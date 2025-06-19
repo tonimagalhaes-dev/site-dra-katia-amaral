@@ -61,17 +61,17 @@ const Index = () => {
 
   const benefits = [
     {
-      icon: <Heart className="w-8 h-8 text-rose-500" />,
+      icon: <Heart className="w-8 h-8 text-gold-400" />,
       title: "Naturalidade",
       description: "Resultados que respeitam sua beleza natural"
     },
     {
-      icon: <Shield className="w-8 h-8 text-blue-500" />,
+      icon: <Shield className="w-8 h-8 text-primary" />,
       title: "Segurança",
       description: "Procedimentos realizados por enfermeira especializada"
     },
     {
-      icon: <CheckCircle className="w-8 h-8 text-green-500" />,
+      icon: <CheckCircle className="w-8 h-8 text-blue-400" />,
       title: "Sem Cirurgia",
       description: "Tratamentos minimamente invasivos"
     }
@@ -86,8 +86,8 @@ const Index = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative min-h-[80vh] bg-gradient-to-br from-rose-50 to-gold-50 py-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-white/95 to-white/80 z-10"></div>
+      <section className="relative min-h-[80vh] bg-gradient-to-br from-blue-900 to-blue-400 py-20 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/95 to-blue-900/70 z-10"></div>
         <div className="absolute inset-0 z-0">
           <img 
             src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=1200&h=800&fit=crop" 
@@ -99,37 +99,37 @@ const Index = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[60vh]">
             <div className="space-y-8">
               <div className="space-y-4">
-                <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium">
+                <span className="inline-block px-4 py-2 bg-gold-400/20 text-gold-400 rounded-full text-sm font-medium">
                   Estética Avançada
                 </span>
-                <h1 className="text-5xl lg:text-6xl font-bold font-playfair text-foreground leading-tight">
-                  Realce sua beleza com <span className="text-primary">segurança</span> e <span className="text-primary">naturalidade</span>
+                <h1 className="text-5xl lg:text-6xl font-bold font-playfair text-white leading-tight">
+                  Realce sua beleza com <span className="text-gold-400">segurança</span> e <span className="text-gold-400">naturalidade</span>
                 </h1>
-                <p className="text-xl text-muted-foreground leading-relaxed">
+                <p className="text-xl text-blue-100 leading-relaxed">
                   Procedimentos estéticos personalizados, realizados por enfermeira especializada com foco no seu bem-estar e resultados naturais.
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button onClick={handleWhatsAppClick} size="lg" className="bg-primary hover:bg-primary/90 px-8 py-6 text-lg">
+                <Button onClick={handleWhatsAppClick} size="lg" className="bg-gold-400 hover:bg-gold-400/90 text-blue-900 px-8 py-6 text-lg font-semibold">
                   <MessageCircle className="w-5 h-5 mr-2" />
                   Agendar Avaliação Gratuita
                 </Button>
-                <Button variant="outline" size="lg" asChild className="px-8 py-6 text-lg">
+                <Button variant="outline" size="lg" asChild className="px-8 py-6 text-lg border-white text-white hover:bg-white hover:text-blue-900">
                   <Link to="/sobre">Conheça a Dra. Katia</Link>
                 </Button>
               </div>
               <div className="flex items-center gap-8 pt-4">
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-primary">500+</div>
-                  <div className="text-sm text-muted-foreground">Procedimentos realizados</div>
+                  <div className="text-2xl font-bold text-gold-400">500+</div>
+                  <div className="text-sm text-blue-200">Procedimentos realizados</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-primary">98%</div>
-                  <div className="text-sm text-muted-foreground">Satisfação</div>
+                  <div className="text-2xl font-bold text-gold-400">98%</div>
+                  <div className="text-sm text-blue-200">Satisfação</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-primary">5+</div>
-                  <div className="text-sm text-muted-foreground">Anos de experiência</div>
+                  <div className="text-2xl font-bold text-gold-400">5+</div>
+                  <div className="text-sm text-blue-200">Anos de experiência</div>
                 </div>
               </div>
             </div>
@@ -209,7 +209,7 @@ const Index = () => {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-20 bg-gradient-to-br from-slate-50 to-rose-50/30">
+      <section className="py-20 bg-gradient-to-br from-blue-50 to-blue-100">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
@@ -224,7 +224,7 @@ const Index = () => {
             {benefits.map((benefit, index) => (
               <Card key={index} className="text-center p-8 hover:shadow-xl transition-all duration-300 group border-0 bg-white/80 backdrop-blur-sm">
                 <CardContent className="space-y-6">
-                  <div className="mx-auto w-16 h-16 bg-gradient-to-br from-primary/20 to-gold-400/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <div className="mx-auto w-16 h-16 bg-gradient-to-br from-primary/20 to-blue-400/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                     {benefit.icon}
                   </div>
                   <h3 className="text-2xl font-bold font-playfair">{benefit.title}</h3>
@@ -250,7 +250,7 @@ const Index = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {procedures.map((procedure, index) => (
-              <Card key={index} className="group hover:shadow-2xl transition-all duration-300 border-0 bg-gradient-to-br from-white to-slate-50/50 overflow-hidden">
+              <Card key={index} className="group hover:shadow-2xl transition-all duration-300 border-0 bg-gradient-to-br from-white to-blue-50 overflow-hidden">
                 <CardContent className="p-8">
                   <div className="text-center space-y-4">
                     <div className="text-5xl mb-6 group-hover:scale-110 transition-transform duration-300">{procedure.icon}</div>
@@ -268,7 +268,7 @@ const Index = () => {
       </section>
 
       {/* Gallery Section */}
-      <section className="py-20 bg-gradient-to-br from-slate-50 to-white">
+      <section className="py-20 bg-gradient-to-br from-blue-50 to-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
@@ -331,7 +331,7 @@ const Index = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {testimonials.map((testimonial, index) => (
-              <Card key={index} className="p-8 border-0 bg-gradient-to-br from-slate-50 to-white shadow-lg hover:shadow-xl transition-all duration-300">
+              <Card key={index} className="p-8 border-0 bg-gradient-to-br from-blue-50 to-white shadow-lg hover:shadow-xl transition-all duration-300">
                 <CardContent className="space-y-6">
                   <div className="flex space-x-1 justify-center">
                     {[...Array(testimonial.rating)].map((_, i) => (

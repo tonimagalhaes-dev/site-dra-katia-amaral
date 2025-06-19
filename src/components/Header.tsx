@@ -32,13 +32,15 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-gradient-to-br from-rose-500 to-gold-500 rounded-full flex items-center justify-center">
-              <span className="text-white font-bold text-xl font-playfair">K</span>
-            </div>
+          <Link to="/" className="flex items-center space-x-3">
+            <img 
+              src="/lovable-uploads/0ddbf619-5add-459b-956f-318950394c97.png" 
+              alt="KM - Katia Amaral Logo" 
+              className="w-12 h-12 object-contain"
+            />
             <div className="hidden sm:block">
-              <h1 className="font-playfair font-semibold text-lg">Dra. Katia Amaral</h1>
-              <p className="text-xs text-muted-foreground">Estética Avançada</p>
+              <h1 className="font-playfair font-semibold text-lg text-foreground">Dra. Katia Amaral</h1>
+              <p className="text-xs text-muted-foreground">Saúde e Estética Avançada</p>
             </div>
           </Link>
 

@@ -86,31 +86,61 @@ const Index = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-rose-50 to-gold-50 py-20">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <h1 className="text-4xl lg:text-5xl font-bold font-playfair text-foreground">
-                ✨ Realce sua beleza com <span className="text-primary">segurança</span> e <span className="text-primary">naturalidade</span>
-              </h1>
-              <p className="text-xl text-muted-foreground">
-                Procedimentos estéticos personalizados, realizados por enfermeira especializada e focada no seu bem-estar.
-              </p>
+      <section className="relative min-h-[80vh] bg-gradient-to-br from-rose-50 to-gold-50 py-20 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-white/95 to-white/80 z-10"></div>
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=1200&h=800&fit=crop" 
+            alt="Profissional de estética" 
+            className="w-full h-full object-cover opacity-30"
+          />
+        </div>
+        <div className="container mx-auto px-4 relative z-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[60vh]">
+            <div className="space-y-8">
+              <div className="space-y-4">
+                <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium">
+                  Estética Avançada
+                </span>
+                <h1 className="text-5xl lg:text-6xl font-bold font-playfair text-foreground leading-tight">
+                  Realce sua beleza com <span className="text-primary">segurança</span> e <span className="text-primary">naturalidade</span>
+                </h1>
+                <p className="text-xl text-muted-foreground leading-relaxed">
+                  Procedimentos estéticos personalizados, realizados por enfermeira especializada com foco no seu bem-estar e resultados naturais.
+                </p>
+              </div>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button onClick={handleWhatsAppClick} size="lg" className="bg-primary hover:bg-primary/90">
+                <Button onClick={handleWhatsAppClick} size="lg" className="bg-primary hover:bg-primary/90 px-8 py-6 text-lg">
                   <MessageCircle className="w-5 h-5 mr-2" />
-                  Agendar Avaliação
+                  Agendar Avaliação Gratuita
                 </Button>
-                <Button variant="outline" size="lg" asChild>
+                <Button variant="outline" size="lg" asChild className="px-8 py-6 text-lg">
                   <Link to="/sobre">Conheça a Dra. Katia</Link>
                 </Button>
               </div>
-            </div>
-            <div className="relative">
-              <div className="aspect-square bg-gradient-to-br from-primary/20 to-gold-400/20 rounded-full flex items-center justify-center">
-                <div className="w-80 h-80 bg-white rounded-full shadow-lg flex items-center justify-center">
-                  <span className="text-6xl">👩‍⚕️</span>
+              <div className="flex items-center gap-8 pt-4">
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-primary">500+</div>
+                  <div className="text-sm text-muted-foreground">Procedimentos realizados</div>
                 </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-primary">98%</div>
+                  <div className="text-sm text-muted-foreground">Satisfação</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-primary">5+</div>
+                  <div className="text-sm text-muted-foreground">Anos de experiência</div>
+                </div>
+              </div>
+            </div>
+            <div className="relative lg:block hidden">
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-gold-400/30 rounded-2xl transform rotate-6"></div>
+                <img 
+                  src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=700&fit=crop" 
+                  alt="Dra. Katia Amaral - Enfermeira Estética" 
+                  className="relative rounded-2xl shadow-2xl w-full h-[500px] object-cover"
+                />
               </div>
             </div>
           </div>
@@ -118,30 +148,87 @@ const Index = () => {
       </section>
 
       {/* About Section */}
-      <section className="py-16">
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold font-playfair mb-4">Quem é a Dra. Katia Amaral</h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Sou enfermeira com especialização em estética e atendo em São Paulo, oferecendo tratamentos que valorizam a sua beleza natural com segurança, técnica e cuidado no pós-procedimento.
-            </p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="space-y-6">
+              <div className="space-y-4">
+                <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium">
+                  Dra. Katia Amaral
+                </span>
+                <h2 className="text-4xl font-bold font-playfair text-foreground">
+                  Especialista em Estética Avançada
+                </h2>
+                <div className="space-y-4 text-lg text-muted-foreground">
+                  <p>
+                    Enfermeira com especialização em estética facial e corporal, atendendo em São Paulo com mais de 5 anos de experiência em procedimentos estéticos minimamente invasivos.
+                  </p>
+                  <p>
+                    Minha missão é valorizar a beleza natural de cada paciente com segurança, técnica apurada e cuidado integral no pós-procedimento.
+                  </p>
+                </div>
+              </div>
+              <div className="grid grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <div className="flex items-center space-x-2">
+                    <CheckCircle className="w-5 h-5 text-primary" />
+                    <span className="font-medium">Enfermeira Especializada</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <CheckCircle className="w-5 h-5 text-primary" />
+                    <span className="font-medium">Certificações Internacionais</span>
+                  </div>
+                </div>
+                <div className="space-y-2">
+                  <div className="flex items-center space-x-2">
+                    <CheckCircle className="w-5 h-5 text-primary" />
+                    <span className="font-medium">Produtos Premium</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <CheckCircle className="w-5 h-5 text-primary" />
+                    <span className="font-medium">Resultados Naturais</span>
+                  </div>
+                </div>
+              </div>
+              <Button asChild size="lg" className="bg-primary hover:bg-primary/90">
+                <Link to="/sobre">Conheça minha história</Link>
+              </Button>
+            </div>
+            <div className="relative">
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-gold-400/20 rounded-2xl transform -rotate-6"></div>
+                <img 
+                  src="https://images.unsplash.com/photo-1559757175-0eb5d9eb9c17?w=600&h=700&fit=crop" 
+                  alt="Consultório de estética profissional" 
+                  className="relative rounded-2xl shadow-2xl w-full h-[500px] object-cover"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Benefits Section */}
-      <section className="py-16 bg-slate-50">
+      <section className="py-20 bg-gradient-to-br from-slate-50 to-rose-50/30">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold font-playfair mb-4">Por que escolher nossos procedimentos?</h2>
+          <div className="text-center mb-16">
+            <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
+              Nossos Diferenciais
+            </span>
+            <h2 className="text-4xl font-bold font-playfair mb-6">Por que escolher nossos procedimentos?</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Combinamos expertise técnica, produtos de alta qualidade e cuidado personalizado para entregar resultados excepcionais.
+            </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {benefits.map((benefit, index) => (
-              <Card key={index} className="text-center p-6">
-                <CardContent className="space-y-4">
-                  <div className="flex justify-center">{benefit.icon}</div>
-                  <h3 className="text-xl font-semibold">{benefit.title}</h3>
-                  <p className="text-muted-foreground">{benefit.description}</p>
+              <Card key={index} className="text-center p-8 hover:shadow-xl transition-all duration-300 group border-0 bg-white/80 backdrop-blur-sm">
+                <CardContent className="space-y-6">
+                  <div className="mx-auto w-16 h-16 bg-gradient-to-br from-primary/20 to-gold-400/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    {benefit.icon}
+                  </div>
+                  <h3 className="text-2xl font-bold font-playfair">{benefit.title}</h3>
+                  <p className="text-muted-foreground text-lg leading-relaxed">{benefit.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -150,22 +237,29 @@ const Index = () => {
       </section>
 
       {/* Procedures Section */}
-      <section className="py-16">
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold font-playfair mb-4">Procedimentos em destaque</h2>
-            <p className="text-lg text-muted-foreground">Cada procedimento é personalizado para valorizar sua beleza natural</p>
+          <div className="text-center mb-16">
+            <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
+              Tratamentos
+            </span>
+            <h2 className="text-4xl font-bold font-playfair mb-6">Procedimentos em destaque</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Cada procedimento é personalizado para valorizar sua beleza natural com técnicas avançadas e produtos premium.
+            </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {procedures.map((procedure, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow">
-                <CardContent className="p-6">
-                  <div className="text-4xl mb-4">{procedure.icon}</div>
-                  <h3 className="text-xl font-semibold mb-3">{procedure.title}</h3>
-                  <p className="text-muted-foreground mb-4">{procedure.description}</p>
-                  <Button asChild variant="outline" className="w-full">
-                    <Link to={procedure.link}>Saiba mais</Link>
-                  </Button>
+              <Card key={index} className="group hover:shadow-2xl transition-all duration-300 border-0 bg-gradient-to-br from-white to-slate-50/50 overflow-hidden">
+                <CardContent className="p-8">
+                  <div className="text-center space-y-4">
+                    <div className="text-5xl mb-6 group-hover:scale-110 transition-transform duration-300">{procedure.icon}</div>
+                    <h3 className="text-2xl font-bold font-playfair group-hover:text-primary transition-colors duration-300">{procedure.title}</h3>
+                    <p className="text-muted-foreground text-lg leading-relaxed">{procedure.description}</p>
+                    <Button asChild variant="outline" className="w-full mt-6 group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                      <Link to={procedure.link}>Saiba mais</Link>
+                    </Button>
+                  </div>
                 </CardContent>
               </Card>
             ))}
@@ -173,23 +267,84 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="py-16 bg-slate-50">
+      {/* Gallery Section */}
+      <section className="py-20 bg-gradient-to-br from-slate-50 to-white">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold font-playfair mb-4">Depoimentos de pacientes</h2>
+          <div className="text-center mb-16">
+            <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
+              Nosso Espaço
+            </span>
+            <h2 className="text-4xl font-bold font-playfair mb-6">Ambiente profissional e acolhedor</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Um espaço pensado para proporcionar conforto, segurança e bem-estar durante seus tratamentos.
+            </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="relative group overflow-hidden rounded-2xl">
+              <img 
+                src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=400&h=300&fit=crop" 
+                alt="Consultório de estética - Recepção" 
+                className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <h3 className="font-semibold">Recepção Acolhedora</h3>
+              </div>
+            </div>
+            <div className="relative group overflow-hidden rounded-2xl">
+              <img 
+                src="https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=400&h=300&fit=crop" 
+                alt="Sala de procedimentos" 
+                className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <h3 className="font-semibold">Sala de Procedimentos</h3>
+              </div>
+            </div>
+            <div className="relative group overflow-hidden rounded-2xl">
+              <img 
+                src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=300&fit=crop" 
+                alt="Equipamentos modernos" 
+                className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <h3 className="font-semibold">Equipamentos Modernos</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
+              Depoimentos
+            </span>
+            <h2 className="text-4xl font-bold font-playfair mb-6">O que nossas pacientes dizem</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              A satisfação e confiança das nossas pacientes são nosso maior reconhecimento.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {testimonials.map((testimonial, index) => (
-              <Card key={index} className="p-6">
-                <CardContent className="space-y-4">
-                  <div className="flex space-x-1">
+              <Card key={index} className="p-8 border-0 bg-gradient-to-br from-slate-50 to-white shadow-lg hover:shadow-xl transition-all duration-300">
+                <CardContent className="space-y-6">
+                  <div className="flex space-x-1 justify-center">
                     {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 fill-gold-400 text-gold-400" />
+                      <Star key={i} className="w-6 h-6 fill-gold-400 text-gold-400" />
                     ))}
                   </div>
-                  <p className="text-muted-foreground italic">"{testimonial.text}"</p>
-                  <p className="font-semibold">- {testimonial.name}</p>
+                  <blockquote className="text-center">
+                    <p className="text-lg text-muted-foreground italic leading-relaxed">"{testimonial.text}"</p>
+                  </blockquote>
+                  <div className="text-center pt-4 border-t border-slate-200">
+                    <p className="font-bold text-foreground text-lg">{testimonial.name}</p>
+                    <p className="text-sm text-muted-foreground">Paciente verificada</p>
+                  </div>
                 </CardContent>
               </Card>
             ))}
@@ -198,31 +353,56 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
+      <section className="py-20 bg-gradient-to-br from-primary/5 to-gold-400/5 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-white/95 to-white/90"></div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold font-playfair mb-4">Agendamento fácil</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-              <div className="flex items-center justify-center space-x-2">
-                <CheckCircle className="w-5 h-5 text-green-500" />
-                <span>Atendimento personalizado</span>
+            <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
+              Agende Agora
+            </span>
+            <h2 className="text-4xl font-bold font-playfair mb-6">Pronta para transformar sua beleza?</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-12">
+              Agende sua avaliação gratuita e descubra como podemos realçar sua beleza natural com segurança e resultados excepcionais.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 max-w-4xl mx-auto">
+              <div className="flex flex-col items-center space-y-2 p-6 bg-white/50 backdrop-blur-sm rounded-2xl">
+                <CheckCircle className="w-8 h-8 text-primary" />
+                <span className="font-semibold text-lg">Atendimento Personalizado</span>
+                <span className="text-sm text-muted-foreground text-center">Cada tratamento é único para você</span>
               </div>
-              <div className="flex items-center justify-center space-x-2">
-                <CheckCircle className="w-5 h-5 text-green-500" />
-                <span>Sem cirurgia</span>
+              <div className="flex flex-col items-center space-y-2 p-6 bg-white/50 backdrop-blur-sm rounded-2xl">
+                <CheckCircle className="w-8 h-8 text-primary" />
+                <span className="font-semibold text-lg">Procedimentos Seguros</span>
+                <span className="text-sm text-muted-foreground text-center">Minimamente invasivos</span>
               </div>
-              <div className="flex items-center justify-center space-x-2">
-                <CheckCircle className="w-5 h-5 text-green-500" />
-                <span>Consultório em São Paulo</span>
+              <div className="flex flex-col items-center space-y-2 p-6 bg-white/50 backdrop-blur-sm rounded-2xl">
+                <CheckCircle className="w-8 h-8 text-primary" />
+                <span className="font-semibold text-lg">Localização Conveniente</span>
+                <span className="text-sm text-muted-foreground text-center">Consultório em São Paulo</span>
               </div>
             </div>
           </div>
           
-          <div className="max-w-md mx-auto">
-            <ContactForm 
-              title="Agende sua avaliação gratuita"
-              description="Entre em contato e descubra qual procedimento é ideal para você"
-            />
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-4xl mx-auto items-center">
+            <div className="text-center lg:text-left space-y-6">
+              <div className="space-y-4">
+                <h3 className="text-2xl font-bold font-playfair">Agendamento Rápido</h3>
+                <p className="text-muted-foreground">
+                  Entre em contato via WhatsApp ou formulário e receba atendimento personalizado em até 2 horas.
+                </p>
+              </div>
+              <Button onClick={handleWhatsAppClick} size="lg" className="bg-green-500 hover:bg-green-600 text-white px-8 py-6 text-lg">
+                <MessageCircle className="w-6 h-6 mr-2" />
+                Conversar no WhatsApp
+              </Button>
+            </div>
+            
+            <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg">
+              <ContactForm 
+                title="Ou preencha o formulário"
+                description="Retornaremos seu contato em breve"
+              />
+            </div>
           </div>
         </div>
       </section>

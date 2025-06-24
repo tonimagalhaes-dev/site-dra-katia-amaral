@@ -7,7 +7,7 @@ const Footer = () => {
   };
 
   const handleInstagramClick = () => {
-    window.open('https://instagram.com/drakatiaamaral', '_blank');
+    window.open('https://instagram.com/drakatia_amaral', '_blank');
   };
 
   const handleEmailClick = () => {
@@ -93,7 +93,7 @@ const Footer = () => {
                 className="flex items-center space-x-3 text-sm text-muted-foreground hover:text-primary transition-colors"
               >
                 <Instagram className="w-4 h-4 text-pink-500" />
-                <span>@drakatiaamaral</span>
+                <span>@drakatia_amaral</span>
               </button>
               
               <button 

@@ -93,6 +93,9 @@ const Index = () => {
             src="/minha-imagem.jpg" 
             alt="Profissional de estética" 
             className="w-full h-full object-cover opacity-30"
+            loading="eager"        
+            fetchPriority="high"   
+            decoding="async"       
           />
         </div>
         <div className="container mx-auto px-4 relative z-20">

@@ -13,6 +13,19 @@ import Skinbooster from "./pages/Skinbooster";
 import PreenchimentoLabial from "./pages/PreenchimentoLabial";
 import Sobre from "./pages/Sobre";
 import Contato from "./pages/Contato";
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+import { pageview } from './lib/analytics';
+
+const App = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    pageview(location.pathname + location.search);
+  }, [location]);
+
+  // resto do seu código...
+};
 
 const queryClient = new QueryClient();
 

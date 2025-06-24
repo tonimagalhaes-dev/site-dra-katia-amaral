@@ -4,6 +4,32 @@ import { Input } from './ui/input';
 import { Label } from './ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
 import { useToast } from '@/hooks/use-toast';
+import { event } from '@/lib/analytics';
+
+const handleWhatsAppClick = () => {
+  // Evento para Analytics
+  event({
+    action: 'click',
+    category: 'Contato',
+    label: 'WhatsApp'
+  });
+
+  // Abrir WhatsApp
+  window.open('https://wa.me/5511914477057...', '_blank');
+};
+
+const handleSubmit = (e: React.FormEvent) => {
+  e.preventDefault();
+  
+  // Evento para Analytics
+  event({
+    action: 'submit',
+    category: 'Formulario',
+    label: 'Contato'
+  });
+
+  // resto da lógica...
+};
 
 interface ContactFormProps {
   defaultProcedure?: string;

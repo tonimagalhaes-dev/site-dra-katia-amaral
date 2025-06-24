@@ -1,9 +1,20 @@
 // src/lib/analytics.ts
+declare global {
+  interface Window {
+    gtag: (...args: any[]) => void;
+  }
+}
 export const GA_TRACKING_ID = 'G-926CE4V53N'; 
+
+// Verifica se o gtag está disponível
+const isGtagAvailable = (): boolean => {
+  return typeof window !== 'undefined' && typeof window.gtag === 'function';
+};
+
 
 // Função para inicializar o GA
 export const pageview = (url: string) => {
-  if (typeof window !== 'undefined') {
+  if (isGtagAvailable()) {
     window.gtag('config', GA_TRACKING_ID, {
       page_path: url,
     });

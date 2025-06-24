@@ -78,7 +78,7 @@ const Index = () => {
   ];
 
   const handleWhatsAppClick = () => {
-    window.open('https://wa.me/5511999999999?text=Olá! Gostaria de agendar uma avaliação.', '_blank');
+    window.open('https://wa.me/5511914477057?text=Olá! Gostaria de agendar uma avaliação.', '_blank');
   };
 
   return (
@@ -90,7 +90,7 @@ const Index = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-blue-900/95 to-blue-900/70 z-10"></div>
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=1200&h=800&fit=crop" 
+            src="/minha-imagem.jpg" 
             alt="Profissional de estética" 
             className="w-full h-full object-cover opacity-30"
           />
@@ -114,7 +114,7 @@ const Index = () => {
                   <MessageCircle className="w-5 h-5 mr-2" />
                   Agendar Avaliação Gratuita
                 </Button>
-                <Button variant="outline" size="lg" asChild className="px-8 py-6 text-lg border-white text-white hover:bg-white hover:text-blue-900">
+                <Button variant="outline" size="lg" asChild className="px-8 py-6 text-lg border-white text-blue-900 hover:bg-white hover:bg-gold-400/90 text-blue-900">
                   <Link to="/sobre">Conheça a Dra. Katia</Link>
                 </Button>
               </div>
@@ -137,7 +137,7 @@ const Index = () => {
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-gold-400/30 rounded-2xl transform rotate-6"></div>
                 <img 
-                  src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=700&fit=crop" 
+                  src="/public/lovable-uploads/drv-clinic-elf-ear-filler-london.png"
                   alt="Dra. Katia Amaral - Enfermeira Estética" 
                   className="relative rounded-2xl shadow-2xl w-full h-[500px] object-cover"
                 />
@@ -198,7 +198,7 @@ const Index = () => {
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-gold-400/20 rounded-2xl transform -rotate-6"></div>
                 <img 
-                  src="https://images.unsplash.com/photo-1559757175-0eb5d9eb9c17?w=600&h=700&fit=crop" 
+                  src="public/lovable-uploads/Aesthetic-Clinics-Near-Me.png" 
                   alt="Consultório de estética profissional" 
                   className="relative rounded-2xl shadow-2xl w-full h-[500px] object-cover"
                 />
@@ -304,7 +304,7 @@ const Index = () => {
             </div>
             <div className="relative group overflow-hidden rounded-2xl">
               <img 
-                src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=300&fit=crop" 
+                src="public/lovable-uploads/Aesthetic-Innovations-8-Latest-Trends-in-Medical-Aesthetics-1024x683.jpg" 
                 alt="Equipamentos modernos" 
                 className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
               />

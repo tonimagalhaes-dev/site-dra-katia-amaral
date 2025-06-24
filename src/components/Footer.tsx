@@ -3,7 +3,7 @@ import { MapPin, Instagram, MessageCircle, Mail } from 'lucide-react';
 
 const Footer = () => {
   const handleWhatsAppClick = () => {
-    window.open('https://wa.me/5511999999999?text=Olá! Gostaria de agendar uma avaliação.', '_blank');
+    window.open('https://wa.me/5511914477057?text=Olá! Gostaria de agendar uma avaliação.', '_blank');
   };
 
   const handleInstagramClick = () => {
@@ -21,12 +21,14 @@ const Footer = () => {
           {/* Logo e Descrição */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-gradient-to-br from-rose-500 to-gold-500 rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-xl font-playfair">K</span>
-              </div>
+              <img
+              src="public/lovable-uploads/0ddbf619-5add-459b-956f-318950394c97.png"
+              alt="Logo Dra. Katia Amaral"
+              className="w-12 h-12 object-contain rounded-full bg-white"
+              />
               <div>
-                <h2 className="font-playfair font-semibold text-lg">Dra. Katia Amaral</h2>
-                <p className="text-xs text-muted-foreground">Estética Avançada</p>
+              <h2 className="font-playfair font-semibold text-lg">Dra. Katia Amaral</h2>
+              <p className="text-xs text-muted-foreground">Estética Avançada</p>
               </div>
             </div>
             <p className="text-sm text-muted-foreground">

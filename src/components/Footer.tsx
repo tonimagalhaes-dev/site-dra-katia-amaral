@@ -22,7 +22,7 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <img
-              src="public/lovable-uploads/0ddbf619-5add-459b-956f-318950394c97.png"
+              src="/lovable-uploads/0ddbf619-5add-459b-956f-318950394c97.png"
               alt="Logo Dra. Katia Amaral"
               className="w-12 h-12 object-contain rounded-full bg-white"
               />

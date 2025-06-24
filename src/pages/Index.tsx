@@ -137,7 +137,7 @@ const Index = () => {
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-gold-400/30 rounded-2xl transform rotate-6"></div>
                 <img 
-                  src="/public/lovable-uploads/drv-clinic-elf-ear-filler-london.png"
+                  src="/lovable-uploads/drv-clinic-elf-ear-filler-london.png"
                   alt="Dra. Katia Amaral - Enfermeira Estética" 
                   className="relative rounded-2xl shadow-2xl w-full h-[500px] object-cover"
                 />
@@ -198,7 +198,7 @@ const Index = () => {
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-gold-400/20 rounded-2xl transform -rotate-6"></div>
                 <img 
-                  src="public/lovable-uploads/Aesthetic-Clinics-Near-Me.png" 
+                  src="/lovable-uploads/Aesthetic-Clinics-Near-Me.png" 
                   alt="Consultório de estética profissional" 
                   className="relative rounded-2xl shadow-2xl w-full h-[500px] object-cover"
                 />
@@ -304,7 +304,7 @@ const Index = () => {
             </div>
             <div className="relative group overflow-hidden rounded-2xl">
               <img 
-                src="public/lovable-uploads/Aesthetic-Innovations-8-Latest-Trends-in-Medical-Aesthetics-1024x683.jpg" 
+                src="/lovable-uploads/Aesthetic-Innovations-8-Latest-Trends-in-Medical-Aesthetics-1024x683.jpg" 
                 alt="Equipamentos modernos" 
                 className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
               />

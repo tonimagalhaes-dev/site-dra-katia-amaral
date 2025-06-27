@@ -41,7 +41,8 @@ const ProcedurePage = ({
 
   return (
     <div className="min-h-screen bg-background">
-      {!hideHero && <Header />}
+      {/* Header sempre aparece */}
+      <Header />
       
       {/* Hero Section - apenas se não estiver oculto */}
       {!hideHero && (

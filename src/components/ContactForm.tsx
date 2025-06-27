@@ -5,6 +5,7 @@ import { Label } from './ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
 import { useToast } from '@/hooks/use-toast';
 import { event } from '@/lib/analytics';
+import { createWhatsAppUrl } from '@/lib/constants';
 
 const handleWhatsAppClick = () => {
   // Evento para Analytics
@@ -15,20 +16,7 @@ const handleWhatsAppClick = () => {
   });
 
   // Abrir WhatsApp
-  window.open('https://wa.me/5511914477057...', '_blank');
-};
-
-const handleSubmit = (e: React.FormEvent) => {
-  e.preventDefault();
-  
-  // Evento para Analytics
-  event({
-    action: 'submit',
-    category: 'Formulario',
-    label: 'Contato'
-  });
-
-  // resto da lógica...
+  window.open(createWhatsAppUrl(''), '_blank');
 };
 
 interface ContactFormProps {
@@ -74,7 +62,7 @@ Nome: ${formData.nome}
 Celular: ${formData.celular}
 Procedimento de interesse: ${formData.procedimento}`;
 
-    const whatsappUrl = `https://wa.me/5511914477057?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = createWhatsAppUrl(message);
     window.open(whatsappUrl, '_blank');
 
     toast({

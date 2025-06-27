@@ -5,6 +5,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ContactForm from '@/components/ContactForm';
+import { createWhatsAppUrl } from '@/lib/constants';
 
 const Index = () => {
   const procedures = [
@@ -78,7 +79,7 @@ const Index = () => {
   ];
 
   const handleWhatsAppClick = () => {
-    window.open('https://wa.me/5511914477057?text=Olá! Gostaria de agendar uma avaliação.', '_blank');
+    window.open(createWhatsAppUrl('Olá! Gostaria de agendar uma avaliação.'), '_blank');
   };
 
   return (

@@ -1,4 +1,3 @@
-
 import { ReactNode } from 'react';
 import { CheckCircle, MessageCircle } from 'lucide-react';
 import { Button } from './ui/button';
@@ -6,6 +5,7 @@ import { Card, CardContent } from './ui/card';
 import Header from './Header';
 import Footer from './Footer';
 import ContactForm from './ContactForm';
+import { createWhatsAppUrl } from '@/lib/constants';
 
 interface ProcedurePageProps {
   title: string;
@@ -36,7 +36,7 @@ const ProcedurePage = ({
 }: ProcedurePageProps) => {
   const handleWhatsAppClick = () => {
     const message = `Olá! Gostaria de saber mais sobre ${procedureName} e agendar uma avaliação.`;
-    window.open(`https://wa.me/5511999999999?text=${encodeURIComponent(message)}`, '_blank');
+    window.open(createWhatsAppUrl(message), '_blank');
   };
 
   return (

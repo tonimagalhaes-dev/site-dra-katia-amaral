@@ -1,5 +1,6 @@
 
 import ProcedurePage from '@/components/ProcedurePage';
+import Header from '@/components/Header';
 
 const Otomodelacao = () => {
   const benefits = [
@@ -17,6 +18,9 @@ const Otomodelacao = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      {/* Header no topo */}
+      <Header />
+      
       <div className="relative bg-gradient-to-br from-rose-50 to-gold-50">
         {/* Hero Section com imagem de fundo */}
         <div 

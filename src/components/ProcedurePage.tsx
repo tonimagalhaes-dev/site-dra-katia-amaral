@@ -1,3 +1,4 @@
+
 import { ReactNode } from 'react';
 import { CheckCircle, MessageCircle } from 'lucide-react';
 import { Button } from './ui/button';
@@ -17,6 +18,7 @@ interface ProcedurePageProps {
   sessions?: string;
   children?: ReactNode;
   procedureName: string;
+  hideHero?: boolean;
 }
 
 const ProcedurePage = ({
@@ -29,7 +31,8 @@ const ProcedurePage = ({
   products,
   sessions,
   children,
-  procedureName
+  procedureName,
+  hideHero = false
 }: ProcedurePageProps) => {
   const handleWhatsAppClick = () => {
     const message = `Olá! Gostaria de saber mais sobre ${procedureName} e agendar uma avaliação.`;
@@ -38,35 +41,37 @@ const ProcedurePage = ({
 
   return (
     <div className="min-h-screen bg-background">
-      <Header />
+      {!hideHero && <Header />}
       
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-rose-50 to-gold-50 py-20">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <div className="text-6xl mb-4">{emoji}</div>
-              <h1 className="text-4xl lg:text-5xl font-bold font-playfair text-foreground">
-                {title}
-              </h1>
-              <p className="text-xl text-muted-foreground">
-                {description}
-              </p>
-              <Button onClick={handleWhatsAppClick} size="lg" className="bg-primary hover:bg-primary/90">
-                <MessageCircle className="w-5 h-5 mr-2" />
-                Agendar Avaliação
-              </Button>
-            </div>
-            <div className="relative">
-              <div className="aspect-square bg-gradient-to-br from-primary/20 to-gold-400/20 rounded-full flex items-center justify-center">
-                <div className="w-80 h-80 bg-white rounded-full shadow-lg flex items-center justify-center">
-                  <span className="text-8xl">{emoji}</span>
+      {/* Hero Section - apenas se não estiver oculto */}
+      {!hideHero && (
+        <section className="relative bg-gradient-to-br from-rose-50 to-gold-50 py-20">
+          <div className="container mx-auto px-4">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className="space-y-6">
+                <div className="text-6xl mb-4">{emoji}</div>
+                <h1 className="text-4xl lg:text-5xl font-bold font-playfair text-foreground">
+                  {title}
+                </h1>
+                <p className="text-xl text-muted-foreground">
+                  {description}
+                </p>
+                <Button onClick={handleWhatsAppClick} size="lg" className="bg-primary hover:bg-primary/90">
+                  <MessageCircle className="w-5 h-5 mr-2" />
+                  Agendar Avaliação
+                </Button>
+              </div>
+              <div className="relative">
+                <div className="aspect-square bg-gradient-to-br from-primary/20 to-gold-400/20 rounded-full flex items-center justify-center">
+                  <div className="w-80 h-80 bg-white rounded-full shadow-lg flex items-center justify-center">
+                    <span className="text-8xl">{emoji}</span>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Benefits Section */}
       <section className="py-16">

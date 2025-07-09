@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { createWhatsAppUrl } from '@/lib/constants';
 
 const Sobre = () => {
   const differentials = [
@@ -13,7 +14,7 @@ const Sobre = () => {
   ];
 
   const handleWhatsAppClick = () => {
-    window.open('https://wa.me/5511999999999?text=Olá! Gostaria de conversar com a Dra. Katia.', '_blank');
+    window.open(createWhatsAppUrl('Olá! Gostaria de conversar com a Dra. Katia.'), '_blank');
   };
 
   return (

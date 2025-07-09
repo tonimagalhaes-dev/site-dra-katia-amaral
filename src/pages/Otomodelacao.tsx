@@ -1,4 +1,6 @@
+
 import ProcedurePage from '@/components/ProcedurePage';
+import { createWhatsAppUrl } from '@/lib/constants';
 
 const Otomodelacao = () => {
   const benefits = [
@@ -36,7 +38,8 @@ const Otomodelacao = () => {
                 <button 
                   onClick={() => {
                     const message = `Olá! Gostaria de saber mais sobre Otomodelação e agendar uma avaliação.`;
-                    window.open(`https://wa.me/5511999999999?text=${encodeURIComponent(message)}`, '_blank');
+
+                    window.open(createWhatsAppUrl(message), '_blank');
                   }}
                   className="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-lg font-semibold inline-flex items-center space-x-2"
                 >

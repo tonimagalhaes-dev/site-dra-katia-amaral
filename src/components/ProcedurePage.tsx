@@ -5,6 +5,7 @@ import { Card, CardContent } from './ui/card';
 import Header from './Header';
 import Footer from './Footer';
 import ContactForm from './ContactForm';
+import { createWhatsAppUrl } from '@/lib/constants';
 
 interface ProcedurePageProps {
   title: string;
@@ -36,12 +37,12 @@ const ProcedurePage = ({
   const handleWhatsAppClick = () => {
     const message = `Olá! Gostaria de saber mais sobre ${procedureName} e agendar uma avaliação.`;
     window.open(`https://wa.me/5511914477057?text=${encodeURIComponent(message)}`, '_blank');
-  };
+ };
 
   return (
     <div className="min-h-screen bg-background">
       {!hideHero && <Header />}
-      
+
       {/* Hero Section - apenas se não estiver oculto */}
       {!hideHero && (
         <section className="relative bg-gradient-to-br from-rose-50 to-gold-50 py-20">

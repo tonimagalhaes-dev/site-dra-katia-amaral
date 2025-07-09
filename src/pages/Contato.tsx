@@ -3,10 +3,11 @@ import { Button } from '@/components/ui/button';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ContactForm from '@/components/ContactForm';
+import { createWhatsAppUrl } from '@/lib/constants';
 
 const Contato = () => {
   const handleWhatsAppClick = () => {
-    window.open('https://wa.me/5511999999999?text=Olá! Gostaria de agendar uma avaliação.', '_blank');
+    window.open(createWhatsAppUrl('Olá! Gostaria de agendar uma avaliação.'), '_blank');
   };
 
   return (

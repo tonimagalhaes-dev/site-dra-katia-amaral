@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom';
 import { MapPin, Instagram, MessageCircle, Mail } from 'lucide-react';
+import { createWhatsAppUrl } from '@/lib/constants';
 
 const Footer = () => {
   const handleWhatsAppClick = () => {
-    window.open('https://wa.me/5511914477057?text=Olá! Gostaria de agendar uma avaliação.', '_blank');
+    window.open(createWhatsAppUrl('Olá! Gostaria de agendar uma avaliação.'), '_blank');
   };
 
   const handleInstagramClick = () => {

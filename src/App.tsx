@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -16,8 +17,8 @@ import Contato from "./pages/Contato";
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { pageview } from './lib/analytics';
+import { BUILD_TRIGGER, FORCE_REBUILD, REBUILD_VERSION } from './lib/build-trigger';
 import React from 'react';
-
 
 const queryClient = new QueryClient();
 
@@ -27,6 +28,8 @@ const AppTracker = ({ children }: { children: React.ReactNode }) => {
 
   useEffect(() => {
     pageview(location.pathname + location.search);
+    // Reference all build triggers to ensure clean compilation
+    console.log('Build trigger:', BUILD_TRIGGER, 'Force rebuild:', FORCE_REBUILD, 'Version:', REBUILD_VERSION);
   }, [location]);
 
   return <>{children}</>;

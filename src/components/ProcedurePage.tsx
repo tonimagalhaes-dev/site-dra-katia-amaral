@@ -41,7 +41,7 @@ const ProcedurePage = ({
 
   return (
     <div className="min-h-screen bg-background">
-      {!hideHero && <Header />}
+      { <Header />} 
 
       {/* Hero Section - apenas se não estiver oculto */}
       {!hideHero && (
@@ -201,3 +201,4 @@ const ProcedurePage = ({
 };
 
 export default ProcedurePage;
+// This component can be used in different pages by passing the appropriate props

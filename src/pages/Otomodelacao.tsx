@@ -1,11 +1,13 @@
 
+import Header from '@/components/Header';
 import ProcedurePage from '@/components/ProcedurePage';
 import { createWhatsAppUrl } from '@/lib/constants';
 
 const Otomodelacao = () => {
   const benefits = [
     "Corrige orelhas proeminentes (abano)",
-    "Técnica com ácido hialurônico ou fios de sustentação",
+    "Melhora a autoestima e confiança",
+    "Procedimento não cirúrgico e minimamente invasivo",
     "Procedimento rápido, sem cortes",
     "Indicado para adultos e adolescentes"
   ];
@@ -13,17 +15,19 @@ const Otomodelacao = () => {
   const differentials = [
     "Técnica precisa e segura",
     "Resultado visível na hora",
-    "Sem necessidade de afastamento de atividades"
+    "Sem necessidade de afastamento de atividades",
+    "Realizado por profissional experiente"
   ];
 
   return (
     <div className="min-h-screen bg-background">
       <div className="relative bg-gradient-to-br from-rose-50 to-gold-50">
-        {/* Hero Section com imagem de fundo */}
-        <div 
+        {/* Hero Section com imagem de fundo */<Header />}
+
+        <div
           className="relative bg-cover bg-center bg-no-repeat py-20"
           style={{
-            backgroundImage: "linear-gradient(rgba(0, 30, 76, 0.7), rgba(189, 178, 172, 0.3)), url('/lovable-uploads/drv-clinic-elf-ear-filler-london.png')"
+            backgroundImage: "linear-gradient(rgba(0, 30, 76, 0.7), rgba(189, 178, 172, 0.3)), url('/lovable-uploads/Fundo Oto - Editado.jpg')"
           }}
         >
           <div className="container mx-auto px-4">
@@ -38,6 +42,7 @@ const Otomodelacao = () => {
                 <button 
                   onClick={() => {
                     const message = `Olá! Gostaria de saber mais sobre Otomodelação e agendar uma avaliação.`;
+
                     window.open(createWhatsAppUrl(message), '_blank');
                   }}
                   className="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-lg font-semibold inline-flex items-center space-x-2"
@@ -45,12 +50,12 @@ const Otomodelacao = () => {
                   <span>Agendar Avaliação</span>
                 </button>
               </div>
-              
+
               {/* Imagem do procedimento */}
               <div className="relative">
                 <div className="aspect-square bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center p-8">
                   <img 
-                    src="/lovable-uploads/Aesthetic-Innovations-8-Latest-Trends-in-Medical-Aesthetics-1024x683.jpg"
+                    src="/lovable-uploads/Katia3 - Editado.png"
                     alt="Procedimento de Otomodelação"
                     className="w-full h-full object-cover rounded-full shadow-lg"
                   />

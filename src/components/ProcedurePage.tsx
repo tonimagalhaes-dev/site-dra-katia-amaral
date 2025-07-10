@@ -32,18 +32,17 @@ const ProcedurePage = ({
   sessions,
   children,
   procedureName,
-  hideHero = false
+  hideHero = false,
 }: ProcedurePageProps) => {
   const handleWhatsAppClick = () => {
     const message = `Olá! Gostaria de saber mais sobre ${procedureName} e agendar uma avaliação.`;
-    window.open(createWhatsAppUrl(message), '_blank');
-  };
+    window.open(`https://wa.me/5511914477057?text=${encodeURIComponent(message)}`, '_blank');
+ };
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Header sempre aparece */}
-      <Header />
-      
+      { <Header />} 
+
       {/* Hero Section - apenas se não estiver oculto */}
       {!hideHero && (
         <section className="relative bg-gradient-to-br from-rose-50 to-gold-50 py-20">
@@ -202,3 +201,4 @@ const ProcedurePage = ({
 };
 
 export default ProcedurePage;
+// This component can be used in different pages by passing the appropriate props

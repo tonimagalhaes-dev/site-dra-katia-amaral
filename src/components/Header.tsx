@@ -16,9 +16,9 @@ const Header = () => {
   ];
 
   const procedureItems = [
-    { label: 'Harmonização Facial', path: '/harmonizacao-facial' },
-    { label: 'Glúteos Up', path: '/gluteos-up' },
     { label: 'Otomodelação', path: '/otomodelacao' },
+    { label: 'Glúteos Up', path: '/gluteos-up' },
+    { label: 'Harmonização Facial', path: '/harmonizacao-facial' },
     { label: 'Bioestimulador de Colágeno', path: '/bioestimulador-colageno' },
     { label: 'Skinbooster', path: '/skinbooster' },
     { label: 'Preenchimento Labial', path: '/preenchimento-labial' },

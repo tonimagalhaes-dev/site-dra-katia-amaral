@@ -30,6 +30,8 @@ const PreenchimentoLabial = () => {
       indications={indications}
       differentials={differentials}
       procedureName="Preenchimento Labial"
+      heroImage='/lovable-uploads/labios2.jpg'
+      benefitImage='/lovable-uploads/labios1.jpg'
     />
   );
 };

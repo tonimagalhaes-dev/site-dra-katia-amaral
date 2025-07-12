@@ -23,13 +23,13 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <img
-              src="/lovable-uploads/0ddbf619-5add-459b-956f-318950394c97.png"
+              src="/lovable-uploads/Logo.png"
               alt="Logo Dra. Katia Amaral"
               className="w-12 h-12 object-contain rounded-full bg-white"
               />
               <div>
               <h2 className="font-playfair font-semibold text-lg">Dra. Katia Amaral</h2>
-              <p className="text-xs text-muted-foreground">Estética Avançada</p>
+              <p className="text-xs text-muted-foreground">Saúde e Estética Avançada</p>
               </div>
             </div>
             <p className="text-sm text-muted-foreground">
@@ -45,14 +45,17 @@ const Footer = () => {
               <Link to="/" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
                 Início
               </Link>
+              <Link to="/otomodelacao" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
+                Otomodelação
+              </Link>
               <Link to="/harmonizacao-facial" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
                 Harmonização Facial
               </Link>
-              <Link to="/gluteos-up" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
-                Glúteos Up
+              <Link to="/preenchimento-labial" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
+                Preenchimento Labial
               </Link>
-              <Link to="/otomodelacao" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
-                Otomodelação
+              <Link to="/harmonizacao-glutea" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
+                Harmonização Glútea
               </Link>
               <Link to="/bioestimulador-colageno" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
                 Bioestimulador de Colágeno
@@ -60,8 +63,23 @@ const Footer = () => {
               <Link to="/skinbooster" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
                 Skinbooster
               </Link>
-              <Link to="/preenchimento-labial" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
-                Preenchimento Labial
+              <Link to="/ozonioterapia" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
+                Ozonioterapia
+              </Link>
+              <Link to="/micropigmentacao" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
+                Micropigmentação
+              </Link>
+              <Link to="/jato-de-plasma" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
+                Jato de Plasma - Eletrocautério
+              </Link>
+              <Link to="/empetiers-mesoterapia" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
+                Empetiers/Mesoterapia
+              </Link>
+              <Link to="/escleroterapia" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
+                Escleroterapia
+              </Link>
+              <Link to="/terapia-capilar" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
+                Terapia Capilar
               </Link>
               <Link to="/sobre" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
                 Sobre
@@ -110,7 +128,7 @@ const Footer = () => {
 
         <div className="border-t border-border mt-8 pt-8 text-center">
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Dra. Katia Amaral. Todos os direitos reservados.
+            © {new Date().getFullYear()} KedemTech. Todos os direitos reservados.
           </p>
         </div>
       </div>

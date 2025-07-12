@@ -1,6 +1,6 @@
 import ProcedurePage from '@/components/ProcedurePage';
 
-const GluteosUp = () => {
+const HarmonizacaoGlutea = () => {
   const benefits = [
     "Realçado com ácido hialurônico específico para área corporal",
     "Efeito lifting e volumizador",
@@ -22,15 +22,19 @@ const GluteosUp = () => {
 
   return (
     <ProcedurePage
-      title="Glúteos Up – Modelagem Glútea sem Cirurgia"
-      description="O procedimento Glúteos Up é ideal para quem deseja levantar, projetar ou dar mais firmeza aos glúteos com um resultado natural e imediato."
+      title="Harmonização Glútea – Modelagem Glútea sem Cirurgia"
+      description="O procedimento de harmonização Glútea é ideal para quem deseja levantar, projetar ou dar mais firmeza aos glúteos com um resultado natural e imediato."
       emoji="🍑"
       benefits={benefits}
       indications={indications}
       differentials={differentials}
-      procedureName="Glúteos Up"
+      procedureName="HarmonizacaoGlutea"
+      hideHero={false}
+      heroImage="/lovable-uploads/gluteo2.jpg"
+      benefitImage="/lovable-uploads/gluteo1.jpg"
+      sessions="1 sessão, com retoques conforme necessidade"
     />
   );
 };
 
-export default GluteosUp;
+export default HarmonizacaoGlutea;

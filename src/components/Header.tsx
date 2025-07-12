@@ -17,12 +17,21 @@ const Header = () => {
 
   const procedureItems = [
     { label: 'Otomodelação', path: '/otomodelacao' },
-    { label: 'Glúteos Up', path: '/gluteos-up' },
     { label: 'Harmonização Facial', path: '/harmonizacao-facial' },
+    { label: 'Preenchimento Labial', path: '/preenchimento-labial' },
+    { label: 'Harmonização Glútea', path: '/harmonizacao-glutea' },
     { label: 'Bioestimulador de Colágeno', path: '/bioestimulador-colageno' },
     { label: 'Skinbooster', path: '/skinbooster' },
-    { label: 'Preenchimento Labial', path: '/preenchimento-labial' },
+    { label: 'Ozonioterapia', path: '/ozonioterapia' },
+    { label: 'Micropigmentação', path: '/micropigmentacao' },
+    { label: 'Jato de Plasma - Eletrocautério', path: '/jato-de-plasma' },
+    { label: 'Empetiers/Mesoterapia', path: '/empetiers-mesoterapia' },
+    { label: 'Escleroterapia', path: '/escleroterapia' },
+    { label: 'Terapia Capilar', path: '/terapia-capilar' },
   ];
+  const handleInstagramClick = () => {
+    window.open('https://www.instagram.com/drakatia_amaral/', '_blank');
+  };
 
   const handleWhatsAppClick = () => {
     window.open(createWhatsAppUrl('Olá! Gostaria de agendar uma avaliação.'), '_blank');
@@ -35,9 +44,9 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3">
             <img 
-              src="/lovable-uploads/0ddbf619-5add-459b-956f-318950394c97.png" 
-              alt="KM - Katia Amaral Logo" 
-              className="w-12 h-12 object-contain"
+              src="/lovable-uploads/Logo.png" 
+              alt="Logo Dra. Katia Amaral"
+              className="w-12 h-12 object-contain rounded-full bg-white"
             />
             <div className="hidden sm:block">
               <h1 className="font-playfair font-semibold text-lg text-foreground">Dra. Katia Amaral</h1>

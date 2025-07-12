@@ -31,6 +31,8 @@ const Skinbooster = () => {
       indications={indications}
       differentials={differentials}
       procedureName="Skinbooster"
+      heroImage='/lovable-uploads/skinbooster1.png'
+      benefitImage='/lovable-uploads/skinbooster2.png'
     />
   );
 };

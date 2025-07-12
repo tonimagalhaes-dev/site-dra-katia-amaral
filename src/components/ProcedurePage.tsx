@@ -4,8 +4,10 @@ import { Button } from './ui/button';
 import { Card, CardContent } from './ui/card';
 import Header from './Header';
 import Footer from './Footer';
-import ContactForm from './ContactForm';
-import { createWhatsAppUrl } from '@/lib/constants';
+import ContactForm from './ContactForm';  
+import { createWhatsAppUrl } from '@/lib/constants';  
+import { useEffect } from 'react';
+
 
 interface ProcedurePageProps {
   title: string;
@@ -19,6 +21,8 @@ interface ProcedurePageProps {
   children?: ReactNode;
   procedureName: string;
   hideHero?: boolean;
+  heroImage?: string;
+  benefitImage?: string;
 }
 
 const ProcedurePage = ({
@@ -33,7 +37,12 @@ const ProcedurePage = ({
   children,
   procedureName,
   hideHero = false,
+  heroImage = '/lovable-uploads/BackgroundHero.png', // Default hero image
+  benefitImage,
 }: ProcedurePageProps) => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const handleWhatsAppClick = () => {
     const message = `Olá! Gostaria de saber mais sobre ${procedureName} e agendar uma avaliação.`;
     window.open(`https://wa.me/5511914477057?text=${encodeURIComponent(message)}`, '_blank');
@@ -45,15 +54,21 @@ const ProcedurePage = ({
 
       {/* Hero Section - apenas se não estiver oculto */}
       {!hideHero && (
-        <section className="relative bg-gradient-to-br from-rose-50 to-gold-50 py-20">
+        <section
+          className="relative py-20"
+          style={{
+            backgroundImage: "linear-gradient(rgba(0, 30, 76, 0.7), rgba(189, 178, 172, 0.3)), url('/lovable-uploads/BackgroundHero.png')",
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        >
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div className="space-y-6">
-                <div className="text-6xl mb-4">{emoji}</div>
-                <h1 className="text-4xl lg:text-5xl font-bold font-playfair text-foreground">
+              <div className="space-y-6 text-white">
+                <h1 className="text-4xl lg:text-5xl font-bold font-playfair">
                   {title}
                 </h1>
-                <p className="text-xl text-muted-foreground">
+                <p className="text-xl text-white/90">
                   {description}
                 </p>
                 <Button onClick={handleWhatsAppClick} size="lg" className="bg-primary hover:bg-primary/90">
@@ -61,10 +76,15 @@ const ProcedurePage = ({
                   Agendar Avaliação
                 </Button>
               </div>
+              
               <div className="relative">
-                <div className="aspect-square bg-gradient-to-br from-primary/20 to-gold-400/20 rounded-full flex items-center justify-center">
-                  <div className="w-80 h-80 bg-white rounded-full shadow-lg flex items-center justify-center">
-                    <span className="text-8xl">{emoji}</span>
+                <div className="aspect-square bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center p-8">
+                  <div className="w-full h-full bg-white rounded-full shadow-lg flex items-center justify-center">
+                    {heroImage ? (
+                      <img src={heroImage} alt="Hero" className="w-full h-full object-cover rounded-full shadow-lg" />
+                    ) : (
+                      <span className="text-8xl">{emoji}</span>
+                    )}
                   </div>
                 </div>
               </div>
@@ -76,16 +96,33 @@ const ProcedurePage = ({
       {/* Benefits Section */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center max-w-4xl mx-auto">
+        {/* Imagem à esquerda */}
+        <div className="flex justify-center">
+          <div className="aspect-square w-80 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center p-4">
+            <div className="w-full h-full bg-white rounded-full shadow-lg flex items-center justify-center">
+          {benefitImage ? (
+            <img src={benefitImage} alt="Benefits" className="w-full h-full object-cover rounded-full shadow-lg" />
+          ) : (
+            <span className="text-5xl">{emoji}</span>
+          )}
+            </div>
+          </div>
+        </div>
+        {/* Texto à direita */}
+        <div>
+          <div className="text-left mb-8">
             <h2 className="text-3xl font-bold font-playfair mb-4">Benefícios do procedimento</h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 gap-4">
             {benefits.map((benefit, index) => (
-              <div key={index} className="flex items-center space-x-3">
-                <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                <span className="text-lg">{benefit}</span>
-              </div>
+          <div key={index} className="flex items-center space-x-3">
+            <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
+            <span className="text-lg">{benefit}</span>
+          </div>
             ))}
+          </div>
+        </div>
           </div>
         </div>
       </section>

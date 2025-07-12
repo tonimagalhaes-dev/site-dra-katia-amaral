@@ -1,82 +1,36 @@
 
-import Header from '@/components/Header';
 import ProcedurePage from '@/components/ProcedurePage';
-import { createWhatsAppUrl } from '@/lib/constants';
 
 const Otomodelacao = () => {
   const benefits = [
     "Corrige orelhas proeminentes (abano)",
-    "Melhora a autoestima e confiança",
-    "Procedimento não cirúrgico e minimamente invasivo",
     "Procedimento rápido, sem cortes",
-    "Indicado para adultos e adolescentes"
+    "Não é necessário repouso",
+    "Realizado em crianças a partir de 7 adolescentes",
+    "Não é necessário sedação",
+    "Baixo custo"
   ];
 
   const differentials = [
     "Técnica precisa e segura",
     "Resultado visível na hora",
     "Sem necessidade de afastamento de atividades",
-    "Realizado por profissional experiente"
+    "Sem necessidade de anestesia",
+    "Resultado permanente"
   ];
 
   return (
-    <div className="min-h-screen bg-background">
-      <div className="relative bg-gradient-to-br from-rose-50 to-gold-50">
-        {/* Hero Section com imagem de fundo */<Header />}
-
-        <div
-          className="relative bg-cover bg-center bg-no-repeat py-20"
-          style={{
-            backgroundImage: "linear-gradient(rgba(0, 30, 76, 0.7), rgba(189, 178, 172, 0.3)), url('/lovable-uploads/Fundo Oto - Editado.jpg')"
-          }}
-        >
-          <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div className="space-y-6 text-white">
-                <h1 className="text-4xl lg:text-5xl font-bold font-playfair">
-                  Otomodelação: Corrija orelhas de abano sem cirurgia
-                </h1>
-                <p className="text-xl text-white/90">
-                  A Otomodelação é um procedimento estético não cirúrgico que remodela o formato das orelhas com resultados discretos e eficazes.
-                </p>
-                <button 
-                  onClick={() => {
-                    const message = `Olá! Gostaria de saber mais sobre Otomodelação e agendar uma avaliação.`;
-
-                    window.open(createWhatsAppUrl(message), '_blank');
-                  }}
-                  className="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-lg font-semibold inline-flex items-center space-x-2"
-                >
-                  <span>Agendar Avaliação</span>
-                </button>
-              </div>
-
-              {/* Imagem do procedimento */}
-              <div className="relative">
-                <div className="aspect-square bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center p-8">
-                  <img 
-                    src="/lovable-uploads/Katia3 - Editado.png"
-                    alt="Procedimento de Otomodelação"
-                    className="w-full h-full object-cover rounded-full shadow-lg"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Restante do conteúdo usando o componente ProcedurePage sem o hero */}
-      <ProcedurePage
-        title=""
-        description=""
-        emoji=""
-        benefits={benefits}
-        differentials={differentials}
-        procedureName="Otomodelação"
-        hideHero={true}
-      />
-    </div>
+    <ProcedurePage
+      title="Chega de esconder as suas orelhas!"
+      description="Transforme sua vida hoje mesmo com a Otomodelação, o procedimento que corrige orelhas proeminentes de forma rápida e eficaz. Ideal para adultos e adolescentes, sem necessidade de cirurgia."
+      emoji="👂"
+      benefits={benefits}
+      differentials={differentials}
+      procedureName="Otomodelação"
+      hideHero={false}
+      heroImage="/lovable-uploads/Otomodelacao.jpg" // Caminho para a imagem de fundo
+      benefitImage="/lovable-uploads/Katia6 - Editado.png" // Caminho para a imagem de benefícios
+    />
   );
 };
 

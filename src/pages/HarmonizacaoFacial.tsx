@@ -22,6 +22,8 @@ const HarmonizacaoFacial = () => {
       benefits={benefits}
       differentials={differentials}
       procedureName="Harmonização Facial"
+      heroImage='/lovable-uploads/harmonizacao1.jpg'
+      benefitImage='/lovable-uploads/harmonizacao2.png'
     />
   );
 };

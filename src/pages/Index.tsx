@@ -13,38 +13,45 @@ const Index = () => {
       title: 'Harmonização Facial',
       description: 'Realce seus traços naturais com segurança e naturalidade',
       icon: '💉',
-      link: '/harmonizacao-facial'
+      link: '/harmonizacao-facial',
+      image: '/lovable-uploads/harmonizacao.png'
     },
     {
-      title: 'Glúteos Up',
+      title: 'Harmonização Glútea',
       description: 'Modelagem glútea sem cirurgia, com resultado imediato',
       icon: '🍑',
-      link: '/gluteos-up'
+      link: '/harmonizacao-glutea',
+      image: '/lovable-uploads/gluteo1.jpg'
     },
     {
       title: 'Otomodelação',
       description: 'Corrija orelhas de abano sem procedimento cirúrgico',
       icon: '👂',
-      link: '/otomodelacao'
+      link: '/otomodelacao',
+      image: '/lovable-uploads/otomodelacao3.jpg'
     },
     {
       title: 'Bioestimulador de Colágeno',
       description: 'Rejuvenescimento natural e duradouro da pele',
       icon: '🧴',
-      link: '/bioestimulador-colageno'
+      link: '/bioestimulador-colageno',
+      image: '/lovable-uploads/bioestimulador.jpg'
     },
     {
       title: 'Skinbooster',
       description: 'Hidratação profunda e viço para sua pele',
       icon: '💧',
-      link: '/skinbooster'
+      link: '/skinbooster',
+      image: '/lovable-uploads/skinbooster1.png'
     },
     {
       title: 'Preenchimento Labial',
       description: 'Lábios naturais, definidos e hidratados',
       icon: '💋',
-      link: '/preenchimento-labial'
+      link: '/preenchimento-labial',
+      image: '/lovable-uploads/labios1.jpg'
     }
+    
   ];
 
   const testimonials = [
@@ -141,7 +148,7 @@ const Index = () => {
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-gold-400/30 rounded-2xl transform rotate-6"></div>
                 <img 
-                  src="/lovable-uploads/drv-clinic-elf-ear-filler-london.png"
+                  src="/lovable-uploads/harmonizacao2.png"
                   alt="Dra. Katia Amaral - Enfermeira Estética" 
                   className="relative rounded-2xl shadow-2xl w-full h-[500px] object-cover"
                 />
@@ -202,7 +209,7 @@ const Index = () => {
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-gold-400/20 rounded-2xl transform -rotate-6"></div>
                 <img 
-                  src="/lovable-uploads/Aesthetic-Clinics-Near-Me.png" 
+                  src="/lovable-uploads/sobre4.jpg" 
                   alt="Consultório de estética profissional" 
                   className="relative rounded-2xl shadow-2xl w-full h-[500px] object-cover"
                 />
@@ -257,7 +264,15 @@ const Index = () => {
               <Card key={index} className="group hover:shadow-2xl transition-all duration-300 border-0 bg-gradient-to-br from-white to-blue-50 overflow-hidden">
                 <CardContent className="p-8">
                   <div className="text-center space-y-4">
-                    <div className="text-5xl mb-6 group-hover:scale-110 transition-transform duration-300">{procedure.icon}</div>
+                    <div className="mb-6 group-hover:scale-110 transition-transform duration-300">
+                      <img
+                        src={procedure.image}
+                        alt={procedure.title}
+                        className="w-20 h-20 object-contain mx-auto rounded-xl shadow"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </div>
                     <h3 className="text-2xl font-bold font-playfair group-hover:text-primary transition-colors duration-300">{procedure.title}</h3>
                     <p className="text-muted-foreground text-lg leading-relaxed">{procedure.description}</p>
                     <Button asChild variant="outline" className="w-full mt-6 group-hover:bg-primary group-hover:text-white transition-all duration-300">
@@ -286,7 +301,7 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="relative group overflow-hidden rounded-2xl">
               <img 
-                src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=400&h=300&fit=crop" 
+                src="/lovable-uploads/index3.jpg"
                 alt="Consultório de estética - Recepção" 
                 className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
               />
@@ -297,7 +312,7 @@ const Index = () => {
             </div>
             <div className="relative group overflow-hidden rounded-2xl">
               <img 
-                src="https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=400&h=300&fit=crop" 
+                src="/lovable-uploads/index4.jpg" 
                 alt="Sala de procedimentos" 
                 className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
               />
@@ -308,7 +323,7 @@ const Index = () => {
             </div>
             <div className="relative group overflow-hidden rounded-2xl">
               <img 
-                src="/lovable-uploads/Aesthetic-Innovations-8-Latest-Trends-in-Medical-Aesthetics-1024x683.jpg" 
+                src="/lovable-uploads/index3.jpg" 
                 alt="Equipamentos modernos" 
                 className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
               />

@@ -13,6 +13,7 @@ interface ProcedurePageProps {
   title: string;
   description: string;
   emoji: string;
+  whatIs?: string[];
   benefits: string[];
   differentials: string[];
   indications?: string[];
@@ -29,6 +30,7 @@ const ProcedurePage = ({
   title,
   description,
   emoji,
+  whatIs,
   benefits,
   differentials,
   indications,
@@ -93,8 +95,41 @@ const ProcedurePage = ({
         </section>
       )}
 
+      {/* What Is Section */}
+      {whatIs && (
+        <section className="py-16 bg-slate-50">
+          <div className="container mx-auto px-4">
+            <div className="text-center">
+              <h2 className="text-3xl font-bold font-playfair mb-4">O que é {procedureName}?</h2>
+              <p className="text-lg text-muted-foreground">{whatIs}</p>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Indications Section */}
+      {indications && (
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold font-playfair mb-4">Indicado para</h2>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
+              {indications.map((indication, index) => (
+                <Card key={index} className="p-4">
+                  <CardContent className="flex items-center space-x-3">
+                    <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
+                    <span>{indication}</span>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Benefits Section */}
-      <section className="py-16">
+      <section className="py-16 bg-slate-50">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center max-w-4xl mx-auto">
         {/* Imagem à esquerda */}
@@ -126,27 +161,6 @@ const ProcedurePage = ({
           </div>
         </div>
       </section>
-
-      {/* Indications Section */}
-      {indications && (
-        <section className="py-16 bg-slate-50">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold font-playfair mb-4">Indicado para</h2>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
-              {indications.map((indication, index) => (
-                <Card key={index} className="p-4">
-                  <CardContent className="flex items-center space-x-3">
-                    <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
-                    <span>{indication}</span>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
 
       {/* Products Section */}
       {products && (

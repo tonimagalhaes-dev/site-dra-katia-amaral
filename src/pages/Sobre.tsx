@@ -28,15 +28,22 @@ const Sobre = () => {
               <h1 className="text-4xl lg:text-5xl font-bold font-playfair text-foreground">
                 Conheça a Dra. Katia Amaral
               </h1>
-              <p className="text-xl text-muted-foreground">
-                Sou enfermeira formada com especialização em estética e apaixonada por promover autoestima com responsabilidade e naturalidade.
+              <p className="text-lg text-muted-foreground">
+                Sou a Enf.ª Katia Amaral, especialista em estética com mais de 20 anos de experiência em cuidados
+                com a saúde. Formada pela Universidade Federal de São Paulo, encontrei na estética uma forma de
+                unir conhecimento técnico, sensibilidade e propósito: resgatar a autoestima e o bem-estar dos meus
+                 pacientes.
               </p>
               <p className="text-lg text-muted-foreground">
-                Atuo com foco em segurança, resultados progressivos e principalmente: no cuidado no pós-procedimento, que faz toda diferença no sucesso de cada tratamento.
+                Meu trabalho é voltado para a harmonização facial e modelação das orelhas, sempre com foco em resultados naturais, segurança e principalmente, no cuidado no pós-procedimento — uma etapa essencial para garantir conforto, recuperação adequada e a satisfação com os resultados.
               </p>
               <p className="text-lg text-muted-foreground">
-                Acredito que cada paciente merece uma atenção única, com um plano personalizado de acordo com seus objetivos e suas características.
+                Acredito que cada paciente é único. Por isso, ofereço um atendimento personalizado, escutando suas necessidades e criando um plano que respeite suas características e objetivos.
               </p>
+              <p className="text-lg text-muted-foreground">
+                Meu compromisso é te ajudar a se sentir bem consigo mesma, confiante e feliz ao se olhar no espelho — pronta para viver o seu momento da selfie perfeita, com leveza e autenticidade.
+              </p>
+
               <Button onClick={handleWhatsAppClick} size="lg" className="bg-primary hover:bg-primary/90">
                 <MessageCircle className="w-5 h-5 mr-2" />
                 Fale comigo no WhatsApp
@@ -57,6 +64,7 @@ const Sobre = () => {
         </div>
       </section>
 
+      {/* Diferenciais Section Hide 
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
@@ -74,7 +82,9 @@ const Sobre = () => {
           </div>
         </div>
       </section>
+      */}
 
+      {/* Hero Section */}
       <Footer />
     </div>
   );

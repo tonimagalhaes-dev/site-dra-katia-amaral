@@ -51,6 +51,10 @@ const Footer = () => {
               <Link to="/harmonizacao-facial" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
                 Harmonização Facial
               </Link>
+              {/* 
+              <Link to="/harmonizacao-corporal" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
+                Harmonização Corporal
+              </Link>
               <Link to="/preenchimento-labial" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
                 Preenchimento Labial
               </Link>
@@ -59,9 +63,6 @@ const Footer = () => {
               </Link>
               <Link to="/bioestimulador-colageno" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
                 Bioestimulador de Colágeno
-              </Link>
-              <Link to="/skinbooster" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
-                Skinbooster
               </Link>
               <Link to="/ozonioterapia" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
                 Ozonioterapia
@@ -81,6 +82,7 @@ const Footer = () => {
               <Link to="/terapia-capilar" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
                 Terapia Capilar
               </Link>
+              */}
               <Link to="/sobre" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
                 Sobre
               </Link>
@@ -96,15 +98,20 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-3 text-sm text-muted-foreground">
                 <MapPin className="w-4 h-4 text-primary" />
-                <span>São Paulo - SP</span>
+                <span>Rua Cincinato Braga, 37 - Bela Vista, São Paulo</span>
+              </div>
+              <div className="flex items-center space-x-3 text-sm text-muted-foreground">
+                <MapPin className="w-4 h-4 text-primary" />
+                <span>Av. Pereira Barreto, 1479 - Baeta Neves, São Bernardo do Campo</span>
               </div>
               
+
               <button 
                 onClick={handleWhatsAppClick}
                 className="flex items-center space-x-3 text-sm text-muted-foreground hover:text-primary transition-colors"
               >
                 <MessageCircle className="w-4 h-4 text-green-500" />
-                <span>WhatsApp</span>
+                <span>(11) 91447-7057</span>
               </button>
               
               <button 
@@ -115,6 +122,7 @@ const Footer = () => {
                 <span>@drakatia_amaral</span>
               </button>
               
+              {/* email Hide 
               <button 
                 onClick={handleEmailClick}
                 className="flex items-center space-x-3 text-sm text-muted-foreground hover:text-primary transition-colors"
@@ -122,6 +130,7 @@ const Footer = () => {
                 <Mail className="w-4 h-4 text-primary" />
                 <span>contato@drakatiaamaral.com.br</span>
               </button>
+              */}
             </div>
           </div>
         </div>

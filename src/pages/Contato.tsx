@@ -41,18 +41,24 @@ const Contato = () => {
                 
                 <div className="flex items-center space-x-3 text-lg">
                   <MapPin className="w-6 h-6 text-primary" />
-                  <span>São Paulo - SP</span>
+                <span>Rua Cincinato Braga, 37 - Bela Vista, São Paulo</span>
+                </div>
+                <div className="flex items-center space-x-3 text-lg">
+                  <MapPin className="w-6 h-6 text-primary" />
+                  <span>Av. Pereira Barreto, 1479 - Baeta Neves, São Bernardo do Campo</span>
                 </div>
                 
                 <div className="flex items-center space-x-3 text-lg">
                   <Instagram className="w-6 h-6 text-pink-500" />
-                  <span>@drakatiaamaral</span>
+                  <span>@drakatia_amaral</span>
                 </div>
                 
+                {/* Hide email for now}
                 <div className="flex items-center space-x-3 text-lg">
                   <Mail className="w-6 h-6 text-primary" />
                   <span>contato@drakatiaamaral.com.br</span>
                 </div>
+                */}
               </div>
             </div>
             

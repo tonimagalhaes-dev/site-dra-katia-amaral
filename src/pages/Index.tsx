@@ -116,19 +116,22 @@ const Index = () => {
                 <h1 className="text-5xl lg:text-6xl font-bold font-playfair text-white leading-tight">
                   Realce sua beleza com <span className="text-gold-400">segurança</span> e <span className="text-gold-400">naturalidade</span>
                 </h1>
-                <p className="text-xl text-blue-100 leading-relaxed">
-                  Procedimentos estéticos personalizados, realizados por enfermeira especializada com foco no seu bem-estar e resultados naturais.
+                <p className="text-3xl text-blue-100 leading-relaxed">
+                  Você merece sentir-se incrível todos os dias, e a Otomodelação é a solução inovadora para corrigir orelhas proeminentes, proporcionando uma confiança renovada.
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button onClick={handleWhatsAppClick} size="lg" className="bg-gold-400 hover:bg-gold-400/90 text-blue-900 px-8 py-6 text-lg font-semibold">
                   <MessageCircle className="w-5 h-5 mr-2" />
-                  Agendar Avaliação Gratuita
+                  Agendar Avaliação
                 </Button>
-                <Button variant="outline" size="lg" asChild className="px-8 py-6 text-lg border-white text-blue-900 hover:bg-white hover:bg-gold-400/90 text-blue-900">
+               {/* 
+               <Button variant="outline" size="lg" asChild className="px-8 py-6 text-lg border-white text-blue-900 hover:bg-white hover:bg-gold-400/90 text-blue-900">
                   <Link to="/sobre">Conheça a Dra. Katia</Link>
-                </Button>
+               </Button> 
+               */}
               </div>
+              {/*}
               <div className="flex items-center gap-8 pt-4">
                 <div className="text-center">
                   <div className="text-2xl font-bold text-gold-400">500+</div>
@@ -143,6 +146,7 @@ const Index = () => {
                   <div className="text-sm text-blue-200">Anos de experiência</div>
                 </div>
               </div>
+              */}
             </div>
             <div className="relative lg:block hidden">
               <div className="relative">
@@ -158,7 +162,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* About Section */}
+      {/* About Section Hide 
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -218,6 +222,7 @@ const Index = () => {
           </div>
         </div>
       </section>
+        */}
 
       {/* Benefits Section */}
       <section className="py-20 bg-gradient-to-br from-blue-50 to-blue-100">
@@ -247,7 +252,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Procedures Section */}
+      {/* Procedures Section hide 
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
@@ -285,6 +290,7 @@ const Index = () => {
           </div>
         </div>
       </section>
+      */}
 
       {/* Gallery Section */}
       <section className="py-20 bg-gradient-to-br from-blue-50 to-white">
@@ -301,7 +307,7 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="relative group overflow-hidden rounded-2xl">
               <img 
-                src="/lovable-uploads/index3.jpg"
+                src="/lovable-uploads/clinovi_recepcao2.jpg"
                 alt="Consultório de estética - Recepção" 
                 className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
               />
@@ -312,31 +318,31 @@ const Index = () => {
             </div>
             <div className="relative group overflow-hidden rounded-2xl">
               <img 
-                src="/lovable-uploads/index4.jpg" 
+                src="/lovable-uploads/clinovi_sala3.jpg" 
                 alt="Sala de procedimentos" 
                 className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <h3 className="font-semibold">Sala de Procedimentos</h3>
+                <h3 className="font-semibold">Sala de Procedimentos 1</h3>
               </div>
             </div>
             <div className="relative group overflow-hidden rounded-2xl">
               <img 
-                src="/lovable-uploads/index3.jpg" 
+                src="/lovable-uploads/clinovi_sala4.jpg" 
                 alt="Equipamentos modernos" 
                 className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <h3 className="font-semibold">Equipamentos Modernos</h3>
+                <h3 className="font-semibold">Sala de Procedimentos 2</h3>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Testimonials Section */}
+      {/* Testimonials Section hide
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
@@ -370,6 +376,7 @@ const Index = () => {
           </div>
         </div>
       </section>
+      */}
 
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-br from-primary/5 to-gold-400/5 relative overflow-hidden">
@@ -381,8 +388,9 @@ const Index = () => {
             </span>
             <h2 className="text-4xl font-bold font-playfair mb-6">Pronta para transformar sua beleza?</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-12">
-              Agende sua avaliação gratuita e descubra como podemos realçar sua beleza natural com segurança e resultados excepcionais.
+              Agende sua avaliação e descubra como podemos realçar sua beleza natural com segurança e resultados excepcionais.
             </p>
+            {/*
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 max-w-4xl mx-auto">
               <div className="flex flex-col items-center space-y-2 p-6 bg-white/50 backdrop-blur-sm rounded-2xl">
                 <CheckCircle className="w-8 h-8 text-primary" />
@@ -400,6 +408,7 @@ const Index = () => {
                 <span className="text-sm text-muted-foreground text-center">Consultório em São Paulo</span>
               </div>
             </div>
+            */}
           </div>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-4xl mx-auto items-center">

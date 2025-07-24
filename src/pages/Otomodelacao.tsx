@@ -37,8 +37,8 @@ const Otomodelacao = () => {
       differentials={differentials}
       procedureName="Otomodelação"
       hideHero={false}
-      heroImage="/lovable-uploads/otomodelacao3.jpg" // Caminho para a imagem de fundo
-      benefitImage="/lovable-uploads/otomodelacao5.jpg" // Caminho para a imagem de benefícios
+      heroImage="/lovable-uploads/otomodelacao5.jpg" // Caminho para a imagem de fundo
+      benefitImage="/lovable-uploads/katia6.png" // Caminho para a imagem de benefícios
     />
   );
 };

@@ -34,7 +34,7 @@ const TerapiaCapilar = () => {
       differentials={differentials}
       procedureName="Terapia Capilar"
       heroImage="/lovable-uploads/capilar5.jpg"
-      benefitImage="/lovable-uploads/capilar7.jpg"
+      benefitImage="/lovable-uploads/capilar2.jpg"
     />
   );
 };

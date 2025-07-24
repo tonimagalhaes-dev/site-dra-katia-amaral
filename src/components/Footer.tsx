@@ -23,7 +23,7 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <img
-              src="/lovable-uploads/Logo.png"
+              src="/lovable-uploads/logo_v2.jpg"
               alt="Logo Dra. Katia Amaral"
               className="w-12 h-12 object-contain rounded-full bg-white"
               />
@@ -51,10 +51,11 @@ const Footer = () => {
               <Link to="/harmonizacao-facial" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
                 Harmonização Facial
               </Link>
-              {/* 
+               
               <Link to="/harmonizacao-corporal" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
                 Harmonização Corporal
               </Link>
+              {/*
               <Link to="/preenchimento-labial" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
                 Preenchimento Labial
               </Link>
@@ -83,6 +84,7 @@ const Footer = () => {
                 Terapia Capilar
               </Link>
               */}
+              
               <Link to="/sobre" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
                 Sobre
               </Link>

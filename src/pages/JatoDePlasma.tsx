@@ -36,7 +36,7 @@ const JatoDePlasma = () => {
       differentials={differentials}
       procedureName="Jato de Plasma"
       heroImage='/lovable-uploads/plasma2.png'
-      benefitImage='/lovable-uploads/plasma.png'
+      benefitImage='/lovable-uploads/plasma1.jpg'
     />
   );
 };

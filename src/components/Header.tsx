@@ -18,8 +18,9 @@ const Header = () => {
   const procedureItems = [
     { label: 'Otomodelação', path: '/otomodelacao' },
     { label: 'Harmonização Facial', path: '/harmonizacao-facial' },
-    {/*}
+
     { label: 'Harmonização Corporal', path: '/harmonizacao-corporal' },
+    /*}
     { label: 'Preenchimento Labial', path: '/preenchimento-labial' },
     { label: 'Harmonização Glútea', path: '/harmonizacao-glutea' },
     { label: 'Bioestimulador de Colágeno', path: '/bioestimulador-colageno' },
@@ -30,7 +31,7 @@ const Header = () => {
     { label: 'Empetiers/Mesoterapia', path: '/empetiers-mesoterapia' },
     { label: 'Escleroterapia', path: '/escleroterapia' },
     { label: 'Terapia Capilar', path: '/terapia-capilar' },
-     */}
+     */
   ];
   const handleInstagramClick = () => {
     window.open('https://www.instagram.com/drakatia_amaral/', '_blank');
@@ -47,7 +48,7 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3">
             <img 
-              src="/lovable-uploads/Logo.png" 
+              src="/lovable-uploads/logo_v2.jpg" 
               alt="Logo Dra. Katia Amaral"
               className="w-12 h-12 object-contain rounded-full bg-white"
             />

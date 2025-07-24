@@ -5,24 +5,11 @@ import { Card, CardContent } from '@/components/ui/card';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ContactForm from '@/components/ContactForm';
-import { createWhatsAppUrl } from '@/lib/constants';
+import ProceduresSection from '@/components/ProceduresSection';
+
 
 const Index = () => {
   const procedures = [
-    {
-      title: 'Harmonização Facial',
-      description: 'Realce seus traços naturais com segurança e naturalidade',
-      icon: '💉',
-      link: '/harmonizacao-facial',
-      image: '/lovable-uploads/harmonizacao.png'
-    },
-    {
-      title: 'Harmonização Glútea',
-      description: 'Modelagem glútea sem cirurgia, com resultado imediato',
-      icon: '🍑',
-      link: '/harmonizacao-glutea',
-      image: '/lovable-uploads/gluteo1.jpg'
-    },
     {
       title: 'Otomodelação',
       description: 'Corrija orelhas de abano sem procedimento cirúrgico',
@@ -31,27 +18,20 @@ const Index = () => {
       image: '/lovable-uploads/otomodelacao3.jpg'
     },
     {
-      title: 'Bioestimulador de Colágeno',
-      description: 'Rejuvenescimento natural e duradouro da pele',
-      icon: '🧴',
-      link: '/bioestimulador-colageno',
-      image: '/lovable-uploads/bioestimulador.jpg'
+      title: 'Harmonização Facial',
+      description: 'Realce seus traços naturais com segurança e naturalidade',
+      icon: '💉',
+      link: '/harmonizacao-facial',
+      image: '/lovable-uploads/facial12.png'
     },
     {
-      title: 'Skinbooster',
-      description: 'Hidratação profunda e viço para sua pele',
-      icon: '💧',
-      link: '/skinbooster',
-      image: '/lovable-uploads/skinbooster1.png'
+      title: 'Harmonização Corporal',
+      description: 'Transforme seu corpo com segurança e naturalidade',
+      icon: '🏋️‍♀️',
+      link: '/harmonizacao-corporal',
+      image: '/lovable-uploads/empitiers1.jpg'
     },
-    {
-      title: 'Preenchimento Labial',
-      description: 'Lábios naturais, definidos e hidratados',
-      icon: '💋',
-      link: '/preenchimento-labial',
-      image: '/lovable-uploads/labios1.jpg'
-    }
-    
+
   ];
 
   const testimonials = [
@@ -125,11 +105,11 @@ const Index = () => {
                   <MessageCircle className="w-5 h-5 mr-2" />
                   Agendar Avaliação
                 </Button>
-               {/* 
+                
                <Button variant="outline" size="lg" asChild className="px-8 py-6 text-lg border-white text-blue-900 hover:bg-white hover:bg-gold-400/90 text-blue-900">
-                  <Link to="/sobre">Conheça a Dra. Katia</Link>
-               </Button> 
-               */}
+                  <Link to="/otomodelacao">Saiba Mais</Link>
+               </Button>
+
               </div>
               {/*}
               <div className="flex items-center gap-8 pt-4">
@@ -152,7 +132,7 @@ const Index = () => {
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-gold-400/30 rounded-2xl transform rotate-6"></div>
                 <img 
-                  src="/lovable-uploads/harmonizacao2.png"
+                  src="/lovable-uploads/facial3.png"
                   alt="Dra. Katia Amaral - Enfermeira Estética" 
                   className="relative rounded-2xl shadow-2xl w-full h-[500px] object-cover"
                 />
@@ -251,8 +231,9 @@ const Index = () => {
           </div>
         </div>
       </section>
-
-      {/* Procedures Section hide 
+      
+      <ProceduresSection procedures={procedures} />
+      {/* Procedures Section Hide for now
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">

@@ -25,6 +25,7 @@ import { useLocation } from 'react-router-dom';
 import { pageview } from './lib/analytics';
 import { BUILD_TRIGGER, FORCE_REBUILD, REBUILD_VERSION } from './lib/build-trigger';
 import React from 'react';
+import HarmonizacaoCorporal from "./pages/HarmonizacaoCorporal";
 
 
 const queryClient = new QueryClient();
@@ -52,6 +53,7 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/harmonizacao-facial" element={<HarmonizacaoFacial />} />
+            <Route path="/harmonizacao-corporal" element={<HarmonizacaoCorporal />} />
             <Route path="/harmonizacao-glutea" element={<HarmonizacaoGlutea />} />
             <Route path="/otomodelacao" element={<Otomodelacao />} />
             <Route path="/bioestimulador-colageno" element={<BioestimuladorColageno />} />

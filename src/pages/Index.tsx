@@ -6,7 +6,8 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ContactForm from '@/components/ContactForm';
 import ProceduresSection from '@/components/ProceduresSection';
-
+import { createWhatsAppUrl } from '@/lib/constants';
+import { useEffect } from 'react';
 
 const Index = () => {
   const procedures = [
@@ -66,6 +67,14 @@ const Index = () => {
   ];
 
   const handleWhatsAppClick = () => {
+    // GA4 event
+    if (window.gtag) {
+      window.gtag('event', 'whatsapp_click', {
+        event_category: 'engagement',
+        event_label: window.location.pathname,
+        value: 1,
+      });
+    }
     window.open(createWhatsAppUrl('Olá! Gostaria de agendar uma avaliação.'), '_blank');
   };
 

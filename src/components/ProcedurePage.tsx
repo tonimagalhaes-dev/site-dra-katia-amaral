@@ -47,6 +47,14 @@ const ProcedurePage = ({
     window.scrollTo(0, 0);
   }, []);
   const handleWhatsAppClick = () => {
+    // GA4 event
+    if (window.gtag) {
+      window.gtag('event', 'whatsapp_click', {
+        event_category: 'engagement',
+        event_label: window.location.pathname,
+        value: 1,
+      });
+    }
     const message = `Olá! Gostaria de saber mais sobre ${procedureName} e agendar uma avaliação.`;
     window.open(`https://wa.me/5511914477057?text=${encodeURIComponent(message)}`, '_blank');
  };

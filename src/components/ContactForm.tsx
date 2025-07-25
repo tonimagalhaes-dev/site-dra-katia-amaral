@@ -63,6 +63,14 @@ Celular: ${formData.celular}
 Procedimento de interesse: ${formData.procedimento}`;
 
     const whatsappUrl = createWhatsAppUrl(message);
+     // GA4 event
+      if (window.gtag) {
+        window.gtag('event', 'whatsapp_click', {
+          event_category: 'engagement',
+          event_label: window.location.pathname,
+          value: 1,
+        });
+      }
     window.open(whatsappUrl, '_blank');
 
     toast({

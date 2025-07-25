@@ -7,10 +7,9 @@
     "dev": "vite",
     "build": "vite build",
     "build:dev": "vite build --mode development",
-    "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}' --quiet",
+    "lint": "eslint src/**/*.{js,jsx,ts,tsx} --quiet",
     "preview": "vite preview",
     "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,json,css,md}'"
-
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
@@ -70,8 +69,8 @@
     "@types/node": "^22.5.5",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
-    "@typescript-eslint/eslint-plugin": "^6.7.0",
-    "@typescript-eslint/parser": "^6.7.0",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
     "@vitejs/plugin-react-swc": "^3.5.0",
     "autoprefixer": "^10.4.20",
     "eslint": "^8.56.0",

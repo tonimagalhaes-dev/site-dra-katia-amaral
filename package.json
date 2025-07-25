@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "build:dev": "vite build --mode development",
-    "lint": "eslint . --ext .ts,.tsx --quiet",
+    "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}' --quiet",
     "preview": "vite preview",
     "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,json,css,md}'"
 

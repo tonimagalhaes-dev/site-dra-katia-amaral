@@ -1,0 +1,30 @@
+name: Code Quality
+
+on:
+  pull_request:
+    branches:
+      - main
+      - develop
+
+jobs:
+  lint-and-format:
+    name: Lint & Prettier Check
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Instalar dependências
+        run: npm ci
+
+      - name: Rodar ESLint
+        run: npm run lint
+
+      - name: Verificar formatação com Prettier
+        run: npx prettier --check .

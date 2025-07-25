@@ -6,6 +6,7 @@ import tseslint from "@typescript-eslint/eslint-plugin";
 import tsParser from "@typescript-eslint/parser";
 
 export default [
+  js.configs.recommended,
   {
     ignores: ["dist"],
   },
@@ -29,6 +30,5 @@ export default [
       ],
       "@typescript-eslint/no-unused-vars": "off",
     },
-    extends: [js.configs.recommended],
   },
 ];

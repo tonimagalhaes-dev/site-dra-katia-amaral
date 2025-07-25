@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -26,7 +25,7 @@ import { pageview } from './lib/analytics';
 import { BUILD_TRIGGER, FORCE_REBUILD, REBUILD_VERSION } from './lib/build-trigger';
 import React from 'react';
 import HarmonizacaoCorporal from "./pages/HarmonizacaoCorporal";
-
+import { usePageView } from '@/analytics/usePageView';
 
 const queryClient = new QueryClient();
 
@@ -43,37 +42,39 @@ const AppTracker = ({ children }: { children: React.ReactNode }) => {
   return <>{children}</>;
 };
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <AppTracker>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/harmonizacao-facial" element={<HarmonizacaoFacial />} />
-            <Route path="/harmonizacao-corporal" element={<HarmonizacaoCorporal />} />
-            <Route path="/harmonizacao-glutea" element={<HarmonizacaoGlutea />} />
-            <Route path="/otomodelacao" element={<Otomodelacao />} />
-            <Route path="/bioestimulador-colageno" element={<BioestimuladorColageno />} />
-            <Route path="/skinbooster" element={<Skinbooster />} />
-            <Route path="/preenchimento-labial" element={<PreenchimentoLabial />} />
-            <Route path="/ozonioterapia" element={<Ozonioterapia />} />
-            <Route path="/micropigmentacao" element={<Micropigmentacao />} />
-            <Route path="/jato-de-plasma" element={<JatoDePlasma />} />
-            <Route path="/empetiers-mesoterapia" element={<EmpetiersMesoterapia />} />
-            <Route path="/escleroterapia" element={<Escleroterapia />} />
-            <Route path="/terapia-capilar" element={<TerapiaCapilar />} />
-            <Route path="/sobre" element={<Sobre />} />
-            <Route path="/contato" element={<Contato />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </AppTracker>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+function App() {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <AppTracker>
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/harmonizacao-facial" element={<HarmonizacaoFacial />} />
+              <Route path="/harmonizacao-corporal" element={<HarmonizacaoCorporal />} />
+              <Route path="/harmonizacao-glutea" element={<HarmonizacaoGlutea />} />
+              <Route path="/otomodelacao" element={<Otomodelacao />} />
+              <Route path="/bioestimulador-colageno" element={<BioestimuladorColageno />} />
+              <Route path="/skinbooster" element={<Skinbooster />} />
+              <Route path="/preenchimento-labial" element={<PreenchimentoLabial />} />
+              <Route path="/ozonioterapia" element={<Ozonioterapia />} />
+              <Route path="/micropigmentacao" element={<Micropigmentacao />} />
+              <Route path="/jato-de-plasma" element={<JatoDePlasma />} />
+              <Route path="/empetiers-mesoterapia" element={<EmpetiersMesoterapia />} />
+              <Route path="/escleroterapia" element={<Escleroterapia />} />
+              <Route path="/terapia-capilar" element={<TerapiaCapilar />} />
+              <Route path="/sobre" element={<Sobre />} />
+              <Route path="/contato" element={<Contato />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </AppTracker>
+        </BrowserRouter>
+      </TooltipProvider>
+    </QueryClientProvider>
+  );
+}
 
 export default App;
 

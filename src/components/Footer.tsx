@@ -4,10 +4,26 @@ import { createWhatsAppUrl } from '@/lib/constants';
 
 const Footer = () => {
   const handleWhatsAppClick = () => {
+    // GA4 event
+    if (window.gtag) {
+      window.gtag('event', 'whatsapp_click', {
+        event_category: 'engagement',
+        event_label: window.location.pathname,
+        value: 1,
+      });
+    }
     window.open(createWhatsAppUrl('Olá! Gostaria de agendar uma avaliação.'), '_blank');
   };
 
   const handleInstagramClick = () => {
+    // GA4 event
+    if (window.gtag) {
+      window.gtag('event', 'instagram_click', {
+      event_category: 'engagement',
+      event_label: window.location.pathname,
+      value: 1,
+      });
+    }
     window.open('https://instagram.com/drakatia_amaral', '_blank');
   };
 

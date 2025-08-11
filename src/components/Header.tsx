@@ -66,9 +66,10 @@ const Header = () => {
               alt="Logo Dra. Katia Amaral"
               className="w-12 h-12 object-contain rounded-full bg-white"
             />
-            <div className="hidden sm:block">
+            <div>
               <h1 className="font-playfair font-semibold text-lg text-foreground">Dra. Katia Amaral</h1>
-              <p className="text-xs text-muted-foreground">Saúde e Estética Avançada</p>
+              <h2 className="text-xs text-muted-foreground">Estética Avançada</h2>
+              <p className="text-xs text-muted-foreground">COREN-SP 310.393 </p>
             </div>
           </Link>
 

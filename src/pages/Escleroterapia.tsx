@@ -33,8 +33,8 @@ const Escleroterapia = () => {
       sessions="2 a 4 sessões, conforme extensão das varizes"
       differentials={differentials}
       procedureName="Escleroterapia"
-      heroImage="/lovable-uploads/escleroterapia1.jpg"
-      benefitImage="/lovable-uploads/escleroterapia.jpg"
+      heroImage="/images/escleroterapia1.jpg"
+      benefitImage="/images/escleroterapia.jpg"
     />
   );
 };

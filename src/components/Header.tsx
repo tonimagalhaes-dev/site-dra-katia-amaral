@@ -62,7 +62,7 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3">
             <img 
-              src="/lovable-uploads/logo_v2.jpg" 
+              src="/images/logo_v2.jpg" 
               alt="Logo Dra. Katia Amaral"
               className="w-12 h-12 object-contain rounded-full bg-white"
             />

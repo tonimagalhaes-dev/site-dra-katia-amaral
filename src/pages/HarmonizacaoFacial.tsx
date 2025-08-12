@@ -7,28 +7,28 @@ const proceduresHF = [
       description: 'Rejuvenescimento natural e duradouro da pele',
       icon: '🧴',
       link: '/bioestimulador-colageno',
-      image: '/lovable-uploads/bioestimulador.jpg'
+      image: '/images/bioestimulador.jpg'
     },
     {
       title: 'Preenchimento Labial',
       description: 'Lábios naturais, definidos e hidratados',
       icon: '💋',
       link: '/preenchimento-labial',
-      image: '/lovable-uploads/labios1.jpg'
+      image: '/images/labios1.jpg'
     },
     {
       title: 'Micro Pigmentação',
       description: 'Realce a beleza dos seus traços com a micro pigmentação',
       icon: '💋',
       link: '/micro-pigmentacao',
-      image: '/lovable-uploads/micro2.jpg'
+      image: '/images/micro2.jpg'
     },
     {
     title: 'Jato de Plasma',
       description: 'Tratamento para flacidez e rejuvenescimento da pele',
       icon: '💨',
       link: '/jato-de-plasma',
-      image: '/lovable-uploads/plasma2.png'
+      image: '/images/plasma2.png'
     }
   ];
 
@@ -54,8 +54,8 @@ const HarmonizacaoFacial = () => {
       benefits={benefits}
       differentials={differentials}
       procedureName="Harmonização Facial"
-      heroImage='/lovable-uploads/facial3.png'
-      benefitImage='/lovable-uploads/facial6.jpg'
+      heroImage='/images/facial3.png'
+      benefitImage='/images/facial6.jpg'
     >
       <ProceduresSection procedures={proceduresHF} />
     </ProcedurePage>

@@ -106,7 +106,7 @@ const WhatsAppButton = () => (
     aria-label="Fale conosco pelo WhatsApp"
   >
     <img
-      src="/lovable-uploads/wa-ico.png"
+      src="/images/wa-ico.png"
       alt="WhatsApp"
       width={44}
       height={44}

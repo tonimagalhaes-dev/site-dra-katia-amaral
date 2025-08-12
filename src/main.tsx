@@ -1,10 +1,14 @@
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { HelmetProvider } from 'react-helmet-async'; // 1. Importe o HelmetProvider
+import App from './App.tsx';
+import './index.css';
 
-import { createRoot } from 'react-dom/client'
-import App from './App.tsx'
-import './index.css'
-import { BUILD_TRIGGER, FORCE_REBUILD } from './lib/build-trigger'
-
-// Reference build triggers to force TypeScript rebuild
-console.log('Starting app with build trigger:', BUILD_TRIGGER, 'Force rebuild:', FORCE_REBUILD);
-
-createRoot(document.getElementById("root")!).render(<App />);
+ReactDOM.createRoot(document.getElementById('root')!).render(
+  <React.StrictMode>
+    {/* 2. Envolva o App com o HelmetProvider */}
+    <HelmetProvider>
+      <App />
+    </HelmetProvider>
+  </React.StrictMode>,
+);

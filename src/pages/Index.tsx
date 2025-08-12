@@ -16,21 +16,21 @@ const Index = () => {
       description: 'Corrija orelhas de abano sem procedimento cirúrgico',
       icon: '👂',
       link: '/otomodelacao',
-      image: '/lovable-uploads/otomodelacao3.jpg'
+      image: '/images/otomodelacao3.jpg'
     },
     {
       title: 'Harmonização Facial',
       description: 'Realce seus traços naturais com segurança e naturalidade',
       icon: '💉',
       link: '/harmonizacao-facial',
-      image: '/lovable-uploads/facial12.png'
+      image: '/images/facial12.png'
     },
     {
       title: 'Harmonização Corporal',
       description: 'Transforme seu corpo com segurança e naturalidade',
       icon: '🏋️‍♀️',
       link: '/harmonizacao-corporal',
-      image: '/lovable-uploads/empitiers1.jpg'
+      image: '/images/empitiers1.jpg'
     },
 
   ];
@@ -141,7 +141,7 @@ const Index = () => {
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-gold-400/30 rounded-2xl transform rotate-6"></div>
                 <img 
-                  src="/lovable-uploads/facial3.png"
+                  src="/images/facial3.png"
                   alt="Dra. Katia Amaral - Enfermeira Estética" 
                   className="relative rounded-2xl shadow-2xl w-full h-[500px] object-cover"
                 />
@@ -202,7 +202,7 @@ const Index = () => {
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-gold-400/20 rounded-2xl transform -rotate-6"></div>
                 <img 
-                  src="/lovable-uploads/sobre4.jpg" 
+                  src="/images/sobre4.jpg" 
                   alt="Consultório de estética profissional" 
                   className="relative rounded-2xl shadow-2xl w-full h-[500px] object-cover"
                 />
@@ -297,7 +297,7 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="relative group overflow-hidden rounded-2xl">
               <img 
-                src="/lovable-uploads/clinovi_recepcao2.jpg"
+                src="/images/clinovi_recepcao2.jpg"
                 alt="Consultório de estética - Recepção" 
                 className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
               />
@@ -308,7 +308,7 @@ const Index = () => {
             </div>
             <div className="relative group overflow-hidden rounded-2xl">
               <img 
-                src="/lovable-uploads/clinovi_sala3.jpg" 
+                src="/images/clinovi_sala3.jpg" 
                 alt="Sala de procedimentos" 
                 className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
               />
@@ -319,7 +319,7 @@ const Index = () => {
             </div>
             <div className="relative group overflow-hidden rounded-2xl">
               <img 
-                src="/lovable-uploads/clinovi_sala4.jpg" 
+                src="/images/clinovi_sala4.jpg" 
                 alt="Equipamentos modernos" 
                 className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
               />

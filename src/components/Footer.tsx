@@ -27,10 +27,6 @@ const Footer = () => {
     window.open('https://instagram.com/drakatia_amaral', '_blank');
   };
 
-  const handleEmailClick = () => {
-    window.open('mailto:contato@drakatiaamaral.com.br', '_blank');
-  };
-
   return (
     <footer className="bg-slate-50 border-t border-border mt-20">
       <div className="container mx-auto px-4 py-12">

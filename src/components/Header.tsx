@@ -33,16 +33,6 @@ const Header = () => {
     { label: 'Terapia Capilar', path: '/terapia-capilar' },
      */
   ];
-  const handleInstagramClick = () => {
-    // GA4 event
-    if (window.gtag) {
-      window.gtag('event', 'Instagram', {
-        event_category: 'engagement',
-        event_label: 'Header',
-      });
-    }
-    window.open('https://www.instagram.com/drakatia_amaral/', '_blank');
-  };
 
   const handleWhatsAppClick = () => {
     // GA4 event

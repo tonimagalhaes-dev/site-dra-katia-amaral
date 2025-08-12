@@ -35,8 +35,8 @@ const JatoDePlasma = () => {
       sessions="1 a 3 sessões, conforme a área tratada"
       differentials={differentials}
       procedureName="Jato de Plasma"
-      heroImage='/images/plasma2.png'
-      benefitImage='/images/plasma1.jpg'
+      heroImage='/images/plasma2.webp'
+      benefitImage='/images/plasma1.webp'
     />
   );
 };

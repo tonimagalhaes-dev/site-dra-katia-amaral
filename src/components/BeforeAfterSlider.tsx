@@ -17,48 +17,48 @@ interface BeforeAfterImage {
 // Array com os dados das imagens. Substitua os placeholders pelas suas imagens reais.
 const images: BeforeAfterImage[] = [
   {
-    before: '/images/Before-After/Paciente 4.jpg',
-    after: '/images/Before-After/Paciente 4a.jpg',
+    before: '/images/Before-After/Paciente 4.webp',
+    after: '/images/Before-After/Paciente 4a.webp',
     alt: 'Resultado do tratamento de otomodelação em paciente 1',
   },
   {
-    before: '/images/Before-After/Paciente 7e.jpg',
-    after: '/images/Before-After/Paciente 7c.jpg',
+    before: '/images/Before-After/Paciente 7e.webp',
+    after: '/images/Before-After/Paciente 7c.webp',
     alt: 'Resultado do tratamento de otomodelação em paciente 2',
   },
   {
-    before: '/images/Before-After/Paciente 8.jpg',
-    after: '/images/Before-After/Paciente 8a.jpg',
+    before: '/images/Before-After/Paciente 8.webp',
+    after: '/images/Before-After/Paciente 8a.webp',
     alt: 'Resultado do tratamento de otomodelação em paciente 3',
   },
   {
-    before: '/images/Before-After/Paciente 12.jpg',
-    after: '/images/Before-After/Paciente 12a.jpg',
+    before: '/images/Before-After/Paciente 12.webp',
+    after: '/images/Before-After/Paciente 12a.webp',
     alt: 'Resultado do tratamento de otomodelação em paciente 4',
   },
   {
-    before: '/images/Before-After/Paciente 13.jpg',
-    after: '/images/Before-After/Paciente 13a.jpg',
+    before: '/images/Before-After/Paciente 13.webp',
+    after: '/images/Before-After/Paciente 13a.webp',
     alt: 'Resultado do tratamento de otomodelação em paciente 5',
   },
   {
-    before: '/images/Before-After/Paciente 14.jpg',
-    after: '/images/Before-After/Paciente 14a.jpg',
+    before: '/images/Before-After/Paciente 14.webp',
+    after: '/images/Before-After/Paciente 14a.webp',
     alt: 'Resultado do tratamento de otomodelação em paciente 6',
   },
   {
-    before: '/images/Before-After/Paciente 15.jpg',
-    after: '/images/Before-After/Paciente 15a.jpg',
+    before: '/images/Before-After/Paciente 15.webp',
+    after: '/images/Before-After/Paciente 15a.webp',
     alt: 'Resultado do tratamento de otomodelação em paciente 7',
   },
   {
-    before: '/images/Before-After/Paciente 16.jpg',
-    after: '/images/Before-After/Paciente 16e.jpg',
+    before: '/images/Before-After/Paciente 16.webp',
+    after: '/images/Before-After/Paciente 16e.webp',
     alt: 'Resultado do tratamento de otomodelação em paciente 8',
   },
   {
-    before: '/images/Before-After/Paciente 18.jpg',
-    after: '/images/Before-After/Paciente 18a.jpg',
+    before: '/images/Before-After/Paciente 18.webp',
+    after: '/images/Before-After/Paciente 18a.webp',
     alt: 'Resultado do tratamento de otomodelação em paciente 9',
   },
 

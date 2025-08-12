@@ -8,14 +8,14 @@ import { Button } from '@/components/ui/button';
 import { BeforeAfterSlider } from '@/components/BeforeAfterSlider'; // Importando o novo componente
 import {
   CheckCircle2,
-  Heart,
+//  Heart,
   ShieldCheck,
-  Smile,
-  ThumbsUp,
-  UserCheck,
+//  Smile,
+//  ThumbsUp,
+//  UserCheck,
   Award,
   Clock,
-  Moon,
+//  Moon,
 } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import { createWhatsAppUrl } from '@/lib/constants';
@@ -55,7 +55,7 @@ const OtomodelacaoPage = () => {
         {/* Seção 1: Hero de Alta Conversão */}
         <section
           className="relative text-white py-20 px-4 text-center bg-cover bg-center"
-          style={{ backgroundImage: "url('/images/BackgroundHero.png')" }}
+          style={{ backgroundImage: "url('/images/BackgroundHero.webp')" }}
         >
           <div className="absolute inset-0 bg-black bg-opacity-50"></div>
           <div className="relative z-10 container mx-auto">
@@ -170,7 +170,7 @@ const OtomodelacaoPage = () => {
             <div className="flex flex-col md:flex-row items-center gap-12">
               <div className="md:w-1/3 text-center">
                 <img
-                  src="/images/katia6.png"
+                  src="/images/katia6.webp"
                   alt="Dra. Kátia Amaral"
                   className="rounded-full w-64 h-64 mx-auto object-cover shadow-lg"
                 />

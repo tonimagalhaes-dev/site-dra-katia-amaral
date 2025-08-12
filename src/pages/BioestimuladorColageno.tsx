@@ -31,8 +31,8 @@ const BioestimuladorColageno = () => {
       sessions="De 1 a 3 sessões, conforme avaliação."
       differentials={differentials}
       procedureName="Bioestimulador de Colágeno"
-      heroImage="/images/bioestimulador1.png"
-      benefitImage="/images/bioestimulador4.jpg"
+      heroImage="/images/bioestimulador1.webp"
+      benefitImage="/images/bioestimulador4.webp"
     />
   );
 };

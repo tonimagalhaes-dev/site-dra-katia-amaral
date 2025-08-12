@@ -1,23 +1,12 @@
+import React from 'react';
 import { useState } from 'react';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Label } from './ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
 import { useToast } from '@/hooks/use-toast';
-import { event } from '@/lib/analytics';
 import { createWhatsAppUrl } from '@/lib/constants';
 
-const handleWhatsAppClick = () => {
-  // Evento para Analytics
-  event({
-    action: 'click',
-    category: 'Contato',
-    label: 'WhatsApp'
-  });
-
-  // Abrir WhatsApp
-  window.open(createWhatsAppUrl(''), '_blank');
-};
 
 interface ContactFormProps {
   defaultProcedure?: string;

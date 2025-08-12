@@ -101,7 +101,7 @@ const OtomodelacaoPage = () => {
               Resultados que Falam por Si
             </h2>
             <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-              Veja o poder da otomodelação em transformar não apenas a aparência,
+              ➡️ Role para o lado e veja o poder da otomodelação em transformar não apenas a aparência,
               mas a confiança de nossos pacientes.
             </p>
             <BeforeAfterSlider />
@@ -204,7 +204,7 @@ const OtomodelacaoPage = () => {
             </h2>
             <Accordion type="single" collapsible className="w-full">
               <AccordionItem value="item-1">
-                <AccordionTrigger>
+                <AccordionTrigger className="text-left">
                   Qual a diferença entre otomodelação e otoplastia?
                 </AccordionTrigger>
                 <AccordionContent>
@@ -216,7 +216,7 @@ const OtomodelacaoPage = () => {
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-2">
-                <AccordionTrigger>
+                <AccordionTrigger className="text-left">
                   Por que escolher uma Enfermeira Esteta para este
                   procedimento?
                 </AccordionTrigger>
@@ -229,7 +229,7 @@ const OtomodelacaoPage = () => {
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-3">
-                <AccordionTrigger>O resultado é permanente?</AccordionTrigger>
+                <AccordionTrigger className="text-left">O resultado é permanente?</AccordionTrigger>
                 <AccordionContent>
                   Sim, os resultados da otomodelação são considerados
                   permanentes. Os fios utilizados são biocompatíveis e projetados
@@ -237,7 +237,7 @@ const OtomodelacaoPage = () => {
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-4">
-                <AccordionTrigger>O procedimento dói?</AccordionTrigger>
+                <AccordionTrigger className="text-left">O procedimento dói?</AccordionTrigger>
                 <AccordionContent>
                   O procedimento é realizado com anestesia local, tornando-o
                   muito confortável para o paciente. Pode haver um leve

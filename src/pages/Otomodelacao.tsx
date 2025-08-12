@@ -19,15 +19,24 @@ const Otomodelacao = () => {
     "Resultado permanente"
   ];
 
-    const whatIs = [
-    "É uma técnica que permite remodelar a cartilagem das orelhas sem que haja danos, corrigindo deformidades ou assimétrias de maneira definitiva, sem a necessidade de cortes ou longos períodos de recuperação. Podendo ser realizada em adultos e crianças a partir de 8 anos de idade. É realizada através de fios estéreis e biocompatíveis, sem a necessidade de cirurgia."
-    
-  ];
+  const whatIs = [
+    `A otomodelação é uma técnica inovadora e não cirúrgica, 
+    ideal para corrigir orelhas proeminentes (de abano) 
+    sem os traumas e o longo tempo de recuperação de uma otoplastia tradicional. 
+    Realizado em consultório com anestesia local, o procedimento utiliza 
+    fios estéreis e biocompatíveis para remodelar a cartilagem de forma segura, 
+    sem deixar cicatrizes visíveis. É a solução perfeita para adultos e crianças 
+    (a partir de 8 anos) que buscam um resultado imediato, permanente e 
+    que não exige repouso, permitindo o retorno à rotina no mesmo dia. 
+    Como Enfermeira Esteta especialista e seguindo as regulamentações do COFEN, 
+    a Dra. Kátia Amaral realiza a técnica com máxima segurança, utilizando materiais 
+    de ponta e seguindo rigorosos protocolos de higiene e cuidado para garantir não 
+    apenas a sua estética, mas a sua tranquilidade.`,];
 
   return (
     <ProcedurePage
-      title="Chega de esconder as suas orelhas!"
-      description="Você merece sentir-se incrível todos os dias, e a Otomodelação é a solução inovadora para corrigir orelhas proeminentes, proporcionando uma confiança renovada."
+      title="Diga Adeus às Orelhas de Abano, Sem Cirurgia"
+      description="Resultados definitivos, naturais e seguros com a técnica de otomodelação."
       emoji="👂"
       whatIs={whatIs}
       indications={["Indicado para falta de curvatura da anti-hélice da orelha. Neste caso, muitas vezes é possível reconstruir curvatura sem a necessidade de cortes atrás da orelha, apenas por meio da confecção de pontos de sutura.",

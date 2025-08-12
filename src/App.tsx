@@ -71,10 +71,50 @@ function App() {
             </Routes>
           </AppTracker>
         </BrowserRouter>
+        <WhatsAppButton />
       </TooltipProvider>
     </QueryClientProvider>
   );
 }
 
-export default App;
+import { createWhatsAppUrl  } from '@/lib/constants';
 
+const WhatsAppButton = () => (
+  <a
+    href={createWhatsAppUrl('Olá! Vi o site e gostaria de saber mais sobre a otomodelação.')}
+    target="_blank"
+    rel="noopener noreferrer"
+    style={{
+      position: 'fixed',
+      bottom: 24,
+      right: 24,
+      zIndex: 1000,
+      background: '#25D366',
+      borderRadius: '999px',
+      height: 48,
+      padding: '0 20px',
+      color: 'white',
+      fontWeight: 400,
+      fontSize: 18,
+      textDecoration: 'none',
+      display: 'flex',
+      alignItems: 'center',
+      gap: 2,
+      boxShadow: '0 2px 8px rgba(0,0,0,0.12)',
+      transition: 'box-shadow 0.2s',
+    }}
+    aria-label="Fale conosco pelo WhatsApp"
+  >
+    <img
+      src="/lovable-uploads/wa-ico.png"
+      alt="WhatsApp"
+      width={44}
+      height={44}
+      style={{ display: 'block' }}
+    />
+
+    <span>Fale conosco</span>
+  </a>
+);
+
+export default App

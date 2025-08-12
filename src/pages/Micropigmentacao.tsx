@@ -32,8 +32,8 @@ const Micropigmentacao = () => {
       indications={indications}
       differentials={differentials}
       procedureName="Micropigmentação"
-      heroImage="/images/micro3.jpg"
-      benefitImage="/images/micro1.jpg"
+      heroImage="/images/micro3.webp"
+      benefitImage="/images/micro1.webp"
     />
   );
 };

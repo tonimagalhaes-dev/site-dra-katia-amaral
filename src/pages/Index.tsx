@@ -15,21 +15,21 @@ const Index = () => {
       description: 'Corrija orelhas de abano sem procedimento cirúrgico',
       icon: '👂',
       link: '/otomodelacao',
-      image: '/images/otomodelacao3.jpg'
+      image: '/images/otomodelacao3.webp'
     },
     {
       title: 'Harmonização Facial',
       description: 'Realce seus traços naturais com segurança e naturalidade',
       icon: '💉',
       link: '/harmonizacao-facial',
-      image: '/images/facial12.png'
+      image: '/images/facial12.webp'
     },
     {
       title: 'Harmonização Corporal',
       description: 'Transforme seu corpo com segurança e naturalidade',
       icon: '🏋️‍♀️',
       link: '/harmonizacao-corporal',
-      image: '/images/empitiers1.jpg'
+      image: '/images/empitiers1.webp'
     },
 
   ];
@@ -88,7 +88,7 @@ const Index = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-blue-900/95 to-blue-900/70 z-10"></div>
         <div className="absolute inset-0 z-0">
           <img 
-            src="/minha-imagem.jpg" 
+            src="/minha-imagem.webp" 
             alt="Profissional de estética" 
             className="w-full h-full object-cover opacity-30"
             loading="eager"        
@@ -126,7 +126,7 @@ const Index = () => {
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-gold-400/30 rounded-2xl transform rotate-6"></div>
                 <img 
-                  src="/images/facial3.png"
+                  src="/images/facial3.webp"
                   alt="Dra. Katia Amaral - Enfermeira Estética" 
                   className="relative rounded-2xl shadow-2xl w-full h-[500px] object-cover"
                 />
@@ -187,7 +187,7 @@ const Index = () => {
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-gold-400/20 rounded-2xl transform -rotate-6"></div>
                 <img 
-                  src="/images/sobre4.jpg" 
+                  src="/images/sobre4.webp" 
                   alt="Consultório de estética profissional" 
                   className="relative rounded-2xl shadow-2xl w-full h-[500px] object-cover"
                 />
@@ -282,7 +282,7 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="relative group overflow-hidden rounded-2xl">
               <img 
-                src="/images/clinovi_recepcao2.jpg"
+                src="/images/clinovi_recepcao2.webp"
                 alt="Consultório de estética - Recepção" 
                 className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
               />
@@ -293,7 +293,7 @@ const Index = () => {
             </div>
             <div className="relative group overflow-hidden rounded-2xl">
               <img 
-                src="/images/clinovi_sala3.jpg" 
+                src="/images/clinovi_sala3.webp" 
                 alt="Sala de procedimentos" 
                 className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
               />
@@ -304,7 +304,7 @@ const Index = () => {
             </div>
             <div className="relative group overflow-hidden rounded-2xl">
               <img 
-                src="/images/clinovi_sala4.jpg" 
+                src="/images/clinovi_sala4.webp" 
                 alt="Equipamentos modernos" 
                 className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
               />

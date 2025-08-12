@@ -1,119 +1,121 @@
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
-import NotFound from "./pages/NotFound";
-import HarmonizacaoFacial from "./pages/HarmonizacaoFacial";
-import HarmonizacaoGlutea from "./pages/HarmonizacaoGlutea";
-import Otomodelacao from "./pages/Otomodelacao";
-import BioestimuladorColageno from "./pages/BioestimuladorColageno";
-import Skinbooster from "./pages/Skinbooster";
-import PreenchimentoLabial from "./pages/PreenchimentoLabial";
-import Micropigmentacao from "./pages/Micropigmentacao";
-import Ozonioterapia from "./pages/Ozonioterapia";
-import JatoDePlasma from "./pages/JatoDePlasma";
-import EmpetiersMesoterapia from "./pages/EmpetiersMesoterapia";
-import Escleroterapia from "./pages/Escleroterapia";
-import TerapiaCapilar from "./pages/TerapiaCapilar";
-import Sobre from "./pages/Sobre";
-import Contato from "./pages/Contato";
-import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
-import { pageview } from './lib/analytics';
-import { BUILD_TRIGGER, FORCE_REBUILD, REBUILD_VERSION } from './lib/build-trigger';
-import React from 'react';
-import HarmonizacaoCorporal from "./pages/HarmonizacaoCorporal";
+import { Suspense, lazy } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Toaster } from '@/components/ui/toaster';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import { createWhatsAppUrl } from './lib/constants';
 
-const queryClient = new QueryClient();
+// --- IMPLEMENTAÇÃO DO CODE SPLITTING ---
+// Em vez de importar tudo de uma vez, usamos React.lazy para carregar
+// cada página apenas quando ela for necessária.
 
-// Componente interno para tracking (precisa estar dentro do BrowserRouter)
-const AppTracker = ({ children }: { children: React.ReactNode }) => {
-  const location = useLocation();
+const Index = lazy(() => import('./pages/Index'));
+const Otomodelacao = lazy(() => import('./pages/Otomodelacao'));
+const Contato = lazy(() => import('./pages/Contato'));
+const Sobre = lazy(() => import('./pages/Sobre'));
+const BioestimuladorColageno = lazy(
+  () => import('./pages/BioestimuladorColageno'),
+);
+const EmpetiersMesoterapia = lazy(
+  () => import('./pages/EmpetiersMesoterapia'),
+);
+const Escleroterapia = lazy(() => import('./pages/Escleroterapia'));
+const HarmonizacaoCorporal = lazy(
+  () => import('./pages/HarmonizacaoCorporal'),
+);
+const HarmonizacaoFacial = lazy(() => import('./pages/HarmonizacaoFacial'));
+const HarmonizacaoGlutea = lazy(() => import('./pages/HarmonizacaoGlutea'));
+const JatoDePlasma = lazy(() => import('./pages/JatoDePlasma'));
+const Micropigmentacao = lazy(() => import('./pages/Micropigmentacao'));
+const Ozonioterapia = lazy(() => import('./pages/Ozonioterapia'));
+const PreenchimentoLabial = lazy(() => import('./pages/PreenchimentoLabial'));
+const Skinbooster = lazy(() => import('./pages/Skinbooster'));
+const TerapiaCapilar = lazy(() => import('./pages/TerapiaCapilar'));
+const NotFound = lazy(() => import('./pages/NotFound'));
 
-  useEffect(() => {
-    pageview(location.pathname + location.search);
-    // Reference all build triggers to ensure clean compilation
-    console.log('Build trigger:', BUILD_TRIGGER, 'Force rebuild:', FORCE_REBUILD, 'Version:', REBUILD_VERSION);
-  }, [location]);
-
-  return <>{children}</>;
-};
+// Componente de "Carregando..." para ser exibido enquanto as páginas carregam
+const PageLoader = () => (
+  <div className="flex justify-center items-center h-screen">
+    <p>Carregando...</p>
+  </div>
+);
 
 function App() {
+  const handleWhatsAppClick = () => {
+    const message = 'Olá, Dra. Kátia! Gostaria de agendar uma consulta.';
+    window.open(createWhatsAppUrl(message), '_blank');
+  };
+
   return (
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <AppTracker>
-            <Routes>
-              <Route path="/" element={<Index />} />
-              <Route path="/harmonizacao-facial" element={<HarmonizacaoFacial />} />
-              <Route path="/harmonizacao-corporal" element={<HarmonizacaoCorporal />} />
-              <Route path="/harmonizacao-glutea" element={<HarmonizacaoGlutea />} />
-              <Route path="/otomodelacao" element={<Otomodelacao />} />
-              <Route path="/bioestimulador-colageno" element={<BioestimuladorColageno />} />
-              <Route path="/skinbooster" element={<Skinbooster />} />
-              <Route path="/preenchimento-labial" element={<PreenchimentoLabial />} />
-              <Route path="/ozonioterapia" element={<Ozonioterapia />} />
-              <Route path="/micropigmentacao" element={<Micropigmentacao />} />
-              <Route path="/jato-de-plasma" element={<JatoDePlasma />} />
-              <Route path="/empetiers-mesoterapia" element={<EmpetiersMesoterapia />} />
-              <Route path="/escleroterapia" element={<Escleroterapia />} />
-              <Route path="/terapia-capilar" element={<TerapiaCapilar />} />
-              <Route path="/sobre" element={<Sobre />} />
-              <Route path="/contato" element={<Contato />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </AppTracker>
-        </BrowserRouter>
-        <WhatsAppButton />
-      </TooltipProvider>
-    </QueryClientProvider>
+    <Router>
+      <Header />
+      {/* O Suspense mostra o PageLoader enquanto o componente da rota está sendo baixado */}
+      <Suspense fallback={<PageLoader />}>
+        <main className="flex-grow">
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/otomodelacao" element={<Otomodelacao />} />
+            <Route path="/contato" element={<Contato />} />
+            <Route path="/sobre" element={<Sobre />} />
+            <Route
+              path="/bioestimulador-de-colageno"
+              element={<BioestimuladorColageno />}
+            />
+            <Route
+              path="/mesoterapia-emptiers"
+              element={<EmpetiersMesoterapia />}
+            />
+            <Route path="/escleroterapia" element={<Escleroterapia />} />
+            <Route
+              path="/harmonizacao-corporal"
+              element={<HarmonizacaoCorporal />}
+            />
+            <Route
+              path="/harmonizacao-facial"
+              element={<HarmonizacaoFacial />}
+            />
+            <Route
+              path="/harmonizacao-glutea"
+              element={<HarmonizacaoGlutea />}
+            />
+            <Route path="/jato-de-plasma" element={<JatoDePlasma />} />
+            <Route path="/micropigmentacao" element={<Micropigmentacao />} />
+            <Route path="/ozonioterapia" element={<Ozonioterapia />} />
+            <Route
+              path="/preenchimento-labial"
+              element={<PreenchimentoLabial />}
+            />
+            <Route path="/skinbooster" element={<Skinbooster />} />
+            <Route path="/terapia-capilar" element={<TerapiaCapilar />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </main>
+      </Suspense>
+      <Footer />
+      <Toaster />
+      {/* Botão Flutuante do WhatsApp */}
+      <button
+        onClick={handleWhatsAppClick}
+        className="fixed bottom-5 right-5 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-transform hover:scale-110 z-50"
+        aria-label="Fale Conosco pelo WhatsApp"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className="lucide lucide-message-circle"
+        >
+          <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" />
+        </svg>
+      </button>
+    </Router>
   );
 }
 
-import { createWhatsAppUrl  } from '@/lib/constants';
-
-const WhatsAppButton = () => (
-  <a
-    href={createWhatsAppUrl('Olá! Vi o site e gostaria de saber mais sobre a otomodelação.')}
-    target="_blank"
-    rel="noopener noreferrer"
-    style={{
-      position: 'fixed',
-      bottom: 24,
-      right: 24,
-      zIndex: 1000,
-      background: '#25D366',
-      borderRadius: '999px',
-      height: 48,
-      padding: '0 20px',
-      color: 'white',
-      fontWeight: 400,
-      fontSize: 18,
-      textDecoration: 'none',
-      display: 'flex',
-      alignItems: 'center',
-      gap: 2,
-      boxShadow: '0 2px 8px rgba(0,0,0,0.12)',
-      transition: 'box-shadow 0.2s',
-    }}
-    aria-label="Fale conosco pelo WhatsApp"
-  >
-    <img
-      src="/images/wa-ico.png"
-      alt="WhatsApp"
-      width={44}
-      height={44}
-      style={{ display: 'block' }}
-    />
-
-    <span>Fale conosco</span>
-  </a>
-);
-
-export default App
+export default App;

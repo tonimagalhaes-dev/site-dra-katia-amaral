@@ -34,8 +34,8 @@ const EmpetiersMesoterapia = () => {
       sessions="4 a 8 sessões, conforme o protocolo"
       differentials={differentials}
       procedureName="Mesoterapia"
-      heroImage="/images/empitiers.jpg"
-      benefitImage="/images/empitiers2.png"
+      heroImage="/images/empitiers.webp"
+      benefitImage="/images/empitiers2.webp"
     />
   );
 };

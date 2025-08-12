@@ -8,14 +8,14 @@ import { Button } from '@/components/ui/button';
 import { BeforeAfterSlider } from '@/components/BeforeAfterSlider'; // Importando o novo componente
 import {
   CheckCircle2,
-  Heart,
+//  Heart,
   ShieldCheck,
-  Smile,
-  ThumbsUp,
-  UserCheck,
+//  Smile,
+//  ThumbsUp,
+//  UserCheck,
   Award,
   Clock,
-  Moon,
+//  Moon,
 } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import { createWhatsAppUrl } from '@/lib/constants';

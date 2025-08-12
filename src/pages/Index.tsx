@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Star, Shield, Heart, CheckCircle, MessageCircle } from 'lucide-react';
+import { Shield, Heart, CheckCircle, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import Header from '@/components/Header';
@@ -7,7 +7,6 @@ import Footer from '@/components/Footer';
 import ContactForm from '@/components/ContactForm';
 import ProceduresSection from '@/components/ProceduresSection';
 import { createWhatsAppUrl } from '@/lib/constants';
-import { useEffect } from 'react';
 
 const Index = () => {
   const procedures = [
@@ -35,7 +34,8 @@ const Index = () => {
 
   ];
 
-  const testimonials = [
+  { /*
+    const testimonials = [
     {
       name: "Maria Silva",
       text: "Me senti segura e acolhida durante todo o processo. Resultado incrível!",
@@ -47,6 +47,7 @@ const Index = () => {
       rating: 5
     }
   ];
+*/}
 
   const benefits = [
     {
@@ -120,22 +121,6 @@ const Index = () => {
                </Button>
 
               </div>
-              {/*}
-              <div className="flex items-center gap-8 pt-4">
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-gold-400">500+</div>
-                  <div className="text-sm text-blue-200">Procedimentos realizados</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-gold-400">98%</div>
-                  <div className="text-sm text-blue-200">Satisfação</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-gold-400">5+</div>
-                  <div className="text-sm text-blue-200">Anos de experiência</div>
-                </div>
-              </div>
-              */}
             </div>
             <div className="relative lg:block hidden">
               <div className="relative">

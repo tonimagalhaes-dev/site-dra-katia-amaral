@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { ReactNode } from 'react';
 import { CheckCircle, MessageCircle } from 'lucide-react';
 import { Button } from './ui/button';
@@ -6,7 +5,6 @@ import { Card, CardContent } from './ui/card';
 import Header from './Header';
 import Footer from './Footer';
 import ContactForm from './ContactForm';  
-import { createWhatsAppUrl } from '@/lib/constants';  
 import { useEffect } from 'react';
 
 

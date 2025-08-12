@@ -40,7 +40,7 @@ const ProcedurePage = ({
   children,
   procedureName,
   hideHero = false,
-  heroImage = '/lovable-uploads/BackgroundHero.png', // Default hero image
+  heroImage = '/images/BackgroundHero.png', // Default hero image
   benefitImage,
 }: ProcedurePageProps) => {
   useEffect(() => {
@@ -68,7 +68,7 @@ const ProcedurePage = ({
         <section
           className="relative py-20"
           style={{
-            backgroundImage: "linear-gradient(rgba(0, 30, 76, 0.7), rgba(189, 178, 172, 0.3)), url('/lovable-uploads/BackgroundHero.png')",
+            backgroundImage: "linear-gradient(rgba(0, 30, 76, 0.7), rgba(189, 178, 172, 0.3)), url('/images/BackgroundHero.png')",
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}

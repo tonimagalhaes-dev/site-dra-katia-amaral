@@ -30,8 +30,8 @@ const HarmonizacaoGlutea = () => {
       differentials={differentials}
       procedureName="HarmonizacaoGlutea"
       hideHero={false}
-      heroImage="/lovable-uploads/gluteo2.jpg"
-      benefitImage="/lovable-uploads/gluteo1.jpg"
+      heroImage="/images/gluteo2.jpg"
+      benefitImage="/images/gluteo1.jpg"
       sessions="1 sessão, com retoques conforme necessidade"
     />
   );

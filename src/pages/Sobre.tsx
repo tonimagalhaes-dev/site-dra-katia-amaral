@@ -53,7 +53,7 @@ const Sobre = () => {
               <div className="aspect-square bg-gradient-to-br from-primary/20 to-gold-400/20 rounded-full flex items-center justify-center">
                 <div className="w-full h-full bg-white rounded-full shadow-lg flex items-center justify-center">
                     <img
-                    src="/lovable-uploads/katia7.jpg"
+                    src="/images/katia7.jpg"
                     alt="Dra. Katia Amaral"
                     className="w-full h-full object-cover rounded-full"
                     />

@@ -33,8 +33,8 @@ const TerapiaCapilar = () => {
       sessions="6 a 12 sessões, com intervalos semanais"
       differentials={differentials}
       procedureName="Terapia Capilar"
-      heroImage="/lovable-uploads/capilar5.jpg"
-      benefitImage="/lovable-uploads/capilar2.jpg"
+      heroImage="/images/capilar5.jpg"
+      benefitImage="/images/capilar2.jpg"
     />
   );
 };

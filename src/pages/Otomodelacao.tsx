@@ -62,7 +62,7 @@ const OtomodelacaoPage = () => {
               Resultados naturais e seguros com a técnica de otomodelação.
             </p>
             <p className="font-semibold bg-primary/80 inline-block px-3 py-1 rounded-md mb-6">
-              Dra. Kátia Amaral | Enfermeira Esteta | COREN-SP 123.456
+              Dra. Kátia Amaral | Enfermeira Esteta | COREN-SP 310.193
             </p>
             <div>
               <Button
@@ -167,16 +167,18 @@ const OtomodelacaoPage = () => {
                   Sua Confiança nas Mãos de uma Especialista
                 </h2>
                 <p className="text-muted-foreground mb-4 text-justify">
-                  "Minha paixão é realçar a beleza única de cada paciente,
-                  utilizando as técnicas mais avançadas e seguras. Como
-                  Enfermeira Esteta, meu compromisso é com a sua segurança, seu
-                  conforto e, claro, com um resultado que traga a autoestima e
-                  a felicidade que você merece. Cada procedimento é realizado
-                  com o máximo cuidado e atenção aos detalhes, porque entendo
-                  que estou cuidando de um sonho."
+                  "Com mais de 10 anos de experiência em ambientes hospitalares
+                  e clínicos, trago para a estética a segurança e o rigor
+                  técnico que você merece. Minha paixão é realçar a beleza
+                  única de cada paciente, utilizando as técnicas mais avançadas
+                  e seguras. Como Enfermeira Esteta, meu compromisso é com o
+                  seu bem-estar, seu conforto e, claro, com um resultado que
+                  traga a autoestima e a felicidade que você busca. Cada
+                  procedimento é realizado com o máximo cuidado, porque entendo
+                  que estou cuidando de um sonho."                  
                 </p>
                 <p className="font-semibold text-gray-700">
-                  - Dra. Kátia Amaral, Enfermeira Esteta
+                  - Dra. Kátia Amaral, Enfermeira Esteta | COREN-SP 310.193
                 </p>
               </div>
             </div>

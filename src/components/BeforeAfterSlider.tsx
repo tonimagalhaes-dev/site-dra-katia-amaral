@@ -92,6 +92,9 @@ export function BeforeAfterSlider() {
                       src={image.before}
                       alt={`Antes - ${image.alt}`}
                       className="rounded-lg shadow-md w-full h-auto object-cover aspect-square"
+                      loading="lazy"
+                      width="800"
+                      height="800"
                     />
                   </div>
                   {/* Coluna "Depois" */}
@@ -103,6 +106,9 @@ export function BeforeAfterSlider() {
                       src={image.after}
                       alt={`Depois - ${image.alt}`}
                       className="rounded-lg shadow-md w-full h-auto object-cover aspect-square"
+                      loading="lazy"
+                      width="800"
+                      height="800"
                     />
                   </div>
                 </CardContent>

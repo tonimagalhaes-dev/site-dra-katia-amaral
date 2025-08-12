@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { MapPin, Instagram, MessageCircle, Mail } from 'lucide-react';
+import { MapPin, Instagram, MessageCircle } from 'lucide-react';
 import { createWhatsAppUrl } from '@/lib/constants';
 
 const Footer = () => {
@@ -139,16 +139,6 @@ const Footer = () => {
                 <Instagram className="w-4 h-4 text-pink-500" />
                 <span>@drakatia_amaral</span>
               </button>
-              
-              {/* email Hide 
-              <button 
-                onClick={handleEmailClick}
-                className="flex items-center space-x-3 text-sm text-muted-foreground hover:text-primary transition-colors"
-              >
-                <Mail className="w-4 h-4 text-primary" />
-                <span>contato@drakatiaamaral.com.br</span>
-              </button>
-              */}
             </div>
           </div>
         </div>

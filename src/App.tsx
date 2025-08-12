@@ -25,7 +25,6 @@ import { pageview } from './lib/analytics';
 import { BUILD_TRIGGER, FORCE_REBUILD, REBUILD_VERSION } from './lib/build-trigger';
 import React from 'react';
 import HarmonizacaoCorporal from "./pages/HarmonizacaoCorporal";
-import { usePageView } from '@/analytics/usePageView';
 
 const queryClient = new QueryClient();
 

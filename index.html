@@ -1,61 +1,84 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dra. Katia Amaral - Procedimentos Estéticos em São Paulo</title>
-    <meta name="description" content="Realce sua beleza com segurança e naturalidade. Harmonização facial, glúteos up, preenchimentos e mais procedimentos estéticos em São Paulo." />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" media="print" onload="this.media='all'">
+    <title>Dra. Katia Amaral</title>
 
-    <meta name="author" content="Lovable" />
-    <meta property="og:title" content="Dra. Katia Amaral - Procedimentos Estéticos em São Paulo" />
-    <meta property="og:description" content="Realce sua beleza com segurança e naturalidade. Harmonização facial, glúteos up, preenchimentos e mais procedimentos estéticos em São Paulo." />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="" />
-
-    <!-- Meta Pixel Code -->
-    <script>
-      !function(f,b,e,v,n,t,s)
-      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)}(window, document,'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', '1264501178665065');
-      fbq('track', 'PageView');
-    </script>
-    <!-- End Meta Pixel Code -->
-    
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-926CE4V53N"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-926CE4V53N');
-    </script>
-    <!-- OTIMIZAÇÃO DE LCP: Pré-carrega a imagem de fundo principal -->
+    <!-- OTIMIZAÇÃO DE LCP: Pré-carrega a imagem de fundo principal para mobile e desktop -->
+    <link
+      rel="preload"
+      as="image"
+      href="/images/BackgroundHero-mobile.webp"
+      media="(max-width: 768px)"
+    />
     <link
       rel="preload"
       as="image"
       href="/images/BackgroundHero.webp"
+      media="(min-width: 769px)"
     />
 
-  </head>
+    <!-- OTIMIZAÇÃO DE FONTES (com display=swap) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
 
+    <!-- CSS CRÍTICO: Estilos essenciais para a primeira tela são inseridos aqui -->
+    <style>
+      /* Estilos básicos para evitar "piscar" de conteúdo sem estilo (FOUC) */
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #f9fafb; /* bg-gray-50 */
+        margin: 0;
+      }
+      /* Estilos para o Header e a primeira seção, garantindo que sejam renderizados imediatamente */
+      header {
+        background-color: white;
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1),
+          0 1px 2px 0 rgba(0, 0, 0, 0.06);
+      }
+      .hero-section {
+        position: relative;
+        color: white;
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+        text-align: center;
+      }
+      .hero-section img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -10;
+      }
+      .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+      .hero-content {
+        position: relative;
+        z-index: 10;
+      }
+    </style>
+
+    <!-- O CSS principal é carregado de forma não-bloqueante -->
+    <link rel="stylesheet" href="/src/index.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="/src/index.css"></noscript>
+
+  </head>
   <body>
     <div id="root"></div>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1264501178665065&ev=PageView&noscript=1"
-    /></noscript>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

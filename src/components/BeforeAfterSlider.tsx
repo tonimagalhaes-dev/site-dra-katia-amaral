@@ -1,3 +1,4 @@
+
 import { Card, CardContent } from '@/components/ui/card';
 import {
   Carousel,
@@ -14,9 +15,9 @@ interface BeforeAfterImage {
   alt: string;
 }
 
-// Array com os dados das imagens. Substitua os placeholders pelas suas imagens reais.
+// Array com os dados das imagens reais do seu projeto
 const images: BeforeAfterImage[] = [
-  {
+ {
     before: '/images/Before-After/Paciente 4.webp',
     after: '/images/Before-After/Paciente 4a.webp',
     alt: 'Resultado do tratamento de otomodelação em paciente 1',
@@ -66,7 +67,6 @@ const images: BeforeAfterImage[] = [
 
 /**
  * Componente de Carrossel para exibir imagens de Antes e Depois.
- * Utiliza o componente Carousel do shadcn/ui.
  */
 export function BeforeAfterSlider() {
   return (
@@ -79,12 +79,12 @@ export function BeforeAfterSlider() {
     >
       <CarouselContent>
         {images.map((image, index) => (
-          <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/1">
+          <CarouselItem key={index} className="md:basis-1/2">
             <div className="p-1">
               <Card className="overflow-hidden">
-                <CardContent className="flex flex-col md:flex-row items-stretch justify-center p-4 md:p-6 gap-2 md:gap-4">
+                <CardContent className="flex items-stretch justify-center p-4 md:p-6 gap-2 md:gap-4">
                   {/* Coluna "Antes" */}
-                  <div className="w-full md:w-1/2 flex flex-col items-center">
+                  <div className="w-1/2 flex flex-col items-center">
                     <h3 className="text-center text-lg font-semibold mb-2 text-gray-600">
                       Antes   -   Depois
                     </h3>
@@ -98,7 +98,7 @@ export function BeforeAfterSlider() {
                     />
                   </div>
                   {/* Coluna "Depois" */}
-                  <div className="w-full md:w-1/2 flex flex-col items-center">
+                  <div className="w-1/2 flex flex-col items-center">
                     <h3 className="text-center text-lg font-semibold mb-2 text-primary">
                       Antes   -   Depois
                     </h3>

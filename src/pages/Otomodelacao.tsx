@@ -43,18 +43,31 @@ const OtomodelacaoPage = () => {
       </Helmet>
 
       <div className="flex flex-col">
-        {/* Seção 1: Hero Otimizado com <img> para LCP */}
-        <section className="relative text-white py-20 px-4 text-center">
-          {/* A imagem agora é uma tag <img> com prioridade máxima */}
-          <img
-            src="/images/BackgroundHero.webp"
-            alt=""
-            role="presentation"
-            fetchPriority="high"
-            className="absolute inset-0 w-full h-full object-cover -z-10"
-          />
-          <div className="absolute inset-0 bg-black bg-opacity-50"></div>
-          <div className="relative z-10 container mx-auto">
+        {/* Seção 1: Hero Otimizado com <picture> para LCP */}
+        <section className="hero-section"> {/* Classe para o CSS crítico */}
+          {/* A tag <picture> permite carregar imagens diferentes para mobile e desktop */}
+          <picture>
+            {/* Imagem para ecrãs menores (mobile-first) */}
+            <source
+              media="(max-width: 768px)"
+              srcSet="/images/BackgroundHero-mobile.webp"
+            />
+            {/* Imagem padrão para ecrãs maiores */}
+            <source
+              media="(min-width: 769px)"
+              srcSet="/images/BackgroundHero.webp"
+            />
+            {/* Tag <img> de fallback com prioridade máxima */}
+            <img
+              src="/images/BackgroundHero.webp"
+              alt=""
+              role="presentation"
+              fetchPriority="high"
+            />
+          </picture>
+
+          <div className="hero-overlay"></div>
+          <div className="hero-content container mx-auto">
             <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
               Diga Adeus às Orelhas de Abano, Sem Cirurgia.
             </h1>
@@ -72,7 +85,7 @@ const OtomodelacaoPage = () => {
                   window.open(createWhatsAppUrl(otomodelacaoMessage), '_blank')
                 }
               >
-                Agende sua Avaliação Gratuita
+                Agende sua Avaliação
               </Button>
             </div>
           </div>
@@ -86,7 +99,7 @@ const OtomodelacaoPage = () => {
             </h2>
             <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
               Veja o poder da otomodelação em transformar não apenas a aparência,
-              mas a confiança de nossos pacientes.
+              mas a confiança dos nossos pacientes.
             </p>
             <BeforeAfterSlider />
           </div>
@@ -100,7 +113,7 @@ const OtomodelacaoPage = () => {
             </h2>
             <p className="text-muted-foreground mb-12 max-w-2xl mx-auto">
               Se você se identifica com alguma destas situações, saiba que não
-              está sozinho(a) e existe uma solução para recuperar sua
+              está sozinho(a) e existe uma solução para recuperar a sua
               autoestima.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto text-left">
@@ -115,7 +128,7 @@ const OtomodelacaoPage = () => {
               <div className="flex items-start space-x-3 p-4">
                 <CheckCircle2 className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
                 <p>
-                  A aparência de suas orelhas afeta sua confiança e bem-estar?
+                  A aparência das suas orelhas afeta a sua confiança e bem-estar?
                 </p>
               </div>
             </div>
@@ -137,7 +150,7 @@ const OtomodelacaoPage = () => {
                 local, minimizando riscos e desconforto.
               </BenefitCard>
               <BenefitCard icon={<Clock size={48} />} title="Recuperação Rápida">
-                Sem cortes e sem necessidade de repouso. Volte para suas
+                Sem cortes e sem necessidade de repouso. Volte para as suas
                 atividades no mesmo dia.
               </BenefitCard>
               <BenefitCard icon={<Award size={48} />} title="Resultados Imediatos">
@@ -164,18 +177,18 @@ const OtomodelacaoPage = () => {
               </div>
               <div className="md:w-2/3">
                 <h2 className="text-3xl font-bold text-gray-800 mb-4">
-                  Sua Confiança nas Mãos de uma Especialista
+                  A Sua Confiança nas Mãos de uma Especialista
                 </h2>
                 <p className="text-muted-foreground mb-4 text-justify">
                   "Com mais de 10 anos de experiência em ambientes hospitalares
                   e clínicos, trago para a estética a segurança e o rigor
-                  técnico que você merece. Minha paixão é realçar a beleza
+                  técnico que você merece. A minha paixão é realçar a beleza
                   única de cada paciente, utilizando as técnicas mais avançadas
-                  e seguras. Como Enfermeira Esteta, meu compromisso é com o
-                  seu bem-estar, seu conforto e, claro, com um resultado que
+                  e seguras. Como Enfermeira Esteta, o meu compromisso é com o
+                  seu bem-estar, o seu conforto e, claro, com um resultado que
                   traga a autoestima e a felicidade que você busca. Cada
                   procedimento é realizado com o máximo cuidado, porque entendo
-                  que estou cuidando de um sonho."                  
+                  que estou a cuidar de um sonho."
                 </p>
                 <p className="font-semibold text-gray-700">
                   - Dra. Kátia Amaral, Enfermeira Esteta | COREN-SP 310.193
@@ -250,7 +263,7 @@ const OtomodelacaoPage = () => {
             </h2>
             <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto">
               Chega de se esconder. Chegou a hora de se sentir livre e
-              confiante em qualquer situação. Nossa equipe está pronta para
+              confiante em qualquer situação. A nossa equipa está pronta para
               tirar todas as suas dúvidas.
             </p>
             <Button
@@ -260,7 +273,7 @@ const OtomodelacaoPage = () => {
                 window.open(createWhatsAppUrl(otomodelacaoMessage), '_blank')
               }
             >
-              Quero Agendar Minha Avaliação
+              Quero Agendar a Minha Avaliação
             </Button>
           </div>
         </section>

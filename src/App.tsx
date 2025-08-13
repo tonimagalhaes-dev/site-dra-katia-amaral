@@ -42,7 +42,7 @@ const PageLoader = () => (
 
 function App() {
   const handleWhatsAppClick = () => {
-    const message = 'Olá, Dra. Kátia! Gostaria de agendar uma consulta.';
+    const message = 'Olá, Dra. Kátia! Vi o site e gostaria de saber mais sobre a otomodelação. Podemos conversar?';
     window.open(createWhatsAppUrl(message), '_blank');
   };
 
@@ -93,7 +93,8 @@ function App() {
       </Suspense>
       <Footer />
       <Toaster />
-      {/* Botão Flutuante do WhatsApp */}
+
+      {/* Botão Flutuante do WhatsApp 
       <button
         onClick={handleWhatsAppClick}
         className="fixed bottom-5 right-5 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-transform hover:scale-110 z-50"
@@ -113,9 +114,48 @@ function App() {
         >
           <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" />
         </svg>
-      </button>
+      </button> */}
     </Router>
   );
 }
+
+
+const WhatsAppButton = () => (
+  <a
+    href={createWhatsAppUrl('Olá! Vi o site e gostaria de saber mais sobre a otomodelação.')}
+    target="_blank"
+    rel="noopener noreferrer"
+    style={{
+      position: 'fixed',
+      bottom: 24,
+      right: 24,
+      zIndex: 1000,
+      background: '#25D366',
+      borderRadius: '999px',
+      height: 48,
+      padding: '0 20px',
+      color: 'white',
+      fontWeight: 400,
+      fontSize: 18,
+      textDecoration: 'none',
+      display: 'flex',
+      alignItems: 'center',
+      gap: 2,
+      boxShadow: '0 2px 8px rgba(0,0,0,0.12)',
+      transition: 'box-shadow 0.2s',
+    }}
+    aria-label="Fale conosco pelo WhatsApp"
+  >
+    <img
+      src="/images/wa-ico.png"
+      alt="WhatsApp"
+      width={44}
+      height={44}
+      style={{ display: 'block' }}
+    />
+
+    <span>Fale conosco</span>
+  </a>
+);
 
 export default App;

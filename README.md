@@ -1,5 +1,3 @@
-Claro, aqui está uma documentação completa do projeto no formato `README.md`, com base na análise do código-fonte:
-
 # Lead Landing Pages Pro
 
 Este projeto é uma aplicação web desenvolvida para a Dra. Katia Amaral, especialista em estética avançada. O site serve como uma landing page para capturar leads, apresentando informações sobre os procedimentos estéticos oferecidos, detalhes sobre a profissional e canais de contato. A aplicação foi construída com foco em performance, componentização e uma arquitetura moderna utilizando React e Vite.
@@ -61,7 +59,7 @@ Siga os passos abaixo para configurar e rodar o ambiente de desenvolvimento:
 1.  **Clone o repositório:**
 
     ```sh
-    git clone <URL_DO_SEU_REPOSITORIO_GIT>
+    git clone 
     cd lead-landing-pages-pro
     ```
 

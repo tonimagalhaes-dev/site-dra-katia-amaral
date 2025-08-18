@@ -2,8 +2,6 @@ import { Link } from 'react-router-dom';
 import { Shield, Heart, CheckCircle, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
 import ContactForm from '@/components/ContactForm';
 import ProceduresSection from '@/components/ProceduresSection';
 import { createWhatsAppUrl } from '@/lib/constants';
@@ -81,7 +79,6 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Header />
       
       {/* Hero Section */}
       <section className="relative min-h-[80vh] bg-gradient-to-br from-blue-900 to-blue-400 py-20 overflow-hidden">
@@ -410,7 +407,6 @@ const Index = () => {
         </div>
       </section>
 
-      <Footer />
     </div>
   );
 };

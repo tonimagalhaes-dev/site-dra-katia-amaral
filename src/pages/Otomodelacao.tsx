@@ -50,12 +50,12 @@ const OtomodelacaoPage = () => {
             {/* Imagem para ecrãs menores (mobile-first) */}
             <source
               media="(max-width: 768px)"
-              srcSet="/images/BackgroundHero-mobile.webp"
+              srcSet="/images/otomodelacao3.webp"
             />
             {/* Imagem padrão para ecrãs maiores */}
             <source
               media="(min-width: 769px)"
-              srcSet="/images/BackgroundHero.webp"
+              srcSet="/images/otomodelacao2.webp"
             />
             {/* Tag <img> de fallback com prioridade máxima */}
             <img
@@ -98,7 +98,7 @@ const OtomodelacaoPage = () => {
               Resultados que Falam por Si
             </h2>
             <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-              Veja o poder da otomodelação em transformar não apenas a aparência,
+              ➡️ Role para o lado e veja o poder da otomodelação em transformar não apenas a aparência,
               mas a confiança dos nossos pacientes.
             </p>
             <BeforeAfterSlider />
@@ -167,7 +167,7 @@ const OtomodelacaoPage = () => {
             <div className="flex flex-col md:flex-row items-center gap-12 max-w-5xl mx-auto">
               <div className="md:w-1/3 text-center">
                 <img
-                  src="/images/katia1.webp"
+                  src="/images/katia6.webp"
                   alt="Dra. Kátia Amaral"
                   className="rounded-full w-56 h-56 md:w-64 md:h-64 mx-auto object-cover shadow-2xl"
                   loading="lazy"

@@ -7,7 +7,7 @@ const proceduresHC = [
       description: 'Rejuvenescimento natural e duradouro da pele',
       icon: '🧴',
       link: '/bioestimulador-colageno',
-      image: '/images/bioestimulador.webp'
+      image: '/images/bioestimulador1.webp'
     },
     {
       title: 'Empetiers/Mesoterapia',

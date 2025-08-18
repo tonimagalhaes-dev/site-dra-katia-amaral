@@ -2,8 +2,8 @@ import { ReactNode } from 'react';
 import { CheckCircle, MessageCircle } from 'lucide-react';
 import { Button } from './ui/button';
 import { Card, CardContent } from './ui/card';
-import Header from './Header';
-import Footer from './Footer';
+//import Header from './Header';
+//import Footer from './Footer';
 import ContactForm from './ContactForm';  
 import { useEffect } from 'react';
 
@@ -59,7 +59,6 @@ const ProcedurePage = ({
 
   return (
     <div className="min-h-screen bg-background">
-      { <Header />} 
 
       {/* Hero Section - apenas se não estiver oculto */}
       {!hideHero && (
@@ -253,7 +252,6 @@ const ProcedurePage = ({
         </div>
       </section>
 
-      <Footer />
     </div>
   );
 };

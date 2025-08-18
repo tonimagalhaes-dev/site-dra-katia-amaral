@@ -4,15 +4,14 @@ import { Toaster } from '@/components/ui/toaster';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { createWhatsAppUrl } from './lib/constants';
+import { MessageCircle } from 'lucide-react'; // Ícone para o botão
 
-// --- IMPLEMENTAÇÃO DO CODE SPLITTING ---
-// Em vez de importar tudo de uma vez, usamos React.lazy para carregar
-// cada página apenas quando ela for necessária.
-
+// --- O Code Splitting continua a funcionar ---
 const Index = lazy(() => import('./pages/Index'));
 const Otomodelacao = lazy(() => import('./pages/Otomodelacao'));
 const Contato = lazy(() => import('./pages/Contato'));
 const Sobre = lazy(() => import('./pages/Sobre'));
+// ... (restante das importações lazy)
 const BioestimuladorColageno = lazy(
   () => import('./pages/BioestimuladorColageno'),
 );
@@ -33,7 +32,7 @@ const Skinbooster = lazy(() => import('./pages/Skinbooster'));
 const TerapiaCapilar = lazy(() => import('./pages/TerapiaCapilar'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 
-// Componente de "Carregando..." para ser exibido enquanto as páginas carregam
+// Componente de "Carregando..."
 const PageLoader = () => (
   <div className="flex justify-center items-center h-screen">
     <p>Carregando...</p>
@@ -49,7 +48,6 @@ function App() {
   return (
     <Router>
       <Header />
-      {/* O Suspense mostra o PageLoader enquanto o componente da rota está sendo baixado */}
       <Suspense fallback={<PageLoader />}>
         <main className="flex-grow">
           <Routes>
@@ -93,29 +91,19 @@ function App() {
       </Suspense>
       <Footer />
       <Toaster />
-      {/* Botão Flutuante do WhatsApp */}
+
+      {/* BOTÃO FLUTUANTE ATUALIZADO COM TEXTO */}
       <button
         onClick={handleWhatsAppClick}
-        className="fixed bottom-5 right-5 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-transform hover:scale-110 z-50"
+        className="fixed bottom-5 right-5 bg-green-500 text-white font-semibold py-3 px-5 rounded-full shadow-lg hover:bg-green-600 transition-transform hover:scale-110 z-50 flex items-center justify-center gap-2"
         aria-label="Fale Conosco pelo WhatsApp"
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className="lucide lucide-message-circle"
-        >
-          <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" />
-        </svg>
+        <img src="/images/wa-ico.png" alt="WhatsApp" className="w-6 h-6" />
+        <span className="hidden sm:inline">Fale Conosco</span>
       </button>
     </Router>
   );
 }
 
 export default App;
+

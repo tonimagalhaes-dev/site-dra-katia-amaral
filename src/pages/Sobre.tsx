@@ -19,7 +19,6 @@ const Sobre = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Header />
       
       <section className="relative bg-gradient-to-br from-rose-50 to-gold-50 py-20">
         <div className="container mx-auto px-4">
@@ -84,8 +83,6 @@ const Sobre = () => {
       </section>
       */}
 
-      {/* Hero Section */}
-      <Footer />
     </div>
   );
 };

@@ -9,3 +9,4 @@ export const WHATSAPP_BASE_URL = `https://wa.me/${WHATSAPP_NUMBER}`;
 export const createWhatsAppUrl = (message: string) => {
   return `${WHATSAPP_BASE_URL}?text=${encodeURIComponent(message)}`;
 };
+

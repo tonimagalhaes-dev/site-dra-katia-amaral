@@ -9,6 +9,8 @@ import { BeforeAfterSlider } from '@/components/BeforeAfterSlider';
 import { createWhatsAppUrl } from '@/lib/constants';
 import { CheckCircle2, Award, Clock, ShieldCheck } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
+import { useEffect } from 'react'; 
+
 
 // Componente auxiliar para cards de benefícios
 const BenefitCard = ({
@@ -29,6 +31,10 @@ const BenefitCard = ({
 
 // Componente principal da página de Otomodelação
 const OtomodelacaoPage = () => {
+    useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  
   const otomodelacaoMessage =
     'Olá, Dra. Kátia! Vi o site e gostaria de saber mais sobre a otomodelação. Podemos conversar?';
 

@@ -57,9 +57,8 @@ const Header = () => {
               className="w-12 h-12 object-contain rounded-full bg-white"
             />
             <div>
-              <h1 className="font-playfair font-semibold text-lg text-foreground">Dra. Katia Amaral</h1>
+              <h1 className="font-semibold text-lg text-foreground">Dra. Katia Amaral</h1>
               <h2 className="text-xs text-muted-foreground">Estética Avançada</h2>
-              <p className="text-xs text-muted-foreground">COREN-SP 310.393 </p>
             </div>
           </Link>
 

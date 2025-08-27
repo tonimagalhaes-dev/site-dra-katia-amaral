@@ -68,20 +68,20 @@ const OtomodelacaoPage = () => {
               src="/images/BackgroundHero.webp"
               alt=""
               role="presentation"
-              fetchPriority="high"
+              fetchpriority="high"
             />
           </picture>
 
           <div className="hero-overlay"></div>
-          <div className="hero-content container mx-auto">
-            <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
+          <div className="hero-content container mx-auto text-center" >
+            <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4" >
               Diga Adeus às Orelhas de Abano, Sem Cirurgia.
             </h1>
             <p className="text-lg md:text-xl mb-2">
               Resultados naturais e seguros com a técnica de otomodelação.
             </p>
-            <p className="font-semibold bg-primary/80 inline-block px-3 py-1 rounded-md mb-6">
-              Dra. Kátia Amaral | Enfermeira Esteta | COREN-SP 310.193
+            <p className="font-semibold mb-6">
+              Por Dra. Kátia Amaral | Enfermeira Esteta | COREN-SP 310.193
             </p>
             <div>
               <Button
@@ -91,28 +91,28 @@ const OtomodelacaoPage = () => {
                   window.open(createWhatsAppUrl(otomodelacaoMessage), '_blank')
                 }
               >
-                Agende sua Avaliação
+                Agendar Avaliação pelo WhatsApp
               </Button>
+              <p className="text-sm mt-2">✓ Resposta rápida e sem compromisso</p>
             </div>
           </div>
         </section>
 
         {/* Seção 2: Prova Visual (Antes e Depois) */}
-        <section id="resultados" className="py-16 sm:py-20 bg-white">
+        <section id="resultados" className="py-12 sm:py-16 bg-gray-50">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold text-center text-gray-800 mb-2">
-              Resultados que Falam por Si
+              Veja a Transformação que Você Merece.
             </h2>
             <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-              ➡️ Role para o lado e veja o poder da otomodelação em transformar não apenas a aparência,
-              mas a confiança dos nossos pacientes.
+              ➡️ Role para o lado e veja as transformações, sem cirurgia e com baixo custo.
             </p>
             <BeforeAfterSlider />
           </div>
         </section>
 
         {/* Seção 3: Conexão com a Dor (Empatia) */}
-        <section id="empatia" className="py-16 sm:py-20 bg-gray-50">
+        <section id="empatia" className="py-12 sm:py-16 bg-white">
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl font-bold text-gray-800 mb-4">
               Você também se sente assim?
@@ -142,7 +142,7 @@ const OtomodelacaoPage = () => {
         </section>
 
         {/* Seção 4: Apresentando a Solução Segura */}
-        <section id="solucao" className="py-16 sm:py-20 bg-white">
+        <section id="solucao" className="py-16 sm:py-20 bg-gray-50">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">
               Otomodelação: A Evolução da Correção de Orelhas
@@ -168,7 +168,7 @@ const OtomodelacaoPage = () => {
         </section>
 
         {/* Seção 5: Conheça a Especialista */}
-        <section id="especialista" className="py-16 sm:py-20 bg-gray-50">
+        <section id="especialista" className="py-16 sm:py-20 bg-white">
           <div className="container mx-auto px-4">
             <div className="flex flex-col md:flex-row items-center gap-12 max-w-5xl mx-auto">
               <div className="md:w-1/3 text-center">
@@ -182,7 +182,7 @@ const OtomodelacaoPage = () => {
                 />
               </div>
               <div className="md:w-2/3">
-                <h2 className="text-3xl font-bold text-gray-800 mb-4">
+                <h2 className="text-3xl font-bold text-gray-800 mb-4 text-center">
                   A Sua Confiança nas Mãos de uma Especialista
                 </h2>
                 <p className="text-muted-foreground mb-4 text-justify">
@@ -205,7 +205,7 @@ const OtomodelacaoPage = () => {
         </section>
 
         {/* Seção 6: Perguntas Frequentes (FAQ) */}
-        <section id="faq" className="py-16 sm:py-20 bg-white">
+        <section id="faq" className="py-16 sm:py-20 bg-gray-50">
           <div className="container mx-auto px-4 max-w-3xl">
             <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">
               Perguntas Frequentes

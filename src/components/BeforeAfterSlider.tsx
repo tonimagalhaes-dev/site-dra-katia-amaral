@@ -17,8 +17,8 @@ interface BeforeAfterImage {
 // Array com os dados das imagens. Substitua os placeholders pelas suas imagens reais.
 const images: BeforeAfterImage[] = [
   {
-    before: '/images/Before-After/Paciente 4.webp',
-    after: '/images/Before-After/Paciente 4a.webp',
+    before: '/images/Before-After/Paciente 8.webp',
+    after: '/images/Before-After/Paciente 8a.webp',
     alt: 'Resultado do tratamento de otomodelação em paciente 1',
   },
   {
@@ -27,8 +27,8 @@ const images: BeforeAfterImage[] = [
     alt: 'Resultado do tratamento de otomodelação em paciente 2',
   },
   {
-    before: '/images/Before-After/Paciente 8.webp',
-    after: '/images/Before-After/Paciente 8a.webp',
+    before: '/images/Before-After/Paciente 4.webp',
+    after: '/images/Before-After/Paciente 4a.webp',
     alt: 'Resultado do tratamento de otomodelação em paciente 3',
   },
   {
@@ -82,16 +82,16 @@ export function BeforeAfterSlider() {
           <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/1">
             <div className="p-1">
               <Card className="overflow-hidden">
-                <CardContent className="flex flex-col md:flex-row items-stretch justify-center p-4 md:p-6 gap-2 md:gap-4">
+                <CardContent className="flex flex-col md:flex-row items-center justify-center p-4 md:p-6 gap-2 md:gap-4">
                   {/* Coluna "Antes" */}
                   <div className="w-full md:w-1/2 flex flex-col items-center">
-                    <h3 className="text-center text-lg font-semibold mb-2 text-gray-600">
+                    <h3 className="text-center text-lg font-semibold mb-2 text-primary">
                       Antes   -   Depois
                     </h3>
                     <img
                       src={image.before}
                       alt={`Antes - ${image.alt}`}
-                      className="rounded-lg shadow-md w-full h-auto object-cover aspect-square"
+                      className="rounded-lg shadow-md w-full h-auto object-contain "
                       loading="lazy"
                       width="800"
                       height="800"
@@ -105,7 +105,7 @@ export function BeforeAfterSlider() {
                     <img
                       src={image.after}
                       alt={`Depois - ${image.alt}`}
-                      className="rounded-lg shadow-md w-full h-auto object-cover aspect-square"
+                      className="rounded-lg shadow-md w-full object-contain "
                       loading="lazy"
                       width="800"
                       height="800"

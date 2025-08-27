@@ -89,7 +89,7 @@ const Index = () => {
             alt="Profissional de estética" 
             className="w-full h-full object-cover opacity-30"
             loading="eager"        
-            fetchPriority="high"   
+            fetchpriority="high"   
             decoding="async"       
           />
         </div>

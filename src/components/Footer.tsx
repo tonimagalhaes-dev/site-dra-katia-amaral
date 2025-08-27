@@ -40,7 +40,7 @@ const Footer = () => {
               className="w-12 h-12 object-contain rounded-full bg-white"
               />
               <div>
-              <h2 className="font-playfair font-semibold text-lg">Dra. Katia Amaral</h2>
+              <h2 className="font-semibold text-lg">Dra. Katia Amaral</h2>
               <p className="text-xs text-muted-foreground">Saúde e Estética Avançada</p>
               </div>
             </div>

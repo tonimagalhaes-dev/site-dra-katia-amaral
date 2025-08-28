@@ -49,32 +49,36 @@ const OtomodelacaoPage = () => {
       </Helmet>
 
       <div className="flex flex-col">
-        {/* Seção 1: Hero Otimizado com <picture> para LCP */}
-        <section className="hero-section"> {/* Classe para o CSS crítico */}
-          {/* A tag <picture> permite carregar imagens diferentes para mobile e desktop */}
-          <picture>
-            {/* Imagem para ecrãs menores (mobile-first) */}
+        {/* Seção 1: Hero Otimizado com posicionamento de fundo */}
+        <section className="relative flex items-center justify-center min-h-[60vh] text-white text-center overflow-hidden">
+          {/* A tag <picture> agora se comporta como um fundo de tela */}
+          <picture className="absolute inset-0 w-full h-full z-0">
+            {/* Imagem para telas menores (mobile-first) */}
             <source
               media="(max-width: 768px)"
               srcSet="/images/otomodelacao3.webp"
             />
-            {/* Imagem padrão para ecrãs maiores */}
+            {/* Imagem padrão para telas maiores */}
             <source
               media="(min-width: 769px)"
-              srcSet="/images/otomodelacao2.webp"
+              srcSet="/images/otomodelacao4.webp"
             />
-            {/* Tag <img> de fallback com prioridade máxima */}
+            {/* Tag <img> de fallback com estilo de fundo e alt text */}
             <img
-              src="/images/BackgroundHero.webp"
-              alt=""
+              src="/images/otomodelacao2.webp"
+              alt="Imagem de fundo mostrando uma orelha, representando o procedimento de otomodelação"
               role="presentation"
-              fetchpriority="high"
+              fetchPriority="high"
+              className="w-full h-full object-cover"
             />
           </picture>
 
-          <div className="hero-overlay"></div>
-          <div className="hero-content container mx-auto text-center" >
-            <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4" >
+          {/* Overlay para melhorar a legibilidade do texto */}
+          <div className="hero-overlay absolute inset-0 bg-black/40 opacity-110 z-10"></div>
+          
+          {/* Conteúdo sobreposto */}
+          <div className="hero-content container mx-auto relative z-20 px-4">
+            <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
               Diga Adeus às Orelhas de Abano, Sem Cirurgia.
             </h1>
             <p className="text-lg md:text-xl mb-2">
@@ -99,13 +103,14 @@ const OtomodelacaoPage = () => {
         </section>
 
         {/* Seção 2: Prova Visual (Antes e Depois) */}
-        <section id="resultados" className="py-12 sm:py-16 bg-gray-50">
+        <section id="resultados" className="py-12 sm:py-16 bg-white">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold text-center text-gray-800 mb-2">
-              Veja a Transformação que Você Merece.
+              O Fim de uma Insegurança: Veja as Histórias Reais.
             </h2>
             <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-              ➡️ Role para o lado e veja as transformações, sem cirurgia e com baixo custo.
+              ➡️ Role para o lado e veja o poder da otomodelação em transformar não apenas a aparência,
+              mas a confiança dos nossos pacientes.
             </p>
             <BeforeAfterSlider />
           </div>

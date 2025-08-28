@@ -79,7 +79,7 @@ export function BeforeAfterSlider() {
     >
       <CarouselContent>
         {images.map((image, index) => (
-          <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/1">
+          <CarouselItem key={index} className=" lg:basis-1/1">
             <div className="p-1">
               <Card className="overflow-hidden">
                 <CardContent className="flex flex-col md:flex-row items-center justify-center p-4 md:p-6 gap-2 md:gap-4">

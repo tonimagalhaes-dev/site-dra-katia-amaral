@@ -103,7 +103,7 @@ const Header = () => {
           <div className="hidden lg:block">
             <Button onClick={handleWhatsAppClick} className="bg-green-500 hover:bg-green-600 text-white">
               <img src="/images/wa-ico.png" alt="WhatsApp" className="w-6 h-6" />
-              WhatsApp
+              Fale Conosco
             </Button>
           </div>
 

@@ -19,7 +19,7 @@ declare global {
 }
 export const GA_TRACKING_ID = 'G-926CE4V53N';
 // IMPORTANTE: Substitua pelo seu ID de conversão e rótulo do Google Ads.
-export const GOOGLE_ADS_WHATSAPP_CONVERSION = 'AW-17354756555';
+export const GOOGLE_ADS_WHATSAPP_CONVERSION = 'AW-17354756555/Zd1wCK78jocbEMujstNA';
 
 // Verifica se o gtag está disponível
 const isGtagAvailable = (): boolean => {
@@ -80,3 +80,7 @@ export const reportWhatsappConversion = (whatsappUrl: string) => {
     callback();
   }
 };
+
+
+
+

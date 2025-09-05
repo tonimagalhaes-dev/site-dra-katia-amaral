@@ -4,6 +4,7 @@ import { Toaster } from '@/components/ui/toaster';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { createWhatsAppUrl } from './lib/constants';
+import { reportWhatsappConversion } from '@/analytics/analytics';
 import { MessageCircle } from 'lucide-react'; // Ícone para o botão
 
 // --- O Code Splitting continua a funcionar ---
@@ -42,7 +43,8 @@ const PageLoader = () => (
 function App() {
   const handleWhatsAppClick = () => {
     const message = 'Olá, Dra. Kátia! Gostaria de agendar uma consulta.';
-    window.open(createWhatsAppUrl(message), '_blank');
+    const whatsappUrl = createWhatsAppUrl(message);
+    reportWhatsappConversion(whatsappUrl);
   };
 
   return (
@@ -98,7 +100,7 @@ function App() {
         className="fixed bottom-5 right-5 bg-green-500 text-white font-semibold py-3 px-5 rounded-full shadow-lg hover:bg-green-600 transition-transform hover:scale-110 z-50 flex items-center justify-center gap-2"
         aria-label="Fale Conosco pelo WhatsApp"
       >
-        <img src="/images/wa-ico.png" alt="WhatsApp" className="w-6 h-6" />
+        <img src="/images/wa-ico.png" alt="Ícone do WhatsApp" className="w-6 h-6" />
         <span className="hidden sm:inline">Fale Conosco</span>
       </button>
     </Router>
@@ -106,4 +108,3 @@ function App() {
 }
 
 export default App;
-

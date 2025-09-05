@@ -6,10 +6,11 @@ import {
 } from '@/components/ui/accordion';
 import { Button } from '@/components/ui/button';
 import { BeforeAfterSlider } from '@/components/BeforeAfterSlider';
-import { createWhatsAppUrl } from '@/lib/constants';
 import { CheckCircle2, Award, Clock, ShieldCheck } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import { useEffect } from 'react'; 
+import { reportWhatsappConversion } from '@/analytics/analytics';
+import { createWhatsAppUrl } from '@/lib/constants';
 
 
 // Componente auxiliar para cards de benefícios
@@ -37,6 +38,12 @@ const OtomodelacaoPage = () => {
   
   const otomodelacaoMessage =
     'Olá, Dra. Kátia! Vi o site e gostaria de saber mais sobre a otomodelação. Podemos conversar?';
+
+  const handleWhatsappClick = () => {
+    const whatsappUrl = createWhatsAppUrl(otomodelacaoMessage);
+    reportWhatsappConversion(whatsappUrl);
+  };
+
 
   return (
     <>
@@ -91,9 +98,7 @@ const OtomodelacaoPage = () => {
               <Button
                 size="lg"
                 className="bg-green-500 hover:bg-green-600 text-white font-bold text-lg py-4 px-10 rounded-full transition-transform hover:scale-105 shadow-lg"
-                onClick={() =>
-                  window.open(createWhatsAppUrl(otomodelacaoMessage), '_blank')
-                }
+                onClick={handleWhatsappClick}
               >
                 Agendar Avaliação pelo WhatsApp
               </Button>
@@ -280,9 +285,7 @@ const OtomodelacaoPage = () => {
             <Button
               size="lg"
               className="bg-green-500 hover:bg-green-600 text-white font-bold text-lg py-4 px-10 rounded-full transition-transform hover:scale-105 shadow-lg"
-              onClick={() =>
-                window.open(createWhatsAppUrl(otomodelacaoMessage), '_blank')
-              }
+              onClick={handleWhatsappClick}
             >
               Quero Agendar a Minha Avaliação
             </Button>

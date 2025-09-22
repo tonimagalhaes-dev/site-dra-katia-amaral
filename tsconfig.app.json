@@ -14,7 +14,6 @@
     // "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    /* "noEmit": true, <--- REMOVIDO */
     "jsx": "react-jsx",
 
     /* Linting */
@@ -29,10 +28,3 @@
   },
   "include": ["src"]
 }
-// tsconfig.app.json
-// Este arquivo é usado para configurar o TypeScript no modo de aplicativo, incluindo opções de compilação, resolução de módulos e outras configurações específicas do aplicativo.
-// Ele é utilizado para compilar o código TypeScript do aplicativo, garantindo que as opções de compilação estejam otimizadas para o ambiente de execução do aplicativo, como o navegador ou um servidor Node.js.
-// As opções de compilação incluem o nível de compatibilidade do ECMAScript, a resolução de módulos, a verificação de tipos estrita e outras configurações que ajudam a garantir que o código TypeScript seja compilado corretamente e funcione conforme o esperado.
-// Este arquivo é essencial para o desenvolvimento e a construção do aplicativo, pois define como o TypeScript deve processar os arquivos do aplicativo, incluindo a resolução de módulos, a verificação de tipos e outras opções de compilação.
-// Ele é usado em conjunto com outros arquivos de configuração do TypeScript, como tsconfig.json, para fornecer uma configuração completa do TypeScript para o aplicativo.
-// As opções de configuração podem ser ajustadas conforme necessário para atender aos requisitos específicos do aplicativo,

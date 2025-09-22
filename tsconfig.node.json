@@ -6,15 +6,6 @@
     "moduleResolution": "bundler",
     "allowSyntheticDefaultImports": true,
     "strict": true
-    /* "noEmit": true, <--- REMOVIDO */
   },
   "include": ["vite.config.ts", "tailwind.config.ts", "postcss.config.js"]
 }
-// tsconfig.node.json
-// Este arquivo é usado para configurar o TypeScript no modo Node.js, incluindo opções de compilação, resolução de módulos e outras configurações específicas do ambiente Node.js.
-// Ele é utilizado para compilar o código TypeScript que será executado no ambiente Node.js, garantindo que as opções de compilação estejam otimizadas para esse ambiente.
-// As opções de compilação incluem a resolução de módulos, a verificação de tipos estrita e outras configurações que ajudam a garantir que o código TypeScript seja compilado corretamente e funcione conforme o esperado no Node.js.
-// Este arquivo é essencial para o desenvolvimento e a construção de aplicativos Node.js, pois define como o TypeScript deve processar os arquivos do Node.js, incluindo a resolução de módulos, a verificação de tipos e outras opções de compilação.
-// Ele é usado em conjunto com outros arquivos de configuração do TypeScript, como tsconfig.json, para fornecer uma configuração completa do TypeScript para o ambiente Node.js.
-// As opções de configuração podem ser ajustadas conforme necessário para atender aos requisitos específicos do aplicativo Node.js, como a compatibilidade com versões específicas do ECMAScript ou a inclusão de bibliotecas adicionais.
-// Este arquivo é especialmente útil para projetos que utilizam ferramentas como Vite ou Tailwind CSS, pois permite que o TypeScript seja configurado para trabalhar corretamente com essas ferramentas no ambiente Node.js.

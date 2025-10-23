@@ -40,7 +40,7 @@ const Contato = () => {
                 
                 <div className="flex items-center space-x-3 text-lg">
                   <MapPin className="w-6 h-6 text-primary" />
-                <span>Rua Cincinato Braga, 37 - Bela Vista, São Paulo</span>
+                <span>Rua Chui, 147 - Bela Vista, São Paulo</span>
                 </div>
                 <div className="flex items-center space-x-3 text-lg">
                   <MapPin className="w-6 h-6 text-primary" />

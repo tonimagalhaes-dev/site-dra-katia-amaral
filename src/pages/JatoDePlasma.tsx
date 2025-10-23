@@ -1,7 +1,5 @@
 import ProcedurePage from '@/components/ProcedurePage';
 
-// This file defines the JatoDePlasma component, which represents a specific procedure page in the application.
-// It imports the ProcedurePage component and provides specific content for the Jato de Plasma procedure.
 const JatoDePlasma = () => {
   const benefits = [
     "Lifting instantâneo sem cirurgia",
@@ -40,6 +38,5 @@ const JatoDePlasma = () => {
     />
   );
 };
-// This component represents the Jato de Plasma procedure page, showcasing its benefits, indications, and differentials.
-// It uses the ProcedurePage component to structure the content and provide a consistent layout across different procedures
+
 export default JatoDePlasma;

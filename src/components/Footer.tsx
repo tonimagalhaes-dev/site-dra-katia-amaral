@@ -112,7 +112,7 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-3 text-sm text-muted-foreground">
                 <MapPin className="w-4 h-4 text-primary" />
-                <span>Rua Cincinato Braga, 37 - Bela Vista, São Paulo</span>
+                <span>Rua Chui, 147 - Bela Vista, São Paulo</span>
               </div>
               <div className="flex items-center space-x-3 text-sm text-muted-foreground">
                 <MapPin className="w-4 h-4 text-primary" />

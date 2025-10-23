@@ -6,11 +6,12 @@ import {
 } from '@/components/ui/accordion';
 import { Button } from '@/components/ui/button';
 import { BeforeAfterSlider } from '@/components/BeforeAfterSlider';
-import { CheckCircle2, Award, Clock, ShieldCheck } from 'lucide-react';
+import { CheckCircle2, Award, Clock, ShieldCheck } from 'lucide-react'; 
 import { Helmet } from 'react-helmet-async';
 import { useEffect } from 'react'; 
 import { reportWhatsappConversion } from '@/analytics/analytics';
 import { createWhatsAppUrl } from '@/lib/constants';
+import ScrollDownIndicator from '@/components/ScrollDownIndicator'; 
 
 
 // Componente auxiliar para cards de benefícios
@@ -63,7 +64,7 @@ const OtomodelacaoPage = () => {
             {/* Imagem para telas menores (mobile-first) */}
             <source
               media="(max-width: 768px)"
-              srcSet="/images/otomodelacao3.webp"
+              srcSet="/images/otomodelacao5.webp"
             />
             {/* Imagem padrão para telas maiores */}
             <source
@@ -105,6 +106,11 @@ const OtomodelacaoPage = () => {
               <p className="text-sm mt-2">✓ Resposta rápida e sem compromisso</p>
             </div>
           </div>
+          <ScrollDownIndicator
+            targetId="resultados"
+            label="Role para baixo e veja resultados reais"
+            className="absolute bottom-2 z-30"
+          />          
         </section>
 
         {/* Seção 2: Prova Visual (Antes e Depois) */}

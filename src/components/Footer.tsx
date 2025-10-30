@@ -125,7 +125,7 @@ const Footer = () => {
                 className="flex items-center space-x-3 text-sm text-muted-foreground hover:text-primary transition-colors"
               >
                 <MessageCircle className="w-4 h-4 text-green-500" />
-                <span>(11) 91447-7057</span>
+                <span>(11) 94224-2893</span>
               </button>
               
               <button 

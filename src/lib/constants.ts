@@ -1,6 +1,6 @@
 
 // Constantes globais do projeto
-export const WHATSAPP_NUMBER = '5511914477057';
+export const WHATSAPP_NUMBER = '5511942242893';
 
 // URL base do WhatsApp
 export const WHATSAPP_BASE_URL = `https://wa.me/${WHATSAPP_NUMBER}`;

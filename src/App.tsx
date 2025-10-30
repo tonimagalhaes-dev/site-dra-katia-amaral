@@ -42,7 +42,7 @@ const PageLoader = () => (
 
 function App() {
   const handleWhatsAppClick = () => {
-    const message = 'Olá, Dra. Kátia! Gostaria de agendar uma consulta.';
+    const message = 'Olá, Dra. Kátia! Vi o site e gostaria de saber mais sobre a otomodelação. Podemos conversar?';
     const whatsappUrl = createWhatsAppUrl(message);
     reportWhatsappConversion(whatsappUrl);
   };

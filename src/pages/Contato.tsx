@@ -49,7 +49,7 @@ const Contato = () => {
                 
                 <div className="flex items-center space-x-3 text-lg">
                   <Instagram className="w-6 h-6 text-pink-500" />
-                  <span>@drakatia_amaral</span>
+                  <span>@drakatia.amaral</span>
                 </div>
                 
                 {/* Hide email for now}

@@ -24,7 +24,7 @@ const Footer = () => {
       value: 1,
       });
     }
-    window.open('https://instagram.com/drakatia_amaral', '_blank');
+    window.open('https://instagram.com/drakatia.amaral', '_blank');
   };
 
   return (
@@ -112,13 +112,8 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-3 text-sm text-muted-foreground">
                 <MapPin className="w-4 h-4 text-primary" />
-                <span>Rua Chui, 147 - Bela Vista, São Paulo</span>
+                <span>Rua Santa Cruz, 2105 Sala 1410 - Vila Mariana, São Paulo</span>
               </div>
-              <div className="flex items-center space-x-3 text-sm text-muted-foreground">
-                <MapPin className="w-4 h-4 text-primary" />
-                <span>Av. Pereira Barreto, 1479 - Baeta Neves, São Bernardo do Campo</span>
-              </div>
-              
 
               <button 
                 onClick={handleWhatsAppClick}
@@ -133,7 +128,7 @@ const Footer = () => {
                 className="flex items-center space-x-3 text-sm text-muted-foreground hover:text-primary transition-colors"
               >
                 <Instagram className="w-4 h-4 text-pink-500" />
-                <span>@drakatia_amaral</span>
+                <span>@drakatia.amaral</span>
               </button>
             </div>
           </div>

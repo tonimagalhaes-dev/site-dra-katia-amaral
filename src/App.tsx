@@ -4,7 +4,6 @@ import { Toaster } from '@/components/ui/toaster';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { createWhatsAppUrl } from './lib/constants';
-import { reportWhatsappConversion } from '@/analytics/analytics';
 import { MessageCircle } from 'lucide-react'; // Ícone para o botão
 
 // --- O Code Splitting continua a funcionar ---

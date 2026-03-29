@@ -9,7 +9,6 @@ import { BeforeAfterSlider } from '@/components/BeforeAfterSlider';
 import { CheckCircle2, Award, Clock, ShieldCheck } from 'lucide-react'; 
 import { Helmet } from 'react-helmet-async';
 import { useEffect } from 'react'; 
-import { reportWhatsappConversion } from '@/analytics/analytics';
 import { createWhatsAppUrl } from '@/lib/constants';
 import ScrollDownIndicator from '@/components/ScrollDownIndicator'; 
 

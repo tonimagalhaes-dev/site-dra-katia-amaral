@@ -9,7 +9,6 @@ O projeto utiliza uma arquitetura baseada em componentes, facilitando a manuten�
 /
 ├── public/                  # Arquivos estáticos
 ├── src/
-│   ├── analytics/           # Configurações do Google Analytics
 │   ├── components/
 │   │   ├── ui/              # Componentes de UI (shadcn/ui)
 │   │   ├── BeforeAfterSlider.tsx

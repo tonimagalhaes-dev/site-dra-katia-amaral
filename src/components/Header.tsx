@@ -37,7 +37,7 @@ const Header = () => {
   const handleWhatsAppClick = () => {
     // GA4 event
     if (window.gtag) {
-      window.gtag('event', 'WhatsApp', {
+      window.gtag('event', 'whatsapp_click', {
         event_category: 'engagement',
         event_label: 'Header',
       });

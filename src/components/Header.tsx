@@ -35,6 +35,13 @@ const Header = () => {
   ];
 
   const handleWhatsAppClick = () => {
+    // GA4 event
+    if (window.gtag) {
+      window.gtag('event', 'WhatsApp', {
+        event_category: 'engagement',
+        event_label: 'Header',
+      });
+    }
     window.open(createWhatsAppUrl('Olá! Gostaria de agendar uma avaliação.'), '_blank');
   };
 

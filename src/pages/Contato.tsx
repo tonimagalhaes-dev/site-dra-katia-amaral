@@ -40,11 +40,7 @@ const Contato = () => {
                 
                 <div className="flex items-center space-x-3 text-lg">
                   <MapPin className="w-6 h-6 text-primary" />
-                <span>Rua Chui, 147 - Bela Vista, São Paulo</span>
-                </div>
-                <div className="flex items-center space-x-3 text-lg">
-                  <MapPin className="w-6 h-6 text-primary" />
-                  <span>Av. Pereira Barreto, 1479 - Baeta Neves, São Bernardo do Campo</span>
+                <span>Rua Santa Cruz, 2105 Sala 1410 - Vila Mariana, São Paulo</span>
                 </div>
                 
                 <div className="flex items-center space-x-3 text-lg">

@@ -5,6 +5,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { createWhatsAppUrl } from './lib/constants';
 import { MessageCircle } from 'lucide-react'; // Ícone para o botão
+import { reportWhatsappConversion } from './analytics/analytics';
 
 // --- O Code Splitting continua a funcionar ---
 const Index = lazy(() => import('./pages/Index'));

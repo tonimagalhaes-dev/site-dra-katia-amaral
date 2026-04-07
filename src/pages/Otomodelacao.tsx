@@ -39,9 +39,20 @@ const OtomodelacaoPage = () => {
   const otomodelacaoMessage =
     'Olá, Dra. Kátia! Vi o site e gostaria de saber mais sobre a otomodelação. Podemos conversar?';
 
-  const handleWhatsappClick = () => {
-    const whatsappUrl = createWhatsAppUrl(otomodelacaoMessage);
-    reportWhatsappConversion(whatsappUrl);
+  // const handleWhatsappClick = () => {
+  //   const whatsappUrl = createWhatsAppUrl(otomodelacaoMessage);
+  //   reportWhatsappConversion(whatsappUrl);
+  // };
+
+    const handleWhatsAppClick = () => {
+    // GA4 event
+    if (window.gtag) {
+      window.gtag('event', 'whatsapp_click', {
+        event_category: 'engagement',
+        event_label: 'Header',
+      });
+    }
+    window.open(createWhatsAppUrl(otomodelacaoMessage), '_blank');
   };
 
 
@@ -98,7 +109,7 @@ const OtomodelacaoPage = () => {
               <Button
                 size="lg"
                 className="bg-green-500 hover:bg-green-600 text-white font-bold text-lg py-4 px-10 rounded-full transition-transform hover:scale-105 shadow-lg"
-                onClick={handleWhatsappClick}
+                onClick={handleWhatsAppClick}
               >
                 Agendar Avaliação pelo WhatsApp
               </Button>
@@ -290,7 +301,7 @@ const OtomodelacaoPage = () => {
             <Button
               size="lg"
               className="bg-green-500 hover:bg-green-600 text-white font-bold text-lg py-4 px-10 rounded-full transition-transform hover:scale-105 shadow-lg"
-              onClick={handleWhatsappClick}
+              onClick={handleWhatsAppClick}
             >
               Quero Agendar a Minha Avaliação
             </Button>

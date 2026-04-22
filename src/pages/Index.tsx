@@ -5,6 +5,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import ContactForm from '@/components/ContactForm';
 import ProceduresSection from '@/components/ProceduresSection';
 import { createWhatsAppUrl } from '@/lib/constants';
+import { useAnalytics } from '@/hooks/useAnalytics';
 
 const Index = () => {
   const procedures = [
@@ -65,15 +66,10 @@ const Index = () => {
     }
   ];
 
+  const { trackWhatsAppClick } = useAnalytics();
+
   const handleWhatsAppClick = () => {
-    // GA4 event
-    if (window.gtag) {
-      window.gtag('event', 'whatsapp_click', {
-        event_category: 'engagement',
-        event_label: window.location.pathname,
-        value: 1,
-      });
-    }
+    trackWhatsAppClick('index');
     window.open(createWhatsAppUrl('Olá! Gostaria de agendar uma avaliação.'), '_blank');
   };
 

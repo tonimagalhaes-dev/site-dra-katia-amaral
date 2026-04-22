@@ -10,7 +10,8 @@ import { CheckCircle2, Award, Clock, ShieldCheck } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import { useEffect } from 'react'; 
 import { createWhatsAppUrl } from '@/lib/constants';
-import ScrollDownIndicator from '@/components/ScrollDownIndicator'; 
+import ScrollDownIndicator from '@/components/ScrollDownIndicator';
+import { useAnalytics } from '@/hooks/useAnalytics'; 
 
 
 // Componente auxiliar para cards de benefícios
@@ -36,6 +37,8 @@ const OtomodelacaoPage = () => {
     window.scrollTo(0, 0);
   }, []);
   
+  const { trackWhatsAppClick } = useAnalytics();
+
   const otomodelacaoMessage =
     'Olá, Dra. Kátia! Vi o site e gostaria de saber mais sobre a otomodelação. Podemos conversar?';
 
@@ -45,13 +48,7 @@ const OtomodelacaoPage = () => {
   // };
 
     const handleWhatsAppClick = () => {
-    // GA4 event
-    if (window.gtag) {
-      window.gtag('event', 'whatsapp_click', {
-        event_category: 'engagement',
-        event_label: 'Header',
-      });
-    }
+    trackWhatsAppClick('procedure-page', 'otomodelacao');
     window.open(createWhatsAppUrl(otomodelacaoMessage), '_blank');
   };
 

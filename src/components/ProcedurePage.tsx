@@ -6,6 +6,7 @@ import { Card, CardContent } from './ui/card';
 //import Footer from './Footer';
 import ContactForm from './ContactForm';  
 import { useEffect } from 'react';
+import { useAnalytics } from '@/hooks/useAnalytics';
 
 
 interface ProcedurePageProps {
@@ -44,18 +45,13 @@ const ProcedurePage = ({
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+  const { trackWhatsAppClick } = useAnalytics();
+  
   const handleWhatsAppClick = () => {
-    // GA4 event
-    if (window.gtag) {
-      window.gtag('event', 'whatsapp_click', {
-        event_category: 'engagement',
-        event_label: window.location.pathname,
-        value: 1,
-      });
-    }
+    trackWhatsAppClick('procedure-page', procedureName);
     const message = `Olá! Gostaria de saber mais sobre ${procedureName} e agendar uma avaliação.`;
     window.open(`https://wa.me/5511942242893?text=${encodeURIComponent(message)}`, '_blank');
- };
+  };
 
   return (
     <div className="min-h-screen bg-background">

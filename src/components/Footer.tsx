@@ -1,17 +1,13 @@
 import { Link } from 'react-router-dom';
 import { MapPin, Instagram, MessageCircle } from 'lucide-react';
 import { createWhatsAppUrl } from '@/lib/constants';
+import { useAnalytics } from '@/hooks/useAnalytics';
 
 const Footer = () => {
+  const { trackWhatsAppClick } = useAnalytics();
+
   const handleWhatsAppClick = () => {
-    // GA4 event
-    if (window.gtag) {
-      window.gtag('event', 'whatsapp_click', {
-        event_category: 'engagement',
-        event_label: window.location.pathname,
-        value: 1,
-      });
-    }
+    trackWhatsAppClick('footer');
     window.open(createWhatsAppUrl('Olá! Gostaria de agendar uma avaliação.'), '_blank');
   };
 

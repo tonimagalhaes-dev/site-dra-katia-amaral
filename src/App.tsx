@@ -5,7 +5,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { createWhatsAppUrl } from './lib/constants';
 import { MessageCircle } from 'lucide-react'; // Ícone para o botão
-import { reportWhatsappConversion } from './analytics/analytics';
+import { useAnalytics } from './hooks/useAnalytics';
 
 // --- O Code Splitting continua a funcionar ---
 const Index = lazy(() => import('./pages/Index'));
@@ -41,10 +41,12 @@ const PageLoader = () => (
 );
 
 function App() {
+  const { trackWhatsAppConversion } = useAnalytics();
+
   const handleWhatsAppClick = () => {
-    const message = 'Olá, Dra. Kátia! Vi o site e gostaria de saber mais sobre a otomodelação. Podemos conversar?';
+    const message = 'Olá, Dra. Kátia! Vi o site e gostaria de saber mais. Podemos conversar?';
     const whatsappUrl = createWhatsAppUrl(message);
-    reportWhatsappConversion(whatsappUrl);
+    trackWhatsAppConversion(whatsappUrl);
   };
 
   return (

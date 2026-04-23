@@ -7,6 +7,7 @@ import { Card, CardContent } from './ui/card';
 import ContactForm from './ContactForm';  
 import { useEffect } from 'react';
 import { useAnalytics } from '@/hooks/useAnalytics';
+import { createWhatsAppUrl } from '@/lib/constants';
 
 
 interface ProcedurePageProps {
@@ -50,7 +51,7 @@ const ProcedurePage = ({
   const handleWhatsAppClick = () => {
     trackWhatsAppClick('procedure-page', procedureName);
     const message = `Olá! Gostaria de saber mais sobre ${procedureName} e agendar uma avaliação.`;
-    window.open(`https://wa.me/5511942242893?text=${encodeURIComponent(message)}`, '_blank');
+    window.open(createWhatsAppUrl(message), '_blank');
   };
 
   return (

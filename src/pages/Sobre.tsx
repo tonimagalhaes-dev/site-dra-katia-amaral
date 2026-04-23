@@ -4,6 +4,9 @@ import { Card, CardContent } from '@/components/ui/card';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { createWhatsAppUrl } from '@/lib/constants';
+import { useAnalytics } from '@/hooks/useAnalytics';
+
+const { trackWhatsAppClick } = useAnalytics();
 
 const Sobre = () => {
   const differentials = [
@@ -13,9 +16,10 @@ const Sobre = () => {
     "Consultório em São Paulo"
   ];
 
-  const handleWhatsAppClick = () => {
-    window.open(createWhatsAppUrl('Olá! Gostaria de conversar com a Dra. Katia.'), '_blank');
-  };
+ const handleWhatsAppClick = () => {
+   trackWhatsAppClick('sobre-page', 'sobre');
+   window.open(createWhatsAppUrl('Olá! Gostaria de agendar uma avaliação.'), '_blank');
+ };
 
   return (
     <div className="min-h-screen bg-background">

@@ -32,30 +32,9 @@ export const useAnalytics = () => {
     []
   );
 
-  /**
-   * Rastreia cliques em WhatsApp com parâmetros completos
-   */
-  const trackWhatsAppClickAdvanced = useCallback(
-    (params: WhatsAppClickParams) => {
-      analyticsService.trackWhatsAppClick(params);
-    },
-    []
-  );
-
-  /**
-   * Rastreia conversão de WhatsApp (integrado com Google Ads)
-   */
-  const trackWhatsAppConversion = useCallback(
-    (whatsappUrl: string) => {
-      analyticsService.trackConversion(whatsappUrl);
-    },
-    []
-  );
-
   return {
     trackWhatsAppClick,
     trackWhatsAppClickAdvanced,
-    trackWhatsAppConversion,
   };
 };
 

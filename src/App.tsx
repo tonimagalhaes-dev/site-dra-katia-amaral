@@ -41,12 +41,11 @@ const PageLoader = () => (
 );
 
 function App() {
-  const { trackWhatsAppConversion } = useAnalytics();
+  const { trackWhatsAppClick } = useAnalytics();
 
   const handleWhatsAppClick = () => {
-    const message = 'Olá, Dra. Kátia! Vi o site e gostaria de saber mais. Podemos conversar?';
-    const whatsappUrl = createWhatsAppUrl(message);
-    trackWhatsAppConversion(whatsappUrl);
+    trackWhatsAppClick('app-page', 'app');
+    window.open(createWhatsAppUrl('Olá! Gostaria de agendar uma avaliação.'), '_blank');
   };
 
   return (
@@ -110,3 +109,7 @@ function App() {
 }
 
 export default App;
+function trackWhatsAppClick(arg0: string, arg1: string, arg2: Window | null) {
+  throw new Error('Function not implemented.');
+}
+

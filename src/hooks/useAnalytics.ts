@@ -34,7 +34,6 @@ export const useAnalytics = () => {
 
   return {
     trackWhatsAppClick,
-    trackWhatsAppClickAdvanced,
   };
 };
 

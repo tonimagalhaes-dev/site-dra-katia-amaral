@@ -3,7 +3,6 @@ import { Button } from '@/components/ui/button';
 import { createWhatsAppUrl } from '@/lib/constants';
 import { useAnalytics } from '@/hooks/useAnalytics';
 
-const { trackWhatsAppClick } = useAnalytics();
 
 const Sobre = () => {
   const differentials = [
@@ -12,10 +11,11 @@ const Sobre = () => {
     "Atendimento humanizado e técnico",
     "Consultório em São Paulo"
   ];
+  const { trackWhatsAppClick } = useAnalytics();
 
- const handleWhatsAppClick = () => {
-   trackWhatsAppClick('sobre-page', 'sobre');
-   window.open(createWhatsAppUrl('Olá! Gostaria de agendar uma avaliação.'), '_blank');
+  const handleWhatsAppClick = () => {
+    trackWhatsAppClick('sobre-page', 'sobre');
+    window.open(createWhatsAppUrl('Olá! Gostaria de agendar uma avaliação.'), '_blank');
  };
 
   return (

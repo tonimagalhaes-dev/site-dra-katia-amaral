@@ -42,15 +42,10 @@ const OtomodelacaoPage = () => {
   const otomodelacaoMessage =
     'Olá, Dra. Kátia! Vi o site e gostaria de saber mais sobre a otomodelação. Podemos conversar?';
 
-  // const handleWhatsappClick = () => {
-  //   const whatsappUrl = createWhatsAppUrl(otomodelacaoMessage);
-  //   reportWhatsappConversion(whatsappUrl);
-  // };
-
-    const handleWhatsAppClick = () => {
+   const handleWhatsAppClick = () => {
     trackWhatsAppClick('procedure-page', 'otomodelacao');
     window.open(createWhatsAppUrl(otomodelacaoMessage), '_blank');
-  };
+   };
 
 
   return (

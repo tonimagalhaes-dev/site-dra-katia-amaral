@@ -166,6 +166,29 @@ class GoogleAnalyticsService implements IAnalyticsService {
   }
 }
 
+// Adicione este método dentro da classe GoogleAnalyticsService em src/services/analyticsService.ts
+
+trackEvent(event: AnalyticsEvent): void {
+  if (typeof window !== 'undefined' && window.gtag) {
+    window.gtag('event', event.eventName, {
+      event_category: event.category,
+      event_label: event.label,
+      event_source: event.source,
+      ...event.customParams,
+    });
+  }
+  
+  // Também envia para o dataLayer para o GTM capturar
+  if (typeof window !== 'undefined' && window.dataLayer) {
+    window.dataLayer.push({
+      event: event.eventName,
+      category: event.category,
+      label: event.label,
+      source: event.source
+    });
+  }
+}
+
 /**
  * Singleton - instância única do serviço
  */

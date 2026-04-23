@@ -62,6 +62,7 @@ import { useAnalytics } from '@/hooks/useAnalytics';
 const { trackWhatsAppClick } = useAnalytics();
 ```
 
+
 3. Substitua o `handleWhatsAppClick` de ~7 linhas por:
 ```tsx
 const handleWhatsAppClick = () => {

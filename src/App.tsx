@@ -4,7 +4,6 @@ import { Toaster } from '@/components/ui/toaster';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { createWhatsAppUrl } from './lib/constants';
-import { MessageCircle } from 'lucide-react'; // Ícone para o botão
 import { useAnalytics } from './hooks/useAnalytics';
 
 // --- O Code Splitting continua a funcionar ---
@@ -109,7 +108,4 @@ function App() {
 }
 
 export default App;
-function trackWhatsAppClick(arg0: string, arg1: string, arg2: Window | null) {
-  throw new Error('Function not implemented.');
-}
 

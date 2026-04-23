@@ -1,6 +1,15 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
+declare global {
+  interface Window {
+    dataLayer: Array<{
+      event: string;
+      [key: string]: unknown;
+    }>;
+  }
+}
+
 export function usePageView() {
   const location = useLocation();
 

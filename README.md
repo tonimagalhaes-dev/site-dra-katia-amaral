@@ -1,6 +1,4 @@
-# Lead Landing Pages Pro
-
-Este é o projeto do site que desenvolvi para a Dra. Katia Amaral, minha esposa, para ajudá-la a capturar leads para seu trabalho como esteticista. O site apresenta os procedimentos que ela oferece, informações sobre sua carreira e formas de contato.
+# Site Dra. Katia Amaral
 
 ## Arquitetura e Estrutura de Pastas
 
@@ -9,6 +7,7 @@ O projeto utiliza uma arquitetura baseada em componentes, facilitando a manuten�
 /
 ├── public/                  # Arquivos estáticos
 ├── src/
+│   ├── analytics/           # Configurações do Google Analytics
 │   ├── components/
 │   │   ├── ui/              # Componentes de UI (shadcn/ui)
 │   │   ├── BeforeAfterSlider.tsx

@@ -5,8 +5,6 @@ import { Button } from './ui/button';
 import { createWhatsAppUrl } from '@/lib/constants';
 import { useAnalytics } from '@/hooks/useAnalytics';
 
-useAnalytics(); // Note: se o hook não tiver trackEvent, use trackWhatsAppClickAdvanced com um rótulo customizado
-
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();

@@ -5,6 +5,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { createWhatsAppUrl } from './lib/constants';
 import { useAnalytics } from './hooks/useAnalytics';
+import { usePageView } from './analytics/usePageView';
 
 // --- O Code Splitting continua a funcionar ---
 const Index = lazy(() => import('./pages/Index'));
@@ -41,6 +42,7 @@ const PageLoader = () => (
 
 function App() {
   const { trackWhatsAppClick } = useAnalytics();
+  usePageView(); // Chame o hook aqui
 
   const handleWhatsAppClick = () => {
     trackWhatsAppClick('app-page', 'app');

@@ -1,6 +1,8 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
+export const GTM_ID = 'GTM-W9J8QQDS';
+
 declare global {
   interface Window {
     dataLayer: Array<{
@@ -28,14 +30,14 @@ export function usePageView() {
     // 2. Notifica o Google Ads conforme solicitado pelo gestor
     if (window.gtag) {
       // Configuração base
-      window.gtag('config', 'AW-17354756555', {
+      window.gtag('config', GTM_ID, {
         page_path: url,
         page_title: document.title,
       });
 
       // Evento específico de visualização enviado no arquivo txt
       window.gtag('event', 'conversion', {
-        'send_to': 'AW-17354756555/_Ud5CI6WrJAcEMujstNA'
+        'send_to': GTM_ID,
       });
     }
   }, [location]);

@@ -1,5 +1,6 @@
 export const GOOGLE_ADS_ID = 'AW-17354756555';
-export const GTM_ID = 'GTM-W9J8QQDS';
+// export const GTM_ID = 'GTM-W9J8QQDS';
+export const GTM_ID = 'GTM-KBVSC6C4';
 
 const isGtagAvailable = (): boolean => {
   return typeof window !== 'undefined' && typeof window.gtag === 'function';

@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-
-export const GTM_ID = 'GTM-W9J8QQDS';
+import { GTM_ID } from '@/analytics/analytics';
 
 declare global {
   interface Window {

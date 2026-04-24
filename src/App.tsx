@@ -1,5 +1,5 @@
 import { Suspense, lazy } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { Toaster } from '@/components/ui/toaster';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -50,7 +50,7 @@ function App() {
   };
 
   return (
-    <Router>
+    <>
       <Header />
       <Suspense fallback={<PageLoader />}>
         <main className="flex-grow">
@@ -105,7 +105,7 @@ function App() {
         <img src="/images/wa-ico.png" alt="Ícone do WhatsApp" className="w-6 h-6" />
         <span className="hidden sm:inline">Fale Conosco</span>
       </button>
-    </Router>
+    </>
   );
 }
 

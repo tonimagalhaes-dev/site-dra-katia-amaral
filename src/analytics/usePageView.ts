@@ -4,10 +4,7 @@ import { GTM_ID } from '@/analytics/analytics';
 
 declare global {
   interface Window {
-    dataLayer: Array<{
-      event: string;
-      [key: string]: unknown;
-    }>;
+    // dataLayer is already defined by GTM script
   }
 }
 

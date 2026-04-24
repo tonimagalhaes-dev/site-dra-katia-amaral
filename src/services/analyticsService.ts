@@ -2,6 +2,8 @@
  * Serviço centralizado de Analytics
  */
 
+import { GTM_ID } from "@/analytics/analytics";
+
 export interface AnalyticsEvent {
   eventName: string;
   category: string;
@@ -48,10 +50,6 @@ declare global {
 }
 
 class GoogleAnalyticsService implements IAnalyticsService {
-  // O Rótulo abaixo é do gestor antigo (Zd1w...). Mantive vinculado à nova conta (AW-1735...)
-  // Caso o gestor rastreie tudo via GTM, isso servirá apenas como fallback.
-  private readonly ADS_CONVERSION_ID = 'AW-17354756555/Zd1wCK78jocbEMujstNA';
-
   private isAvailable(): boolean {
     return typeof window !== 'undefined' && typeof window.gtag === 'function';
   }
@@ -92,7 +90,7 @@ class GoogleAnalyticsService implements IAnalyticsService {
 
     if (this.isAvailable()) {
       window.gtag('event', 'conversion', {
-        send_to: this.ADS_CONVERSION_ID,
+        send_to: GTM_ID,
         event_callback: callback,
       });
     } else {

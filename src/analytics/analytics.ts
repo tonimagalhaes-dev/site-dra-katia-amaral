@@ -1,5 +1,5 @@
 export const GOOGLE_ADS_ID = 'AW-17354756555';
-export const GOOGLE_ADS_WHATSAPP_CONVERSION = 'AW-17354756555/Zd1wCK78jocbEMujstNA'; // Rótulo antigo mantido para botões caso não usem GTM
+export const GTM_ID = 'GTM-W9J8QQDS';
 
 const isGtagAvailable = (): boolean => {
   return typeof window !== 'undefined' && typeof window.gtag === 'function';
@@ -7,7 +7,7 @@ const isGtagAvailable = (): boolean => {
 
 export const pageview = (url: string) => {
   if (isGtagAvailable()) {
-    window.gtag('config', GOOGLE_ADS_ID, {
+    window.gtag('config', GTM_ID, {
       page_path: url,
     });
   }
@@ -35,7 +35,7 @@ export const reportWhatsappConversion = (whatsappUrl: string) => {
 
   if (isGtagAvailable()) {
     window.gtag('event', 'conversion', {
-      send_to: GOOGLE_ADS_WHATSAPP_CONVERSION,
+      send_to: GTM_ID,
       event_callback: callback,
     });
   } else {

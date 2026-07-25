@@ -1,9 +1,8 @@
-import { CheckCircle, MessageCircle } from 'lucide-react';
+import { MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
 import { createWhatsAppUrl } from '@/lib/constants';
+import { useAnalytics } from '@/hooks/useAnalytics';
+
 
 const Sobre = () => {
   const differentials = [
@@ -12,10 +11,12 @@ const Sobre = () => {
     "Atendimento humanizado e técnico",
     "Consultório em São Paulo"
   ];
+  const { trackWhatsAppClick } = useAnalytics();
 
   const handleWhatsAppClick = () => {
-    window.open(createWhatsAppUrl('Olá! Gostaria de conversar com a Dra. Katia.'), '_blank');
-  };
+    trackWhatsAppClick('sobre-page', 'sobre');
+    window.open(createWhatsAppUrl('Olá! Gostaria de agendar uma avaliação.'), '_blank');
+ };
 
   return (
     <div className="min-h-screen bg-background">

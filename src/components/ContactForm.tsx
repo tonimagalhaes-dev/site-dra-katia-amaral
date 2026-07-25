@@ -6,6 +6,7 @@ import { Label } from './ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
 import { useToast } from '@/hooks/use-toast';
 import { createWhatsAppUrl } from '@/lib/constants';
+import { useAnalytics } from '@/hooks/useAnalytics';
 
 
 interface ContactFormProps {
@@ -21,6 +22,7 @@ const ContactForm = ({ defaultProcedure, title = "Agende sua avaliação", descr
     procedimento: defaultProcedure || ''
   });
   const { toast } = useToast();
+  const { trackWhatsAppClick } = useAnalytics();
 
   const procedures = [
     'Harmonização Facial',
@@ -52,14 +54,8 @@ Celular: ${formData.celular}
 Procedimento de interesse: ${formData.procedimento}`;
 
     const whatsappUrl = createWhatsAppUrl(message);
-     // GA4 event
-      if (window.gtag) {
-        window.gtag('event', 'whatsapp_click', {
-          event_category: 'engagement',
-          event_label: window.location.pathname,
-          value: 1,
-        });
-      }
+
+    trackWhatsAppClick('form', formData.procedimento);
     window.open(whatsappUrl, '_blank');
 
     toast({

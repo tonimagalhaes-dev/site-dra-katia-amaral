@@ -3,10 +3,12 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, MessageCircle } from 'lucide-react';
 import { Button } from './ui/button';
 import { createWhatsAppUrl } from '@/lib/constants';
+import { useAnalytics } from '@/hooks/useAnalytics';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+  const { trackWhatsAppClick } = useAnalytics();
 
   const menuItems = [
     { label: 'Início', path: '/' },
@@ -35,13 +37,7 @@ const Header = () => {
   ];
 
   const handleWhatsAppClick = () => {
-    // GA4 event
-    if (window.gtag) {
-      window.gtag('event', 'whatsapp_click', {
-        event_category: 'engagement',
-        event_label: 'Header',
-      });
-    }
+    trackWhatsAppClick('header');
     window.open(createWhatsAppUrl('Olá! Gostaria de agendar uma avaliação.'), '_blank');
   };
 

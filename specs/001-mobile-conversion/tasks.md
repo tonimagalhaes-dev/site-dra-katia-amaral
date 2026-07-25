@@ -172,6 +172,10 @@ sem bloquear a conversão.
 - [X] T054 Substituir “Enfermeira Esteta” por `COREN-SP 310.193` no cabeçalho e rodapé da
   campanha em `src/components/campaign/CampaignHeader.tsx` e
   `src/components/campaign/CampaignShell.tsx`
+- [X] T055 Substituir a barra inferior pela transferência contextual do CTA entre hero e
+  cabeçalho, incluindo suporte à montagem lazy, fallback por rolagem, animação reduzível e
+  E2E de ida/volta em `src/components/campaign/CampaignHeader.tsx`,
+  `src/components/campaign/CampaignShell.tsx` e `tests/e2e/otomodelacao-mobile.spec.ts`
 
 ---
 

@@ -79,12 +79,14 @@ apresentação, não de motor do carrossel.
 **Content dependency**: nomes como frontal/posterior e autorização de cada caso precisam
 ser confirmados; casos sem autorização não são publicados.
 
-## R7 — CTA persistente
+## R7 — Transferência contextual do CTA
 
-**Decision**: barra mobile com safe-area, espaço reservado no conteúdo e visibilidade
-controlada por `IntersectionObserver`; fallback é visível/utilizável.
+**Decision**: manter o CTA grande no hero e exibir um CTA compacto no cabeçalho somente
+quando o primeiro sair integralmente da tela, usando `IntersectionObserver` e fallback
+por rolagem.
 
-**Rationale**: mantém a ação disponível sem cobrir galeria ou CTA final.
+**Rationale**: mantém a ação disponível durante a navegação, evita CTAs simultâneos na
+primeira dobra e elimina a barra fixa inferior que competia com o conteúdo.
 
 ## R8 — Testes e performance
 

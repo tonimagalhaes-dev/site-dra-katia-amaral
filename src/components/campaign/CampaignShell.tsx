@@ -4,7 +4,6 @@ import { useLocation } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { CampaignHeader } from './CampaignHeader';
-import { PersistentWhatsAppCta } from './PersistentWhatsAppCta';
 import { usePageView } from '@/analytics/usePageView';
 
 export function CampaignShell({ children }: { children: ReactNode }) {
@@ -14,7 +13,7 @@ export function CampaignShell({ children }: { children: ReactNode }) {
   return (
     <div className="flex min-h-screen flex-col">
       {campaign ? <CampaignHeader /> : <Header />}
-      <main className={campaign ? 'flex-grow pb-20 md:pb-0' : 'flex-grow'}>{children}</main>
+      <main className="flex-grow">{children}</main>
       {campaign ? (
         <footer className="border-t bg-slate-50 px-4 py-8 text-center text-sm text-slate-600">
           <p className="font-semibold text-slate-800">Dra. Katia Amaral</p>
@@ -32,7 +31,6 @@ export function CampaignShell({ children }: { children: ReactNode }) {
           <p className="mt-2">© {new Date().getFullYear()} Todos os direitos reservados.</p>
         </footer>
       ) : <Footer />}
-      {campaign && <PersistentWhatsAppCta />}
     </div>
   );
 }

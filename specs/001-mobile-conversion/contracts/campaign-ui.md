@@ -2,10 +2,11 @@
 
 ## Shell
 
-- `/otomodelacao`: no mobile, o cabeçalho contém somente logo, nome e registro profissional;
-  o CTA do cabeçalho aparece apenas a partir do desktop. Não há menu nem links institucionais
-  concorrentes. O rodapé contém nome, registro profissional, endereço, informações legais
-  aprovadas e um link contextual do endereço para o Google Maps, sem função de menu.
+- `/otomodelacao`: no mobile, o cabeçalho contém somente logo, nome e registro profissional
+  enquanto o CTA do hero está visível. Depois, apresenta também um CTA compacto “WhatsApp”.
+  Não há menu nem links institucionais concorrentes. O rodapé contém nome, registro
+  profissional, endereço, informações legais aprovadas e um link contextual do endereço
+  para o Google Maps, sem função de menu.
 - Outras rotas: preservam Header, Footer e comportamento institucional atuais.
 
 ## WhatsApp CTA
@@ -16,13 +17,14 @@
 - Comportamento: funciona sem JavaScript; tracking não usa `preventDefault`.
 - Acessibilidade: nome explícito, foco visível, alvo >= 44x44 px e quebra de texto.
 
-## Barra persistente
+## Transferência hero → cabeçalho
 
-- Mobile, começa oculta quando a visibilidade pode ser observada, respeita
-  `env(safe-area-inset-bottom)` e reserva espaço equivalente no conteúdo.
-- Aparece quando o CTA inicial deixa a área visível e some quando o CTA final entra.
-- Falha/ausência de `IntersectionObserver` mantém uma ação disponível.
-- Não cobre controles da galeria ou conteúdo essencial.
+- No mobile, nunca exibe simultaneamente o CTA grande do hero e o CTA compacto do header.
+- `IntersectionObserver` acompanha o CTA do hero, inclusive quando a rota lazy ainda não
+  terminou de montar; um fallback por rolagem mantém o comportamento sem essa API.
+- O CTA compacto entra com transição curta de opacidade e deslocamento vertical, respeitando
+  `prefers-reduced-motion`.
+- Não existe barra fixa inferior nem espaço reservado para ela.
 
 ## Galeria
 

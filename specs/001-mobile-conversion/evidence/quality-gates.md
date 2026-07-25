@@ -14,6 +14,10 @@
   e E2E mobile 9/9.
 - Após a redução de CTAs na primeira dobra: build PASS, unitários 15/15, lint PASS e E2E
   mobile 9/9; o cabeçalho não expõe link no mobile e a barra persistente começa oculta.
+- Após substituir a barra inferior pela transferência hero → cabeçalho: build PASS com
+  1.709 módulos, unitários 13/13, lint PASS e E2E 9/9 em 360, 390 e 430 px. O E2E confirma
+  CTA grande no topo, CTA compacto no header após rolar e retorno ao estado inicial ao
+  subir.
 - Chunk Otomodelação: 42,20 kB / 15,32 kB gzip (baseline: 43,65 / 15,42).
 
 Gates externos e validações manuais permanecem abertos conforme `tasks.md`.

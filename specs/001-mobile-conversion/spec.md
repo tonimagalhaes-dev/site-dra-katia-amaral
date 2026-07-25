@@ -14,7 +14,8 @@ dos resultados e garantindo mensuração confiável dos contatos pelo WhatsApp."
 
 ### Session 2026-07-25
 
-- Q: Quais elementos devem permanecer no cabeçalho? → A: Somente logo e WhatsApp.
+- Q: Como o WhatsApp deve aparecer no cabeçalho mobile? → A: Somente depois que o CTA do
+  hero sair da tela, em formato compacto.
 
 ## User Scenarios & Testing *(mandatory)*
 
@@ -40,12 +41,12 @@ primeira chamada sem corte, sobreposição ou navegação por páginas secundár
 2. **Given** a landing page aberta em 360 px, 390 px ou 430 px, **When** a pessoa observa e
    aciona a chamada principal, **Then** nenhum texto ou controle é cortado e o destino de
    WhatsApp recebe uma mensagem contextual sobre otomodelação.
-3. **Given** uma pessoa acessando o cabeçalho da landing de campanha, **When** procura uma
-   ação disponível, **Then** encontra somente a identidade da marca e o CTA de WhatsApp,
-   sem links para outras páginas.
+3. **Given** uma pessoa na primeira dobra, **When** observa o cabeçalho, **Then** encontra
+   somente a identidade e o registro profissional, sem CTA concorrente ou links para
+   outras páginas.
 4. **Given** uma pessoa rolando a página, **When** a chamada inicial deixa de estar visível,
-   **Then** uma chamada persistente continua disponível sem cobrir conteúdo essencial ou
-   controles da página.
+   **Then** o CTA compacto “WhatsApp” aparece no cabeçalho; ao voltar e tornar a chamada
+   inicial visível, o CTA compacto desaparece.
 5. **Given** uma pessoa usando apenas teclado ou tecnologia assistiva, **When** percorre a
    jornada principal, **Then** identifica e aciona cada chamada de conversão pelo nome e
    pelo foco visível.
@@ -119,7 +120,7 @@ mensuração estiver indisponível.
 - Como a página preserva a ação principal quando scripts de publicidade são bloqueados?
 - Como a galeria comunica seu estado quando há apenas um caso disponível?
 - Como a página se comporta com imagens lentas, indisponíveis ou desabilitadas?
-- Como chamadas persistentes respeitam barras do navegador, área segura e teclado virtual?
+- Como a transição do CTA entre hero e cabeçalho evita duplicidade e movimento excessivo?
 - Como animações e transições se comportam quando a pessoa prefere movimento reduzido?
 - Como a página evita eventos duplicados após toque repetido ou retorno pelo navegador?
 
@@ -132,10 +133,11 @@ mensuração estiver indisponível.
 - **FR-002**: O CTA primário MUST permanecer integralmente visível e acionável em larguras
   de 360 px, 390 px e 430 px, com texto adaptável sem corte horizontal.
 - **FR-003**: O cabeçalho da landing de campanha MUST apresentar somente logo, nome e
-  registro profissional no mobile; o CTA de WhatsApp do cabeçalho MUST aparecer apenas a
-  partir do desktop, sem menu ou links para outras páginas.
-- **FR-004**: A página MUST oferecer uma ação persistente de WhatsApp durante a rolagem
-  mobile sem ocultar conteúdo essencial, navegação da galeria ou elementos de segurança.
+  registro profissional enquanto o CTA do hero estiver visível, sem menu ou links para
+  outras páginas.
+- **FR-004**: Quando o CTA do hero sair integralmente da tela, a página MUST apresentar
+  um CTA compacto “WhatsApp” no cabeçalho; quando o CTA do hero voltar a ficar visível,
+  o CTA compacto MUST desaparecer, sem coexistência visual entre os dois no mobile.
 - **FR-005**: Todos os CTAs MUST abrir o mesmo destino de WhatsApp com mensagem contextual
   sobre otomodelação e comportamento de fallback quando o aplicativo não estiver disponível.
 - **FR-006**: A seção de resultados MUST agrupar claramente as vistas de cada paciente e
@@ -179,7 +181,7 @@ mensuração estiver indisponível.
   em até 2,5 segundos, a resposta à interação MUST ocorrer em até 200 milissegundos e o
   deslocamento visual acumulado MUST permanecer em até 0,1.
 - **NFR-004**: A validação de mensuração MUST demonstrar um único evento por destino e por
-  ação, incluindo a identificação `header`, `hero`, `results`, `persistent` ou `final`.
+  ação, incluindo as posições ativas `header`, `hero`, `results` ou `final`.
 - **NFR-005**: Todo texto clínico alterado e toda mídia de paciente MUST ter aprovação
   registrada antes de serem considerados prontos para publicação.
 - **NFR-006**: A ação principal MUST continuar utilizável quando recursos não essenciais,
@@ -225,7 +227,7 @@ mensuração estiver indisponível.
 ### In Scope
 
 - Jornada mobile da rota de otomodelação.
-- Primeira dobra, navegação de campanha, CTAs e ação persistente.
+- Primeira dobra, navegação de campanha e transferência do CTA entre hero e cabeçalho.
 - Apresentação dos resultados existentes e sinais de confiança disponíveis.
 - Revisão do texto diretamente afetado pela jornada de conversão.
 - Unificação e validação da mensuração já utilizada pelo projeto.

@@ -38,8 +38,8 @@ produção sem regressão relevante de bundle
 independente das tags; nenhuma informação clínica/privada na mensuração; texto e mídia
 dependem de aprovação; outras rotas não podem mudar
 
-**Scale/Scope**: Uma rota de campanha, cinco posições de CTA (`header`, `hero`,
-`results`, `persistent`, `final`), nove casos existentes, três destinos de mensuração
+**Scale/Scope**: Uma rota de campanha, quatro posições ativas de CTA (`header`, `hero`,
+`results`, `final`), nove casos existentes, três destinos de mensuração
 via GTM e testes das rotas afetadas
 
 ## Constitution Check
@@ -47,7 +47,8 @@ via GTM e testes das rotas afetadas
 *GATE: Passed before Phase 0 and re-checked after Phase 1.*
 
 - **Mobile-first conversion — PASS**: jornada única até WhatsApp, cabeçalho sem saídas,
-  barra persistente e critérios explícitos para 360/390/430 px (FR-001–005, SC-001/002).
+  transferência contextual do CTA e critérios explícitos para 360/390/430 px
+  (FR-001–005, SC-001/002).
 - **Responsible clinical content — PASS WITH RELEASE DEPENDENCY**: texto absoluto ou de
   vergonha será substituído; credenciais, nomes das vistas e autorizações de imagem
   precisam de aprovação registrada antes da publicação (FR-009–011, NFR-005, SC-008).
@@ -118,8 +119,8 @@ ficam próximos aos módulos e testes de navegador ficam em `tests/e2e`.
 ## Design Decisions
 
 1. **Shell por rota**: menor mudança capaz de separar campanha e site institucional. A
-   landing usa cabeçalho com logo + WhatsApp e rodapé mínimo contendo apenas identidade,
-   localização e informações legais aprovadas, sem links ou navegação concorrente.
+   landing usa cabeçalho com identidade e CTA contextual após a primeira dobra, além de
+   rodapé mínimo contendo identidade, localização e informações legais aprovadas.
 2. **Link real para WhatsApp**: cada CTA é um `<a>` com destino válido; analytics é
    efeito secundário e nunca chama `preventDefault`, espera callback ou controla abertura.
 3. **Integração direta centralizada**: como o GTM não está em uso, `index.html` mantém
@@ -129,8 +130,9 @@ ficam próximos aos módulos e testes de navegador ficam em `tests/e2e`.
 4. **Galeria especializada sobre Embla**: um caso por slide, duas vistas nomeadas somente
    após aprovação, contador, controles localizados de 44 px, teclado, swipe, estados de
    erro e aviso de variação. Não alterar o componente genérico se isso arriscar outras rotas.
-5. **Ação persistente contextual**: `IntersectionObserver` mostra a barra depois que o CTA
-   inicial sai e a oculta perto do CTA final. Falha do observer deixa um CTA utilizável.
+5. **Transferência contextual do CTA**: `IntersectionObserver` mostra o CTA compacto no
+   cabeçalho depois que o CTA inicial sai e o remove quando ele retorna. O fallback usa
+   posição de rolagem, sem barra fixa inferior.
 6. **Qualidade em camadas**: Vitest/RTL cobre contratos e estados; Playwright cobre
    viewports e regressão; axe/Lighthouse e depuradores GA/Ads/Meta produzem evidência.
 
@@ -145,7 +147,7 @@ ficam próximos aos módulos e testes de navegador ficam em `tests/e2e`.
 ### Phase B — Mobile conversion experience
 
 - Refatorar hero, conteúdo e linguagem da landing.
-- Implementar CTA compartilhado e barra persistente com safe-area.
+- Implementar CTA compartilhado e transferência visual entre hero e cabeçalho.
 - Implementar galeria acessível e resiliente com dados tipados.
 
 ### Phase C — Measurement and validation

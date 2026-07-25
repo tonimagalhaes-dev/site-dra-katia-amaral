@@ -7,6 +7,14 @@ test('campaign mobile journey has no horizontal overflow', async ({ page }) => {
   await expect(page.getByRole('banner').getByRole('link')).toHaveCount(0);
   const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
   expect(overflow).toBeLessThanOrEqual(0);
-  await expect(page.locator('[data-cta-position="hero"]')).toBeVisible();
-  await expect(page.locator('[data-cta-position="persistent"]')).toHaveCount(0);
+  const heroCta = page.locator('[data-cta-position="hero"]');
+  await expect(heroCta).toBeVisible();
+
+  await page.locator('[data-cta-position="results"]').scrollIntoViewIfNeeded();
+  await expect(heroCta).not.toBeInViewport();
+  await expect(page.getByRole('banner').getByRole('link', { name: 'WhatsApp' })).toBeVisible();
+
+  await heroCta.scrollIntoViewIfNeeded();
+  await expect(heroCta).toBeVisible();
+  await expect(page.getByRole('banner').getByRole('link')).toHaveCount(0);
 });

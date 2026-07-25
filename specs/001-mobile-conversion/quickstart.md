@@ -19,7 +19,7 @@ Sem essas aprovações, o código pode ser testado localmente, mas não publicad
 3. Criar `CampaignShell` e `WhatsAppCta`; manter outras rotas inalteradas.
 4. Refatorar hero e conteúdo aprovado.
 5. Criar a galeria conforme `contracts/campaign-ui.md`.
-6. Criar a barra persistente e seus fallbacks.
+6. Criar a transferência contextual do CTA entre hero e cabeçalho e seu fallback.
 7. Remover GTM e snippets legados; validar a camada direta e a transição de consentimento
    nos depuradores dos três fornecedores.
 
@@ -42,9 +42,10 @@ gate global verde, pois a constituição exige build e lint antes da conclusão.
 
 Em 360x800, 390x844 e 430x932:
 
-- confirmar cabeçalho somente com logo + WhatsApp;
+- confirmar cabeçalho sem CTA enquanto o CTA do hero estiver visível;
 - confirmar primeira dobra e todos os CTAs sem overflow/corte;
-- rolar e verificar barra persistente, safe-area e ausência de sobreposição;
+- rolar e verificar a entrada do CTA “WhatsApp” no cabeçalho e seu desaparecimento ao
+  retornar ao hero;
 - navegar todos os casos por toque, botões e teclado;
 - simular imagem quebrada e `prefers-reduced-motion`;
 - executar axe e inspecionar contraste/alvos/foco;
@@ -54,7 +55,7 @@ Mapeamento: FR-001–011/016, NFR-001/002/006/007, SC-001–003/005/009.
 
 ## 5. QA de mensuração
 
-Para cada `header`, `hero`, `results`, `persistent` e `final`:
+Para cada posição ativa `header`, `hero`, `results` e `final`:
 
 1. Abrir os depuradores dos fornecedores e limpar os logs.
 2. Acionar o CTA uma vez.

@@ -131,8 +131,9 @@ mensuração estiver indisponível.
   principal, a identificação profissional e o CTA primário de WhatsApp.
 - **FR-002**: O CTA primário MUST permanecer integralmente visível e acionável em larguras
   de 360 px, 390 px e 430 px, com texto adaptável sem corte horizontal.
-- **FR-003**: O cabeçalho da landing de campanha MUST apresentar somente a identidade da
-  marca e um CTA de WhatsApp, sem menu ou links para outras páginas.
+- **FR-003**: O cabeçalho da landing de campanha MUST apresentar somente logo, nome e
+  registro profissional no mobile; o CTA de WhatsApp do cabeçalho MUST aparecer apenas a
+  partir do desktop, sem menu ou links para outras páginas.
 - **FR-004**: A página MUST oferecer uma ação persistente de WhatsApp durante a rolagem
   mobile sem ocultar conteúdo essencial, navegação da galeria ou elementos de segurança.
 - **FR-005**: Todos os CTAs MUST abrir o mesmo destino de WhatsApp com mensagem contextual

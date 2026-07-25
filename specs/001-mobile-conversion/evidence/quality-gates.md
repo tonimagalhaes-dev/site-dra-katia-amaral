@@ -12,6 +12,8 @@
 - Após o merge `ce711a8` com `main`: removida a importação residual de `GTM_ID` e o
   `BrowserRouter` duplicado; build Vite PASS com 1.710 módulos, unitários 14/14, lint PASS
   e E2E mobile 9/9.
+- Após a redução de CTAs na primeira dobra: build PASS, unitários 15/15, lint PASS e E2E
+  mobile 9/9; o cabeçalho não expõe link no mobile e a barra persistente começa oculta.
 - Chunk Otomodelação: 42,20 kB / 15,32 kB gzip (baseline: 43,65 / 15,42).
 
 Gates externos e validações manuais permanecem abertos conforme `tasks.md`.

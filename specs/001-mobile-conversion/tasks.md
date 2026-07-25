@@ -165,6 +165,13 @@ sem bloquear a conversão.
   de `GTM_ID`, preservando a distribuição direta e garantindo uma única instância de
   `BrowserRouter` em `src/services/analyticsService.ts`, `src/App.tsx` e
   `src/services/analyticsService.test.ts`
+- [X] T053 Reduzir a sobrecarga de CTAs na primeira dobra mobile, ocultando o CTA do
+  cabeçalho, iniciando a barra persistente oculta até o CTA do hero sair da tela e
+  atualizando sua microcopy em `src/components/campaign/CampaignHeader.tsx` e
+  `src/components/campaign/PersistentWhatsAppCta.tsx`
+- [X] T054 Substituir “Enfermeira Esteta” por `COREN-SP 310.193` no cabeçalho e rodapé da
+  campanha em `src/components/campaign/CampaignHeader.tsx` e
+  `src/components/campaign/CampaignShell.tsx`
 
 ---
 

@@ -1,41 +1,80 @@
-// Define tipos mais específicos para a função gtag, melhorando a segurança.
-declare global {
-  interface Window {
-    gtag: {
-      (command: 'config', targetId: string, config?: { page_path?: string }): void;
-      (
-        command: 'event',
-        action: string,
-        params: {
-          event_category?: string;
-          event_label?: string;
-          value?: number;
-          send_to?: string;
-          event_callback?: () => void;
-        },
-      ): void;
-    };
+import { captureCampaignAttribution, getCampaignAttribution } from './attribution';
+import type { CtaPosition, TrackingEvent } from './types';
+
+const recentClicks = new Map<CtaPosition, number>();
+const GOOGLE_ADS_WHATSAPP_CONVERSION =
+  'AW-17354756555/Zd1wCK78jocbEMujstNA';
+const createEventId = () =>
+  globalThis.crypto?.randomUUID?.() ??
+  `${Date.now()}-${Math.random().toString(36).slice(2)}`;
+
+export function pushTrackingEvent(event: TrackingEvent) {
+  try {
+    window.dataLayer = window.dataLayer ?? [];
+    window.dataLayer.push(event);
+  } catch {
+    // Analytics is intentionally non-blocking.
   }
 }
-export const GA_TRACKING_ID = 'G-926CE4V53N';
-// IMPORTANTE: Substitua pelo seu ID de conversão e rótulo do Google Ads.
-export const GOOGLE_ADS_WHATSAPP_CONVERSION = 'AW-17354756555/Zd1wCK78jocbEMujstNA';
 
-// Verifica se o gtag está disponível
-const isGtagAvailable = (): boolean => {
-  return typeof window !== 'undefined' && typeof window.gtag === 'function';
-};
-
-// Função para inicializar o GA
-export const pageview = (url: string) => {
-  if (isGtagAvailable()) {
-    window.gtag('config', GA_TRACKING_ID, {
-      page_path: url,
+export function trackWhatsAppContact(position: CtaPosition) {
+  const now = Date.now();
+  if (now - (recentClicks.get(position) ?? 0) < 750) return false;
+  recentClicks.set(position, now);
+  captureCampaignAttribution();
+  const trackingEvent = {
+    event: 'whatsapp_contact',
+    schema_version: 1,
+    event_id: createEventId(),
+    cta_position: position,
+    page_path: window.location.pathname,
+    campaign: getCampaignAttribution(),
+  } satisfies TrackingEvent;
+  pushTrackingEvent(trackingEvent);
+  try {
+    window.gtag?.('event', 'whatsapp_click', {
+      event_id: trackingEvent.event_id,
+      cta_position: position,
+      ...trackingEvent.campaign,
     });
+    window.gtag?.('event', 'conversion', {
+      send_to: GOOGLE_ADS_WHATSAPP_CONVERSION,
+      event_id: trackingEvent.event_id,
+      cta_position: position,
+    });
+    window.fbq?.(
+      'track',
+      'Contact',
+      { cta_position: position },
+      { eventID: trackingEvent.event_id },
+    );
+  } catch {
+    // Vendor failures are intentionally non-blocking.
   }
-};
+  return true;
+}
 
-// Função para eventos personalizados do Google Analytics
+export function trackVirtualPageView(pagePath: string, pageTitle: string) {
+  const trackingEvent = {
+    event: 'virtual_page_view',
+    schema_version: 1,
+    event_id: createEventId(),
+    page_path: pagePath,
+    page_title: pageTitle,
+  } satisfies TrackingEvent;
+  pushTrackingEvent(trackingEvent);
+  try {
+    window.gtag?.('event', 'page_view', {
+      event_id: trackingEvent.event_id,
+      page_path: pagePath,
+      page_title: pageTitle,
+    });
+    window.fbq?.('track', 'PageView', {}, { eventID: trackingEvent.event_id });
+  } catch {
+    // Vendor failures are intentionally non-blocking.
+  }
+}
+
 export const event = ({
   action,
   category,
@@ -46,41 +85,8 @@ export const event = ({
   category: string;
   label?: string;
   value?: number;
-}) => {
-  if (isGtagAvailable()) {
-    window.gtag('event', action, {
-      event_category: category,
-      event_label: label,
-      value: value,
-    });
-  }
-};
+}) => window.gtag?.('event', action, { event_category: category, event_label: label, value });
 
-/**
- * Dispara um evento de conversão para o Google Ads e, em seguida,
- * redireciona o usuário para a URL do WhatsApp.
- * @param whatsappUrl A URL de destino do WhatsApp.
- */
 export const reportWhatsappConversion = (whatsappUrl: string) => {
-  const callback = () => {
-  // Abre o link em uma nova aba, mantendo o comportamento original
-  window.open(whatsappUrl, '_blank');
-  };
-
-  if (isGtagAvailable()) {
-    window.gtag('event', 'conversion', {
-      send_to: GOOGLE_ADS_WHATSAPP_CONVERSION,
-      event_callback: callback,
-    });
-  } else {
-    console.error(
-      'Função gtag não encontrada. Verifique se o script do Google Ads foi carregado.',
-    );
-    // Se o gtag não for encontrado, apenas redireciona o usuário.
-    callback();
-  }
+  window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
 };
-
-
-
-

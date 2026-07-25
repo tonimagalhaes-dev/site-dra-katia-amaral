@@ -1,315 +1,201 @@
+import { useEffect } from 'react';
+import { Award, Clock, ShieldCheck } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
-import { Button } from '@/components/ui/button';
-import { BeforeAfterSlider } from '@/components/BeforeAfterSlider';
-import { CheckCircle2, Award, Clock, ShieldCheck } from 'lucide-react'; 
-import { Helmet } from 'react-helmet-async';
-import { useEffect } from 'react'; 
-import { createWhatsAppUrl } from '@/lib/constants';
-import ScrollDownIndicator from '@/components/ScrollDownIndicator'; 
+import { ResultsCarousel } from '@/components/campaign/ResultsCarousel';
+import { WhatsAppCta } from '@/components/campaign/WhatsAppCta';
 
+const benefits = [
+  {
+    icon: ShieldCheck,
+    title: 'Avaliação individual',
+    text: 'A indicação depende de avaliação profissional e das características de cada pessoa.',
+  },
+  {
+    icon: Clock,
+    title: 'Procedimento em consultório',
+    text: 'A profissional explica as etapas, os cuidados e a recuperação esperada para o seu caso.',
+  },
+  {
+    icon: Award,
+    title: 'Acompanhamento profissional',
+    text: 'Você recebe orientações antes e depois do procedimento e pode esclarecer suas dúvidas.',
+  },
+];
 
-// Componente auxiliar para cards de benefícios
-const BenefitCard = ({
-  icon,
-  title,
-  children,
-}: {
-  icon: React.ReactNode;
-  title: string;
-  children: React.ReactNode;
-}) => (
-  <div className="flex flex-col items-center text-center p-6 bg-white rounded-lg shadow-lg transition-transform hover:scale-105 h-full">
-    <div className="text-primary mb-4">{icon}</div>
-    <h3 className="text-xl font-semibold text-gray-800 mb-2">{title}</h3>
-    <p className="text-muted-foreground text-sm">{children}</p>
-  </div>
-);
+const frequentlyAskedQuestions = [
+  {
+    value: 'o-que-e',
+    question: 'O que é a otomodelação?',
+    answer:
+      'A otomodelação é um procedimento estético minimamente invasivo que busca corrigir e reposicionar as orelhas sem cirurgia convencional. O objetivo é melhorar a harmonia e a simetria facial. A indicação, a técnica e os resultados esperados dependem da anatomia e da avaliação individual.',
+  },
+  {
+    value: 'recuperacao',
+    question: 'Fiz uma otomodelação, a recuperação é demorada?',
+    answer:
+      'A recuperação costuma ser rápida, mas varia conforme cada pessoa e a técnica empregada. Em muitos casos, é possível retomar atividades leves logo após o procedimento. Exercícios sem impacto direto nas orelhas geralmente exigem uma pausa de aproximadamente três dias, conforme orientação profissional.',
+  },
+  {
+    value: 'duracao',
+    question: 'Quanto tempo leva o procedimento de otomodelação?',
+    answer:
+      'O procedimento costuma levar entre 30 minutos e uma hora, dependendo da complexidade e do planejamento de cada caso.',
+  },
+  {
+    value: 'avaliacao',
+    question: 'Por que é necessária uma avaliação antes da otomodelação?',
+    answer:
+      'A avaliação permite conhecer o histórico do paciente, entender suas queixas e expectativas e analisar as características individuais. Com essas informações, a profissional pode indicar e planejar o tratamento de forma personalizada.',
+  },
+  {
+    value: 'internacao',
+    question: 'O paciente precisa ficar internado para realizar a otomodelação?',
+    answer:
+      'Não. A otomodelação é realizada em consultório e normalmente não exige internação.',
+  },
+  {
+    value: 'trabalho',
+    question: 'Em quanto tempo o paciente pode voltar a trabalhar após a otomodelação?',
+    answer:
+      'Muitos pacientes conseguem retornar a atividades leves no mesmo dia. É importante seguir as orientações recebidas e evitar esforços físicos intensos, calor e exposição solar excessiva durante o período recomendado para cada caso.',
+  },
+];
 
-// Componente principal da página de Otomodelação
-const OtomodelacaoPage = () => {
-    useEffect(() => {
+export default function OtomodelacaoPage() {
+  useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  
-  const otomodelacaoMessage =
-    'Olá, Dra. Kátia! Vi o site e gostaria de saber mais sobre a otomodelação. Podemos conversar?';
-
-  // const handleWhatsappClick = () => {
-  //   const whatsappUrl = createWhatsAppUrl(otomodelacaoMessage);
-  //   reportWhatsappConversion(whatsappUrl);
-  // };
-
-    const handleWhatsAppClick = () => {
-    // GA4 event
-    if (window.gtag) {
-      window.gtag('event', 'whatsapp_click', {
-        event_category: 'engagement',
-        event_label: 'Header',
-      });
-    }
-    window.open(createWhatsAppUrl(otomodelacaoMessage), '_blank');
-  };
-
-
   return (
     <>
       <Helmet>
-        <title>Otomodelação Sem Cirurgia | Dra. Kátia Amaral</title>
+        <title>Otomodelação | Dra. Kátia Amaral</title>
+        <link rel="preload" as="image" href="/images/otomodelacao5.webp" media="(max-width: 768px)" />
+        <link rel="preload" as="image" href="/images/otomodelacao4.webp" media="(min-width: 769px)" />
         <meta
           name="description"
-          content="Diga adeus às orelhas de abano com a otomodelação, uma técnica segura, não cirúrgica e com resultados imediatos. Agende sua avaliação."
+          content="Conheça a otomodelação com a Dra. Kátia Amaral e converse pelo WhatsApp para entender indicação, cuidados e avaliação."
         />
       </Helmet>
 
-      <div className="flex flex-col">
-        {/* Seção 1: Hero Otimizado com posicionamento de fundo */}
-        <section className="relative flex items-center justify-center min-h-[60vh] text-white text-center overflow-hidden">
-          {/* A tag <picture> agora se comporta como um fundo de tela */}
-          <picture className="absolute inset-0 w-full h-full z-0">
-            {/* Imagem para telas menores (mobile-first) */}
-            <source
-              media="(max-width: 768px)"
-              srcSet="/images/otomodelacao5.webp"
-            />
-            {/* Imagem padrão para telas maiores */}
-            <source
-              media="(min-width: 769px)"
-              srcSet="/images/otomodelacao4.webp"
-            />
-            {/* Tag <img> de fallback com estilo de fundo e alt text */}
-            <img
-              src="/images/otomodelacao2.webp"
-              alt="Imagem de fundo mostrando uma orelha, representando o procedimento de otomodelação"
-              role="presentation"
-              fetchPriority="high"
-              className="w-full h-full object-cover"
-            />
-          </picture>
-
-          {/* Overlay para melhorar a legibilidade do texto */}
-          <div className="hero-overlay absolute inset-0 bg-black/40 opacity-110 z-10"></div>
-          
-          {/* Conteúdo sobreposto */}
-          <div className="hero-content container mx-auto relative z-20 px-4">
-            <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
-              Diga Adeus às Orelhas de Abano, Sem Cirurgia.
+      <section className="relative isolate flex min-h-[calc(100svh-4rem)] items-center overflow-hidden bg-slate-950 text-white">
+        <picture className="absolute inset-0 -z-20 h-full w-full">
+          <source media="(max-width: 768px)" srcSet="/images/otomodelacao5.webp" />
+          <source media="(min-width: 769px)" srcSet="/images/otomodelacao4.webp" />
+          <img
+            src="/images/otomodelacao5.webp"
+            alt=""
+            width="1200"
+            height="900"
+            fetchPriority="high"
+            className="h-full w-full object-cover"
+          />
+        </picture>
+        <div className="absolute inset-0 -z-10 bg-slate-950/65" />
+        <div className="mx-auto w-full max-w-6xl px-4 py-12 sm:py-16">
+          <div className="max-w-xl">
+            <p className="mb-3 text-sm font-bold uppercase tracking-wider text-green-300">
+              Otomodelação em São Paulo
+            </p>
+            <h1 className="text-3xl font-bold leading-tight sm:text-4xl md:text-5xl">
+              Entenda se a otomodelação faz sentido para você
             </h1>
-            <p className="text-lg md:text-xl mb-2">
-              Resultados naturais e seguros com a técnica de otomodelação.
+            <p className="mt-4 text-lg text-slate-100">
+              Converse sobre objetivos, indicação, cuidados e expectativas em uma avaliação individual.
             </p>
-            <p className="font-semibold mb-6">
-              Por Dra. Kátia Amaral | Enfermeira Esteta | COREN-SP 310.193
+            <p className="mt-4 font-semibold">
+              Dra. Kátia Amaral · Enfermeira Esteta · COREN-SP 310.193
             </p>
-            <div>
-              <Button
-                size="lg"
-                className="bg-green-500 hover:bg-green-600 text-white font-bold text-lg py-4 px-10 rounded-full transition-transform hover:scale-105 shadow-lg"
-                onClick={handleWhatsAppClick}
-              >
-                Agendar Avaliação pelo WhatsApp
-              </Button>
-              <p className="text-sm mt-2">✓ Resposta rápida e sem compromisso</p>
-            </div>
-          </div>
-          <ScrollDownIndicator
-            targetId="resultados"
-            label="Role para baixo e veja resultados reais"
-            className="absolute bottom-2 z-30"
-          />          
-        </section>
-
-        {/* Seção 2: Prova Visual (Antes e Depois) */}
-        <section id="resultados" className="py-12 sm:py-16 bg-white">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center text-gray-800 mb-2">
-              O Fim de uma Insegurança: Veja as Histórias Reais.
-            </h2>
-            <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-              ➡️ Role para o lado e veja o poder da otomodelação em transformar não apenas a aparência,
-              mas a confiança dos nossos pacientes.
-            </p>
-            <BeforeAfterSlider />
-          </div>
-        </section>
-
-        {/* Seção 3: Conexão com a Dor (Empatia) */}
-        <section id="empatia" className="py-12 sm:py-16 bg-white">
-          <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">
-              Você também se sente assim?
-            </h2>
-            <p className="text-muted-foreground mb-12 max-w-2xl mx-auto">
-              Se você se identifica com alguma destas situações, saiba que não
-              está sozinho(a) e existe uma solução para recuperar a sua
-              autoestima.
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto text-left">
-              <div className="flex items-start space-x-3 p-4">
-                <CheckCircle2 className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
-                <p>Evita prender o cabelo ou usar certos penteados?</p>
-              </div>
-              <div className="flex items-start space-x-3 p-4">
-                <CheckCircle2 className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
-                <p>Sente-se desconfortável em fotos ou eventos sociais?</p>
-              </div>
-              <div className="flex items-start space-x-3 p-4">
-                <CheckCircle2 className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
-                <p>
-                  A aparência das suas orelhas afeta a sua confiança e bem-estar?
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Seção 4: Apresentando a Solução Segura */}
-        <section id="solucao" className="py-16 sm:py-20 bg-gray-50">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">
-              Otomodelação: A Evolução da Correção de Orelhas
-            </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-              <BenefitCard
-                icon={<ShieldCheck size={48} />}
-                title="Procedimento Seguro"
-              >
-                Técnica não cirúrgica, realizada em consultório com anestesia
-                local, minimizando riscos e desconforto.
-              </BenefitCard>
-              <BenefitCard icon={<Clock size={48} />} title="Recuperação Rápida">
-                Sem cortes e sem necessidade de repouso. Volte para as suas
-                atividades no mesmo dia.
-              </BenefitCard>
-              <BenefitCard icon={<Award size={48} />} title="Resultados Imediatos">
-                Veja a diferença assim que o procedimento termina. Os
-                resultados são naturais e permanentes.
-              </BenefitCard>
-            </div>
-          </div>
-        </section>
-
-        {/* Seção 5: Conheça a Especialista */}
-        <section id="especialista" className="py-16 sm:py-20 bg-white">
-          <div className="container mx-auto px-4">
-            <div className="flex flex-col md:flex-row items-center gap-12 max-w-5xl mx-auto">
-              <div className="md:w-1/3 text-center">
-                <img
-                  src="/images/katia6.webp"
-                  alt="Dra. Kátia Amaral"
-                  className="rounded-full w-56 h-56 md:w-64 md:h-64 mx-auto object-cover shadow-2xl"
-                  loading="lazy"
-                  width="256"
-                  height="256"
-                />
-              </div>
-              <div className="md:w-2/3">
-                <h2 className="text-3xl font-bold text-gray-800 mb-4 text-center">
-                  A Sua Confiança nas Mãos de uma Especialista
-                </h2>
-                <p className="text-muted-foreground mb-4 text-justify">
-                  "Com mais de 10 anos de experiência em ambientes hospitalares
-                  e clínicos, trago para a estética a segurança e o rigor
-                  técnico que você merece. A minha paixão é realçar a beleza
-                  única de cada paciente, utilizando as técnicas mais avançadas
-                  e seguras. Como Enfermeira Esteta, o meu compromisso é com o
-                  seu bem-estar, o seu conforto e, claro, com um resultado que
-                  traga a autoestima e a felicidade que você busca. Cada
-                  procedimento é realizado com o máximo cuidado, porque entendo
-                  que estou a cuidar de um sonho."
-                </p>
-                <p className="font-semibold text-gray-700">
-                  - Dra. Kátia Amaral, Enfermeira Esteta | COREN-SP 310.193
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Seção 6: Perguntas Frequentes (FAQ) */}
-        <section id="faq" className="py-16 sm:py-20 bg-gray-50">
-          <div className="container mx-auto px-4 max-w-3xl">
-            <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">
-              Perguntas Frequentes
-            </h2>
-            <Accordion type="single" collapsible className="w-full">
-              <AccordionItem value="item-1">
-                <AccordionTrigger className="text-left">
-                  Qual a diferença entre otomodelação e otoplastia?
-                </AccordionTrigger>
-                <AccordionContent className="text-left">
-                  A otomodelação é uma técnica não cirúrgica que remodela a
-                  cartilagem com fios, sem cortes. A otoplastia é uma cirurgia
-                  plástica tradicional, mais invasiva e com um tempo de
-                  recuperação maior. A otomodelação é uma alternativa moderna,
-                  segura e com retorno imediato à rotina.
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-2">
-                <AccordionTrigger className="text-left">
-                  Por que escolher uma Enfermeira Esteta para este
-                  procedimento?
-                </AccordionTrigger>
-                <AccordionContent className="text-left">
-                  A Enfermagem Estética é uma especialidade regulamentada que
-                  foca em procedimentos minimamente invasivos. Uma Enfermeira
-                  Esteta qualificada possui profundo conhecimento da anatomia
-                  facial e das técnicas mais seguras, garantindo um
-                  procedimento ético, seguro e com excelentes resultados.
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-3">
-                <AccordionTrigger className="text-left">
-                  O resultado é permanente?
-                </AccordionTrigger>
-                <AccordionContent className="text-left">
-                  Sim, os resultados da otomodelação são considerados
-                  permanentes. Os fios utilizados são biocompatíveis e projetados
-                  para manter a cartilagem na nova posição de forma definitiva.
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-4">
-                <AccordionTrigger className="text-left">
-                  O procedimento dói?
-                </AccordionTrigger>
-                <AccordionContent className="text-left">
-                  O procedimento é realizado com anestesia local, tornando-o
-                  muito confortável para o paciente. Pode haver um leve
-                  desconforto nos dias seguintes, que é facilmente controlado
-                  com analgésicos comuns.
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
-          </div>
-        </section>
-
-        {/* Seção 7: O Convite Final para a Ação */}
-        <section id="cta-final" className="py-20 bg-primary text-white">
-          <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Dê o primeiro passo para uma nova autoestima.
-            </h2>
-            <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto">
-              Chega de se esconder. Chegou a hora de se sentir livre e
-              confiante em qualquer situação. A nossa equipa está pronta para
-              tirar todas as suas dúvidas.
-            </p>
-            <Button
-              size="lg"
-              className="bg-green-500 hover:bg-green-600 text-white font-bold text-lg py-4 px-10 rounded-full transition-transform hover:scale-105 shadow-lg"
-              onClick={handleWhatsAppClick}
+            <WhatsAppCta
+              id="hero-whatsapp-cta"
+              position="hero"
+              className="mt-7 w-full max-w-md whitespace-normal sm:w-auto"
             >
-              Quero Agendar a Minha Avaliação
-            </Button>
+              Conversar sobre uma avaliação
+            </WhatsAppCta>
+            <p className="mt-3 text-sm text-slate-200">Atendimento inicial pelo WhatsApp.</p>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
+
+      <section id="resultados" className="bg-white px-4 py-14 sm:py-20">
+        <div className="mx-auto max-w-6xl">
+          <h2 className="text-center text-3xl font-bold text-slate-900">Resultados em diferentes casos</h2>
+          <p className="mx-auto mb-8 mt-3 max-w-2xl text-center text-slate-600">
+            Veja comparativos agrupados por paciente. A avaliação considera características e objetivos individuais.
+          </p>
+          <ResultsCarousel />
+          <div className="mt-8 text-center">
+            <WhatsAppCta position="results">Tirar dúvidas sobre o procedimento</WhatsAppCta>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-slate-50 px-4 py-14 sm:py-20">
+        <div className="mx-auto max-w-6xl">
+          <h2 className="text-center text-3xl font-bold text-slate-900">Uma conversa clara antes de decidir</h2>
+          <div className="mt-8 grid gap-5 md:grid-cols-3">
+            {benefits.map(({ icon: Icon, title, text }) => (
+              <article key={title} className="rounded-2xl bg-white p-6 shadow-sm">
+                <Icon className="h-10 w-10 text-primary" aria-hidden="true" />
+                <h3 className="mt-4 text-xl font-semibold">{title}</h3>
+                <p className="mt-2 text-slate-600">{text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white px-4 py-14 sm:py-20">
+        <div className="mx-auto grid max-w-5xl items-center gap-8 md:grid-cols-[280px_1fr]">
+          <img
+            src="/images/katia6.webp"
+            alt="Dra. Kátia Amaral"
+            width="280"
+            height="280"
+            loading="lazy"
+            className="mx-auto aspect-square rounded-full object-cover shadow-xl"
+          />
+          <div>
+            <h2 className="text-3xl font-bold text-slate-900">Dra. Kátia Amaral</h2>
+            <p className="mt-2 font-semibold text-primary">Enfermeira Esteta · COREN-SP 310.193</p>
+            <p className="mt-4 text-slate-600">
+              Atendimento na Vila Mariana, em São Paulo, com orientação individual sobre o procedimento e seus cuidados.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-slate-50 px-4 py-14 sm:py-20">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="mb-8 text-center text-3xl font-bold">Perguntas frequentes</h2>
+          <Accordion type="single" collapsible>
+            {frequentlyAskedQuestions.map(({ value, question, answer }) => (
+              <AccordionItem key={value} value={value}>
+                <AccordionTrigger>{question}</AccordionTrigger>
+                <AccordionContent className="text-base leading-relaxed text-slate-600">
+                  {answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+      </section>
+
+      <section id="cta-final" className="bg-primary px-4 py-16 text-center text-white">
+        <div className="mx-auto max-w-2xl">
+          <h2 className="text-3xl font-bold">Quer entender o seu caso?</h2>
+          <p className="mt-3 text-lg text-blue-100">Envie uma mensagem e tire suas dúvidas sobre avaliação e próximos passos.</p>
+          <WhatsAppCta position="final" className="mt-7 w-full sm:w-auto">
+            Conversar com a Dra. Kátia
+          </WhatsAppCta>
+        </div>
+      </section>
     </>
   );
-};
-
-export default OtomodelacaoPage;
+}

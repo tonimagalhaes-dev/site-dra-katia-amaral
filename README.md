@@ -64,3 +64,20 @@ O projeto utiliza uma arquitetura baseada em componentes, facilitando a manuten�
 - `npm run lint`: Executa o ESLint.
 - `npm run preview`: Visualiza a versão de produção.
 - `npm run format`: Formata o código com o Prettier.
+
+## Desenvolvimento orientado por especificação
+
+O projeto usa o GitHub Spec Kit para manter requisitos, decisões técnicas, tarefas e
+implementação rastreáveis. O fluxo padrão é:
+
+1. `$speckit-constitution`: define as regras permanentes do projeto.
+2. `$speckit-specify`: descreve o valor, o escopo e os critérios da feature.
+3. `$speckit-clarify`: resolve ambiguidades de alto impacto.
+4. `$speckit-plan`: define a abordagem técnica e os contratos.
+5. `$speckit-tasks`: cria tarefas pequenas e rastreáveis.
+6. `$speckit-analyze`: verifica consistência antes do código.
+7. `$speckit-implement`: executa e valida as tarefas aprovadas.
+8. `$speckit-converge`: identifica qualquer trabalho ainda não entregue.
+
+Os artefatos de cada feature ficam em `specs/`. A fase seguinte só começa depois da
+revisão do artefato atual.

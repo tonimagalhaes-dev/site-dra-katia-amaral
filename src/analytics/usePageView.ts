@@ -1,15 +1,14 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { trackVirtualPageView } from './analytics';
+
+let lastPagePath = '';
 
 export function usePageView() {
-  const location = useLocation();
-
+  const { pathname } = useLocation();
   useEffect(() => {
-    if (window.gtag) {
-      window.gtag('event', 'page_view', {
-        page_path: location.pathname + location.search,
-        page_title: document.title,
-      });
-    }
-  }, [location]);
+    if (lastPagePath === pathname) return;
+    lastPagePath = pathname;
+    queueMicrotask(() => trackVirtualPageView(pathname, document.title));
+  }, [pathname]);
 }

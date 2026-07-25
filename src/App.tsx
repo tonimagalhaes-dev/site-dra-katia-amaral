@@ -1,11 +1,8 @@
 import { Suspense, lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { Toaster } from '@/components/ui/toaster';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
-import { createWhatsAppUrl } from './lib/constants';
-import { useAnalytics } from './hooks/useAnalytics';
-import { usePageView } from './analytics/usePageView';
+import { CampaignShell } from '@/components/campaign/CampaignShell';
+import { CookieConsentBanner } from '@/components/consent/CookieConsentBanner';
 
 // --- O Code Splitting continua a funcionar ---
 const Index = lazy(() => import('./pages/Index'));
@@ -41,19 +38,10 @@ const PageLoader = () => (
 );
 
 function App() {
-  const { trackWhatsAppClick } = useAnalytics();
-  usePageView(); // Chame o hook aqui
-
-  const handleWhatsAppClick = () => {
-    trackWhatsAppClick('app-page', 'app');
-    window.open(createWhatsAppUrl('Olá! Gostaria de agendar uma avaliação.'), '_blank');
-  };
-
   return (
     <>
-      <Header />
-      <Suspense fallback={<PageLoader />}>
-        <main className="flex-grow">
+      <CampaignShell>
+        <Suspense fallback={<PageLoader />}>
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/otomodelacao" element={<Otomodelacao />} />
@@ -91,23 +79,12 @@ function App() {
             <Route path="/terapia-capilar" element={<TerapiaCapilar />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
-        </main>
-      </Suspense>
-      <Footer />
+        </Suspense>
+      </CampaignShell>
       <Toaster />
-
-      {/* BOTÃO FLUTUANTE ATUALIZADO COM TEXTO */}
-      <button
-        onClick={handleWhatsAppClick}
-        className="fixed bottom-5 right-5 bg-green-500 text-white font-semibold py-3 px-5 rounded-full shadow-lg hover:bg-green-600 transition-transform hover:scale-110 z-50 flex items-center justify-center gap-2"
-        aria-label="Fale Conosco pelo WhatsApp"
-      >
-        <img src="/images/wa-ico.png" alt="Ícone do WhatsApp" className="w-6 h-6" />
-        <span className="hidden sm:inline">Fale Conosco</span>
-      </button>
+      <CookieConsentBanner />
     </>
   );
 }
 
 export default App;
-

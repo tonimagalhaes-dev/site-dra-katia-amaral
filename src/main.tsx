@@ -4,6 +4,9 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import App from './App';
 import './index.css';
+import { initializeStoredConsent } from './analytics/consent';
+
+initializeStoredConsent();
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>

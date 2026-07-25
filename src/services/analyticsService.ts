@@ -1,8 +1,9 @@
 /**
- * Serviço centralizado de Analytics
+ * Compatibilidade de analytics para as páginas institucionais.
+ *
+ * A landing de campanha usa a camada tipada em `src/analytics/analytics.ts`.
+ * Este serviço mantém os consumidores institucionais antigos sem reintroduzir GTM.
  */
-
-import { GTM_ID } from "@/analytics/analytics";
 
 export interface AnalyticsEvent {
   eventName: string;
@@ -23,30 +24,6 @@ export interface IAnalyticsService {
   trackWhatsAppClick(params: WhatsAppClickParams): void;
   trackEvent(event: AnalyticsEvent): void;
   trackConversion(whatsappUrl: string): void;
-}
-
-declare global {
-  interface Window {
-    gtag: {
-      (command: 'config', targetId: string, config?: { page_path?: string; page_title?: string }): void;
-      (
-        command: 'event',
-        action: string,
-        params: {
-          event_category?: string;
-          event_label?: string;
-          event_source?: string;
-          procedure_name?: string;
-          page_path?: string;
-          value?: number;
-          send_to?: string;
-          event_callback?: () => void;
-          [key: string]: unknown;
-        },
-      ): void;
-    };
-    dataLayer: any[];
-  }
 }
 
 class GoogleAnalyticsService implements IAnalyticsService {
@@ -86,16 +63,7 @@ class GoogleAnalyticsService implements IAnalyticsService {
   }
 
   trackConversion(whatsappUrl: string): void {
-    const callback = () => window.open(whatsappUrl, '_blank');
-
-    if (this.isAvailable()) {
-      window.gtag('event', 'conversion', {
-        send_to: GTM_ID,
-        event_callback: callback,
-      });
-    } else {
-      callback();
-    }
+    window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
   }
 }
 

@@ -1,40 +1,14 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { GTM_ID } from '@/analytics/analytics';
+import { trackVirtualPageView } from './analytics';
 
-declare global {
-  interface Window {
-    // dataLayer is already defined by GTM script
-  }
-}
+let lastPagePath = '';
 
 export function usePageView() {
-  const location = useLocation();
-
+  const { pathname } = useLocation();
   useEffect(() => {
-    const url = location.pathname + location.search;
-
-    // 1. Notifica o GTM sobre a mudança de página (Standard para SPAs)
-    if (window.dataLayer) {
-      window.dataLayer.push({
-        event: 'virtual_pageview',
-        page_path: url,
-        page_title: document.title,
-      });
-    }
-
-    // 2. Notifica o Google Ads conforme solicitado pelo gestor
-    if (window.gtag) {
-      // Configuração base
-      window.gtag('config', GTM_ID, {
-        page_path: url,
-        page_title: document.title,
-      });
-
-      // Evento específico de visualização enviado no arquivo txt
-      window.gtag('event', 'conversion', {
-        'send_to': GTM_ID,
-      });
-    }
-  }, [location]);
+    if (lastPagePath === pathname) return;
+    lastPagePath = pathname;
+    queueMicrotask(() => trackVirtualPageView(pathname, document.title));
+  }, [pathname]);
 }

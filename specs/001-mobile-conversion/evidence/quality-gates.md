@@ -9,6 +9,9 @@
   larguras de 360, 390 e 430 px.
 - Após os ajustes de consentimento, rodapé e FAQ: unitários 12/12, lint e build PASS;
   E2E mobile 9/9 nas larguras de 360, 390 e 430 px.
+- Após o merge `ce711a8` com `main`: removida a importação residual de `GTM_ID` e o
+  `BrowserRouter` duplicado; build Vite PASS com 1.710 módulos, unitários 14/14, lint PASS
+  e E2E mobile 9/9.
 - Chunk Otomodelação: 42,20 kB / 15,32 kB gzip (baseline: 43,65 / 15,42).
 
 Gates externos e validações manuais permanecem abertos conforme `tasks.md`.

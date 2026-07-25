@@ -161,6 +161,10 @@ sem bloquear a conversão.
 - [X] T049 Remover o botão persistente de preferências após a decisão do banner e proteger o comportamento em `src/components/consent/CookieConsentBanner.test.tsx`
 - [X] T050 Adicionar endereço do consultório e link acessível para o Google Maps no rodapé da campanha em `src/components/campaign/CampaignShell.tsx` e atualizar seu contrato e teste
 - [X] T051 Ampliar a seção de perguntas frequentes com o conteúdo aprovado, revisado para comunicação clínica responsável, em `src/pages/Otomodelacao.tsx`
+- [X] T052 Corrigir a regressão do merge com `main`, removendo a dependência institucional
+  de `GTM_ID`, preservando a distribuição direta e garantindo uma única instância de
+  `BrowserRouter` em `src/services/analyticsService.ts`, `src/App.tsx` e
+  `src/services/analyticsService.test.ts`
 
 ---
 

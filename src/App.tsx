@@ -39,7 +39,7 @@ const PageLoader = () => (
 
 function App() {
   return (
-    <Router>
+    <>
       <CampaignShell>
         <Suspense fallback={<PageLoader />}>
           <Routes>
@@ -83,9 +83,8 @@ function App() {
       </CampaignShell>
       <Toaster />
       <CookieConsentBanner />
-    </Router>
+    </>
   );
 }
 
 export default App;
-

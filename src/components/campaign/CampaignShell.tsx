@@ -17,8 +17,8 @@ export function CampaignShell({ children }: { children: ReactNode }) {
       <main className={campaign ? 'flex-grow pb-20 md:pb-0' : 'flex-grow'}>{children}</main>
       {campaign ? (
         <footer className="border-t bg-slate-50 px-4 py-8 text-center text-sm text-slate-600">
-          <p className="font-semibold text-slate-800">Dra. Katia Amaral — Enfermeira Esteta</p>
-          <p>COREN-SP 310.193</p>
+          <p className="font-semibold text-slate-800">Dra. Katia Amaral</p>
+          <p className="mt-1">COREN-SP 310.193</p>
           <a
             href="https://www.google.com/maps/search/?api=1&query=Rua+Santa+Cruz%2C+2105%2C+Sala+1410%2C+Vila+Mariana%2C+S%C3%A3o+Paulo"
             target="_blank"

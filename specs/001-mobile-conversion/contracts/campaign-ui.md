@@ -2,9 +2,10 @@
 
 ## Shell
 
-- `/otomodelacao`: cabeçalho contém somente logo e CTA de WhatsApp; não há menu nem links
-  institucionais concorrentes. O rodapé contém somente identidade, endereço, informações
-  legais aprovadas e um link contextual do endereço para o Google Maps, sem função de menu.
+- `/otomodelacao`: no mobile, o cabeçalho contém somente logo, nome e registro profissional;
+  o CTA do cabeçalho aparece apenas a partir do desktop. Não há menu nem links institucionais
+  concorrentes. O rodapé contém nome, registro profissional, endereço, informações legais
+  aprovadas e um link contextual do endereço para o Google Maps, sem função de menu.
 - Outras rotas: preservam Header, Footer e comportamento institucional atuais.
 
 ## WhatsApp CTA
@@ -17,7 +18,8 @@
 
 ## Barra persistente
 
-- Mobile, respeita `env(safe-area-inset-bottom)` e reserva espaço equivalente no conteúdo.
+- Mobile, começa oculta quando a visibilidade pode ser observada, respeita
+  `env(safe-area-inset-bottom)` e reserva espaço equivalente no conteúdo.
 - Aparece quando o CTA inicial deixa a área visível e some quando o CTA final entra.
 - Falha/ausência de `IntersectionObserver` mantém uma ação disponível.
 - Não cobre controles da galeria ou conteúdo essencial.

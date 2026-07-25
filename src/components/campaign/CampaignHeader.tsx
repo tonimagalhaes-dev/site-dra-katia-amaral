@@ -8,13 +8,15 @@ export function CampaignHeader() {
           <img src="/images/logo_v2.jpg" alt="" className="h-11 w-11 rounded-full object-cover" />
           <div className="min-w-0">
             <p className="truncate text-sm font-semibold text-slate-900 sm:text-base">Dra. Katia Amaral</p>
-            <p className="text-xs text-slate-600">Enfermeira Esteta</p>
+            <p className="text-xs text-slate-600">COREN-SP 310.193</p>
           </div>
         </div>
-        <WhatsAppCta position="header" className="shrink-0 px-3 text-sm sm:px-5">
-          <img src="/images/wa-ico.png" alt="" className="h-5 w-5" />
-          <span className="hidden min-[370px]:inline">WhatsApp</span>
-        </WhatsAppCta>
+        <div className="hidden md:block">
+          <WhatsAppCta position="header" className="shrink-0 px-5 text-sm">
+            <img src="/images/wa-ico.png" alt="" className="h-5 w-5" />
+            <span>WhatsApp</span>
+          </WhatsAppCta>
+        </div>
       </div>
     </header>
   );

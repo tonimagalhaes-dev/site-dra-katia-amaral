@@ -24,20 +24,24 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-slate-50 border-t border-border mt-20">
+    <footer className="bg-[#fcfbf7] border-t border-[#efe8db]">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Logo e Descrição */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <img
-              src="/images/logo_v2.jpg"
-              alt="Logo Dra. Katia Amaral"
-              className="w-12 h-12 object-contain rounded-full bg-white"
+              src="/images/kedem-logo.webp"
+              alt="Kedem Beauty & Care"
+              width={200}
+              height={252}
+              loading="lazy"
+              decoding="async"
+              className="h-20 w-auto object-contain"
               />
               <div>
-              <h2 className="font-semibold text-lg">Dra. Katia Amaral</h2>
-              <p className="text-xs text-muted-foreground">Saúde e Estética Avançada</p>
+              <h2 className="font-semibold text-lg">Dra. Kátia Amaral</h2>
+              <p className="text-xs text-muted-foreground">Enfermeira esteta · COREN-SP 310.193</p>
               </div>
             </div>
             <p className="text-sm text-muted-foreground">

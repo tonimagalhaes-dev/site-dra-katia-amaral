@@ -3,9 +3,9 @@ import { Routes, Route } from 'react-router-dom';
 import { Toaster } from '@/components/ui/toaster';
 import { CampaignShell } from '@/components/campaign/CampaignShell';
 import { CookieConsentBanner } from '@/components/consent/CookieConsentBanner';
+import Index from './pages/Index';
 
 // --- O Code Splitting continua a funcionar ---
-const Index = lazy(() => import('./pages/Index'));
 const Otomodelacao = lazy(() => import('./pages/Otomodelacao'));
 const Contato = lazy(() => import('./pages/Contato'));
 const Sobre = lazy(() => import('./pages/Sobre'));

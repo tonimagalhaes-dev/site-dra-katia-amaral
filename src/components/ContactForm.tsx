@@ -104,7 +104,7 @@ Procedimento de interesse: ${formData.procedimento}`;
             value={formData.procedimento}
             onValueChange={(value) => setFormData({ ...formData, procedimento: value })}
           >
-            <SelectTrigger>
+            <SelectTrigger id="procedimento">
               <SelectValue placeholder="Selecione um procedimento" />
             </SelectTrigger>
             <SelectContent>

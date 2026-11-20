@@ -1,0 +1,210 @@
+.kedem-home {
+  --kedem-ink: #0e3157;
+  --kedem-gold: #98702c;
+  --kedem-ivory: #fcfbf7;
+  --kedem-sand: #efe8db;
+  --kedem-serif: 'Liberation Serif', Georgia, serif;
+  background: var(--kedem-ivory);
+  color: var(--kedem-ink);
+}
+
+.kedem-wrap {
+  width: min(1180px, calc(100% - 40px));
+  margin-inline: auto;
+}
+
+.kedem-hero {
+  border-bottom: 1px solid var(--kedem-sand);
+  background: linear-gradient(115deg, var(--kedem-ivory) 52%, var(--kedem-sand));
+}
+
+.kedem-hero-grid,
+.kedem-studio-grid,
+.kedem-contact {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(2rem, 5vw, 5rem);
+}
+
+.kedem-hero-grid {
+  padding-block: clamp(2.5rem, 7vw, 6.5rem);
+}
+
+.kedem-label {
+  margin-bottom: 1rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.kedem-home h1,
+.kedem-home h2,
+.kedem-home h3 {
+  font-family: var(--kedem-serif);
+  font-weight: 400;
+  text-wrap: balance;
+}
+
+.kedem-home h1 {
+  max-width: 11ch;
+  font-size: clamp(3.1rem, 6.5vw, 6.25rem);
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+}
+
+.kedem-home h1 em {
+  display: block;
+  color: var(--kedem-gold);
+}
+
+.kedem-home h2 {
+  font-size: clamp(2.1rem, 4vw, 3.6rem);
+  line-height: 1.05;
+}
+
+.kedem-home h3 {
+  font-size: 1.7rem;
+  line-height: 1.15;
+}
+
+.kedem-intro {
+  max-width: 44ch;
+  margin-block: 1.25rem;
+  line-height: 1.7;
+}
+
+.kedem-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1.4rem;
+}
+
+.kedem-button,
+.kedem-text-link {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.kedem-button {
+  justify-content: center;
+  padding: 0.8rem 1.3rem;
+  border-radius: 999px;
+  background: var(--kedem-ink);
+  color: white;
+}
+
+.kedem-button:hover {
+  background: #194773;
+}
+
+.kedem-text-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}
+
+.kedem-home :is(a, button):focus-visible {
+  outline: 2px solid var(--kedem-ink);
+  outline-offset: 4px;
+}
+
+.kedem-hero-photo {
+  position: relative;
+  padding: 0.45rem;
+  border: 1px solid var(--kedem-gold);
+  border-radius: 48% 48% 0.35rem 0.35rem / 55% 55% 0.35rem 0.35rem;
+}
+
+.kedem-hero-photo img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: 54% center;
+  border-radius: inherit;
+}
+
+.kedem-hero-photo figcaption {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.7rem 0.45rem 0.25rem;
+  font-size: 0.8rem;
+}
+
+.kedem-section,
+.kedem-studio {
+  padding-block: clamp(3rem, 7vw, 6rem);
+}
+
+#procedimentos {
+  scroll-margin-top: 6rem;
+}
+
+.kedem-procedures {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.75rem;
+}
+
+.kedem-procedures article {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: clamp(1.2rem, 3vw, 2rem);
+  border: 1px solid var(--kedem-sand);
+  border-top: 2px solid var(--kedem-gold);
+  background: white;
+}
+
+.kedem-procedures p {
+  flex: 1;
+  margin-block: 0.7rem;
+  line-height: 1.6;
+}
+
+.kedem-studio {
+  background: var(--kedem-sand);
+}
+
+.kedem-studio img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+}
+
+.kedem-registration {
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.7;
+}
+
+.kedem-form {
+  min-height: 25rem;
+}
+
+.kedem-form button[type='submit'] {
+  height: auto;
+  min-height: 44px;
+  white-space: normal;
+}
+
+@media (min-width: 800px) {
+  .kedem-hero-grid {
+    grid-template-columns: 0.9fr 1.1fr;
+  }
+
+  .kedem-studio-grid,
+  .kedem-contact {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .kedem-procedures {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

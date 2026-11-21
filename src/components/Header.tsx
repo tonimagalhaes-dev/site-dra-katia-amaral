@@ -2,12 +2,14 @@ import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { Button } from './ui/button';
-import { createWhatsAppUrl } from '@/lib/constants';
+import { appointmentMessage, createWhatsAppUrl, getProcedureForPath } from '@/lib/constants';
 import { useAnalytics } from '@/hooks/useAnalytics';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+  const desktopMenuButton =
+    'kedem-button-outline inline-flex items-center justify-center px-4 text-sm font-medium transition-colors';
   const { trackWhatsAppClick } = useAnalytics();
 
   const menuItems = [
@@ -38,11 +40,11 @@ const Header = () => {
 
   const handleWhatsAppClick = () => {
     trackWhatsAppClick('header');
-    window.open(createWhatsAppUrl('Olá! Gostaria de agendar uma avaliação.'), '_blank');
+    window.open(createWhatsAppUrl(appointmentMessage(getProcedureForPath(location.pathname))), '_blank');
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-[#fcfbf7] border-b border-[#efe8db]">
+    <header className="sticky top-0 z-50 bg-[var(--kedem-ivory)] border-b border-[var(--kedem-sand)]">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-[76px]">
           {/* Logo */}
@@ -55,18 +57,18 @@ const Header = () => {
               className="h-[60px] w-auto object-contain"
             />
             <div>
-              <p className="font-semibold text-base text-[#0e3157]">Dra. Kátia Amaral</p>
+              <p className="font-semibold text-base text-primary">Dra. Kátia Amaral</p>
               <p className="text-xs text-muted-foreground">Estética avançada</p>
             </div>
           </Link>
 
           {/* Desktop Menu */}
-          <nav className="hidden lg:flex items-center space-x-8">
+          <nav className="hidden lg:flex items-center gap-3">
             {menuItems.map((item) => (
               <div key={item.label} className="relative group">
                 {item.isDropdown ? (
                   <>
-                    <button className="text-foreground hover:text-primary transition-colors font-medium">
+                    <button type="button" className={desktopMenuButton}>
                       {item.label}
                     </button>
                     <div className="absolute top-full left-0 w-64 bg-background border border-border rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-200 z-50">
@@ -86,9 +88,8 @@ const Header = () => {
                 ) : (
                   <Link
                     to={item.path}
-                    className={`text-foreground hover:text-primary transition-colors font-medium ${
-                      location.pathname === item.path ? 'text-primary' : ''
-                    }`}
+                    className={desktopMenuButton}
+                    aria-current={location.pathname === item.path ? 'page' : undefined}
                   >
                     {item.label}
                   </Link>
@@ -99,14 +100,14 @@ const Header = () => {
 
           {/* WhatsApp Button */}
           <div className="hidden lg:block">
-            <Button onClick={handleWhatsAppClick} className="rounded-full bg-[#0e3157] hover:bg-[#194773] text-white">
+            <Button onClick={handleWhatsAppClick}>
               Agende sua avaliação
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden p-2"
+            className="kedem-button-outline w-11 lg:hidden inline-flex items-center justify-center"
             aria-label={isMenuOpen ? 'Fechar menu' : 'Abrir menu'}
             aria-expanded={isMenuOpen}
             onClick={() => setIsMenuOpen((open) => !open)}

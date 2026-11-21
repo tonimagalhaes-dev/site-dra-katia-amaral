@@ -5,7 +5,7 @@ import { Input } from './ui/input';
 import { Label } from './ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
 import { useToast } from '@/hooks/use-toast';
-import { createWhatsAppUrl } from '@/lib/constants';
+import { appointmentMessage, createWhatsAppUrl } from '@/lib/constants';
 import { useAnalytics } from '@/hooks/useAnalytics';
 
 
@@ -31,6 +31,8 @@ const ContactForm = ({ defaultProcedure, title = "Agende sua avaliação", descr
     'Bioestimulador de Colágeno',
     'Skinbooster',
     'Preenchimento Labial',
+    'Lobuloplastia',
+    'Pacotes de Harmonização Facial',
     'Outros'
   ];
 
@@ -47,11 +49,13 @@ const ContactForm = ({ defaultProcedure, title = "Agende sua avaliação", descr
     }
 
     // Enviar para WhatsApp
-    const message = `Olá! Gostaria de agendar uma avaliação.
-    
-Nome: ${formData.nome}
-Celular: ${formData.celular}
-Procedimento de interesse: ${formData.procedimento}`;
+    const procedure = formData.procedimento === 'Outros' ? undefined : formData.procedimento;
+    const message = [
+      appointmentMessage(procedure),
+      '',
+      `Nome: ${formData.nome}`,
+      `Celular: ${formData.celular}`,
+    ].join('\n');
 
     const whatsappUrl = createWhatsAppUrl(message);
 
@@ -65,9 +69,9 @@ Procedimento de interesse: ${formData.procedimento}`;
   };
 
   return (
-    <div className="bg-background border border-border rounded-lg p-6 shadow-sm">
+    <div className="bg-white border border-[var(--kedem-sand)] rounded-lg p-5 sm:p-8">
       <div className="mb-6">
-        <h3 className="text-xl font-semibold font-playfair mb-2">{title}</h3>
+        <h3 className="kedem-title text-3xl mb-2">{title}</h3>
         {description && (
           <p className="text-muted-foreground">{description}</p>
         )}
@@ -117,7 +121,7 @@ Procedimento de interesse: ${formData.procedimento}`;
           </Select>
         </div>
 
-        <Button type="submit" className="w-full bg-primary hover:bg-primary/90">
+        <Button type="submit" className="h-auto w-full px-4">
           Enviar mensagem no WhatsApp
         </Button>
       </form>

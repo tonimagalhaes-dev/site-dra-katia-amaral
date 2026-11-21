@@ -8,7 +8,7 @@ import {
 } from '@/components/ui/carousel';
 import { otomodelacaoResults } from '@/data/otomodelacaoResults';
 
-function ResultImage({ src, alt, label, eager }: { src: string; alt: string; label: string; eager: boolean }) {
+function ResultImage({ src, alt, label }: { src: string; alt: string; label: string }) {
   const [failed, setFailed] = useState(false);
   return (
     <figure className="overflow-hidden rounded-xl border bg-slate-100">
@@ -25,7 +25,8 @@ function ResultImage({ src, alt, label, eager }: { src: string; alt: string; lab
             alt={alt}
             width={800}
             height={800}
-            loading={eager ? 'eager' : 'lazy'}
+            loading="lazy"
+            decoding="async"
             onError={() => setFailed(true)}
             className="h-full w-full object-contain"
           />
@@ -65,7 +66,7 @@ export function ResultsCarousel() {
             <CarouselItem key={result.id} aria-label={`${result.patientLabel} de ${otomodelacaoResults.length}`}>
               <div className="grid gap-3 sm:grid-cols-2">
                 {result.views.map((view) => (
-                  <ResultImage key={view.id} {...view} eager={index === 0} />
+                  <ResultImage key={view.id} {...view} />
                 ))}
               </div>
             </CarouselItem>
@@ -77,7 +78,7 @@ export function ResultsCarousel() {
           type="button"
           onClick={() => api?.scrollPrev()}
           disabled={!canPrev}
-          className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-full border bg-white disabled:opacity-40 focus-visible:ring-4"
+          className="kedem-button-outline inline-flex min-w-11 items-center justify-center disabled:opacity-40"
           aria-label="Caso anterior"
         >
           <ChevronLeft aria-hidden="true" />
@@ -91,7 +92,7 @@ export function ResultsCarousel() {
           type="button"
           onClick={() => api?.scrollNext()}
           disabled={!canNext}
-          className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-full border bg-white disabled:opacity-40 focus-visible:ring-4"
+          className="kedem-button-outline inline-flex min-w-11 items-center justify-center disabled:opacity-40"
           aria-label="Próximo caso"
         >
           <ChevronRight aria-hidden="true" />

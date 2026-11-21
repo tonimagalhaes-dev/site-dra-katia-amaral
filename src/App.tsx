@@ -5,8 +5,11 @@ import { CampaignShell } from '@/components/campaign/CampaignShell';
 import { CookieConsentBanner } from '@/components/consent/CookieConsentBanner';
 import Index from './pages/Index';
 
+import Otomodelacao from './pages/Otomodelacao';
+import HarmonizacaoFacial from './pages/HarmonizacaoFacial';
+import HarmonizacaoCorporal from './pages/HarmonizacaoCorporal';
+
 // --- O Code Splitting continua a funcionar ---
-const Otomodelacao = lazy(() => import('./pages/Otomodelacao'));
 const Contato = lazy(() => import('./pages/Contato'));
 const Sobre = lazy(() => import('./pages/Sobre'));
 // ... (restante das importações lazy)
@@ -17,10 +20,6 @@ const EmpetiersMesoterapia = lazy(
   () => import('./pages/EmpetiersMesoterapia'),
 );
 const Escleroterapia = lazy(() => import('./pages/Escleroterapia'));
-const HarmonizacaoCorporal = lazy(
-  () => import('./pages/HarmonizacaoCorporal'),
-);
-const HarmonizacaoFacial = lazy(() => import('./pages/HarmonizacaoFacial'));
 const HarmonizacaoGlutea = lazy(() => import('./pages/HarmonizacaoGlutea'));
 const JatoDePlasma = lazy(() => import('./pages/JatoDePlasma'));
 const Micropigmentacao = lazy(() => import('./pages/Micropigmentacao'));

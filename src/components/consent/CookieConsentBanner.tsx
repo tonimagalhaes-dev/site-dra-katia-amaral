@@ -73,14 +73,14 @@ export function CookieConsentBanner() {
         <button
           type="button"
           onClick={() => choose(acceptAll)}
-          className="min-h-11 rounded-full bg-primary px-4 py-2 font-semibold text-white focus-visible:ring-4"
+          className="kedem-button px-4 py-2 font-semibold"
         >
           Aceitar todos
         </button>
         <button
           type="button"
           onClick={() => choose(rejectAll)}
-          className="min-h-11 rounded-full border border-slate-400 px-4 py-2 font-semibold focus-visible:ring-4"
+          className="kedem-button-outline px-4 py-2 font-semibold"
         >
           Rejeitar não necessários
         </button>
@@ -88,7 +88,7 @@ export function CookieConsentBanner() {
           <button
             type="button"
             onClick={() => choose(preferences)}
-            className="min-h-11 rounded-full border border-primary px-4 py-2 font-semibold text-primary focus-visible:ring-4"
+            className="kedem-button-outline px-4 py-2 font-semibold"
           >
             Salvar escolhas
           </button>
@@ -96,7 +96,7 @@ export function CookieConsentBanner() {
           <button
             type="button"
             onClick={() => setConfiguring(true)}
-            className="min-h-11 rounded-full px-4 py-2 font-semibold text-primary underline focus-visible:ring-4"
+            className="kedem-button-outline px-4 py-2 font-semibold"
           >
             Configurar
           </button>

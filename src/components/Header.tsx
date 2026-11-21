@@ -42,7 +42,7 @@ const Header = () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-[#fcfbf7] border-b border-[#efe8db]">
+    <header className="sticky top-0 z-50 bg-[var(--kedem-ivory)] border-b border-[var(--kedem-sand)]">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-[76px]">
           {/* Logo */}
@@ -55,7 +55,7 @@ const Header = () => {
               className="h-[60px] w-auto object-contain"
             />
             <div>
-              <p className="font-semibold text-base text-[#0e3157]">Dra. Kátia Amaral</p>
+              <p className="font-semibold text-base text-primary">Dra. Kátia Amaral</p>
               <p className="text-xs text-muted-foreground">Estética avançada</p>
             </div>
           </Link>
@@ -66,7 +66,7 @@ const Header = () => {
               <div key={item.label} className="relative group">
                 {item.isDropdown ? (
                   <>
-                    <button className="text-foreground hover:text-primary transition-colors font-medium">
+                    <button className="kedem-button-outline px-4 text-sm font-medium">
                       {item.label}
                     </button>
                     <div className="absolute top-full left-0 w-64 bg-background border border-border rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-200 z-50">
@@ -99,14 +99,14 @@ const Header = () => {
 
           {/* WhatsApp Button */}
           <div className="hidden lg:block">
-            <Button onClick={handleWhatsAppClick} className="rounded-full bg-[#0e3157] hover:bg-[#194773] text-white">
+            <Button onClick={handleWhatsAppClick}>
               Agende sua avaliação
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden p-2"
+            className="kedem-button-outline w-11 lg:hidden inline-flex items-center justify-center"
             aria-label={isMenuOpen ? 'Fechar menu' : 'Abrir menu'}
             aria-expanded={isMenuOpen}
             onClick={() => setIsMenuOpen((open) => !open)}

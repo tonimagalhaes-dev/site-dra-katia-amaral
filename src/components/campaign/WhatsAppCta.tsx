@@ -24,7 +24,7 @@ export function WhatsAppCta({ position, children, className, id }: WhatsAppCtaPr
       onClick={handleClick}
       data-cta-position={position}
       className={cn(
-        'inline-flex min-h-12 min-w-11 items-center justify-center gap-2 rounded-full bg-green-600 px-5 py-3 text-center font-bold leading-tight text-white shadow-lg transition-colors hover:bg-green-700 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-green-300',
+        'kedem-button inline-flex min-h-12 min-w-11 items-center justify-center gap-2 px-5 py-3 text-center font-bold leading-tight transition-colors',
         className,
       )}
     >

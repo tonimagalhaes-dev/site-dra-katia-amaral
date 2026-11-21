@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { MessageCircle } from 'lucide-react';
 import { WhatsAppCta } from './WhatsAppCta';
 
 export function CampaignHeader() {
@@ -46,13 +47,13 @@ export function CampaignHeader() {
 
   const compactCta = (
     <WhatsAppCta position="header" className="min-h-11 shrink-0 px-3 py-2 text-sm">
-      <img src="/images/wa-ico.png" alt="" className="h-5 w-5" />
+      <MessageCircle aria-hidden="true" className="h-5 w-5" />
       <span>WhatsApp</span>
     </WhatsAppCta>
   );
 
   return (
-    <header className="sticky top-0 z-50 border-b bg-white/95 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b bg-[var(--kedem-ivory)] border-[var(--kedem-sand)]">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-3 px-4">
         <div className="flex min-w-0 items-center gap-2" aria-label="Dra. Katia Amaral">
           <img src="/images/kedem-logo.webp" alt="Kedem Beauty & Care" width={200} height={252} className="h-11 w-9 shrink-0 object-contain" />

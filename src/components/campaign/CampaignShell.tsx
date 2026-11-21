@@ -15,7 +15,7 @@ export function CampaignShell({ children }: { children: ReactNode }) {
       {campaign ? <CampaignHeader /> : <Header />}
       <main className="flex-grow">{children}</main>
       {campaign ? (
-        <footer className="border-t bg-slate-50 px-4 py-8 text-center text-sm text-slate-600">
+        <footer className="border-t bg-[var(--kedem-ivory)] px-4 py-8 text-center text-sm text-slate-600">
           <p className="font-semibold text-slate-800">Dra. Katia Amaral</p>
           <p className="mt-1">COREN-SP 310.193</p>
           <a

@@ -24,7 +24,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-[#fcfbf7] border-t border-[#efe8db]">
+    <footer className="bg-[var(--kedem-ivory)] border-t border-[var(--kedem-sand)]">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Logo e Descrição */}
@@ -117,17 +117,17 @@ const Footer = () => {
 
               <button 
                 onClick={handleWhatsAppClick}
-                className="flex items-center space-x-3 text-sm text-muted-foreground hover:text-primary transition-colors"
+                className="kedem-button-outline inline-flex items-center gap-2 px-3 text-sm transition-colors"
               >
-                <MessageCircle className="w-4 h-4 text-green-500" />
+                <MessageCircle className="w-4 h-4 text-primary" />
                 <span>(11) 94224-2893</span>
               </button>
               
               <button 
                 onClick={handleInstagramClick}
-                className="flex items-center space-x-3 text-sm text-muted-foreground hover:text-primary transition-colors"
+                className="kedem-button-outline inline-flex items-center gap-2 px-3 text-sm transition-colors"
               >
-                <Instagram className="w-4 h-4 text-pink-500" />
+                <Instagram className="w-4 h-4 text-primary" />
                 <span>@drakatia.amaral</span>
               </button>
             </div>

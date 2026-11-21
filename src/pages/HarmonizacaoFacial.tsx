@@ -6,7 +6,7 @@ const proceduresHF = [
       title: 'Bioestimulador de Colágeno',
       description: 'Rejuvenescimento natural e duradouro da pele',
       icon: '🧴',
-      link: '/bioestimulador-colageno',
+      link: '/bioestimulador-de-colageno',
       image: '/images/bioestimulador1.webp'
     },
     {
@@ -20,7 +20,7 @@ const proceduresHF = [
       title: 'Micro Pigmentação',
       description: 'Realce a beleza dos seus traços com a micro pigmentação',
       icon: '💋',
-      link: '/micro-pigmentacao',
+      link: '/micropigmentacao',
       image: '/images/micro2.webp'
     },
     {

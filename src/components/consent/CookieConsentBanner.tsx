@@ -31,21 +31,21 @@ export function CookieConsentBanner() {
       role="dialog"
       aria-modal="true"
       aria-labelledby="cookie-consent-title"
-      className="fixed inset-x-3 bottom-3 z-[70] mx-auto max-w-3xl rounded-2xl border border-slate-200 bg-white p-5 text-slate-800 shadow-2xl sm:inset-x-6"
+      className="fixed inset-x-3 bottom-3 z-[70] mx-auto max-w-3xl rounded-2xl border border-[var(--kedem-sand)] bg-white p-5 text-primary shadow-2xl sm:inset-x-6"
     >
       <h2 id="cookie-consent-title" className="text-lg font-bold">
         Sua privacidade importa
       </h2>
-      <p className="mt-2 text-sm leading-relaxed text-slate-600">
+      <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
         Usamos cookies opcionais para entender o uso do site e medir campanhas. Cookies necessários permanecem ativos. Você pode aceitar, rejeitar ou escolher as categorias.
       </p>
 
       {configuring && (
-        <div className="mt-4 space-y-3 rounded-xl bg-slate-50 p-4">
+        <div className="mt-4 space-y-3 rounded-xl bg-background p-4">
           <label className="flex min-h-11 items-center justify-between gap-4">
             <span>
               <strong className="block text-sm">Análise</strong>
-              <span className="text-xs text-slate-600">Mede visitas e uso do site.</span>
+              <span className="text-xs text-muted-foreground">Mede visitas e uso do site.</span>
             </span>
             <input
               type="checkbox"
@@ -57,7 +57,7 @@ export function CookieConsentBanner() {
           <label className="flex min-h-11 items-center justify-between gap-4">
             <span>
               <strong className="block text-sm">Publicidade</strong>
-              <span className="text-xs text-slate-600">Mede campanhas no Google e na Meta.</span>
+              <span className="text-xs text-muted-foreground">Mede campanhas no Google e na Meta.</span>
             </span>
             <input
               type="checkbox"
@@ -73,14 +73,14 @@ export function CookieConsentBanner() {
         <button
           type="button"
           onClick={() => choose(acceptAll)}
-          className="min-h-11 rounded-full bg-primary px-4 py-2 font-semibold text-white focus-visible:ring-4"
+          className="kedem-button px-4 py-2 font-semibold"
         >
           Aceitar todos
         </button>
         <button
           type="button"
           onClick={() => choose(rejectAll)}
-          className="min-h-11 rounded-full border border-slate-400 px-4 py-2 font-semibold focus-visible:ring-4"
+          className="kedem-button-outline px-4 py-2 font-semibold"
         >
           Rejeitar não necessários
         </button>
@@ -88,7 +88,7 @@ export function CookieConsentBanner() {
           <button
             type="button"
             onClick={() => choose(preferences)}
-            className="min-h-11 rounded-full border border-primary px-4 py-2 font-semibold text-primary focus-visible:ring-4"
+            className="kedem-button-outline px-4 py-2 font-semibold"
           >
             Salvar escolhas
           </button>
@@ -96,7 +96,7 @@ export function CookieConsentBanner() {
           <button
             type="button"
             onClick={() => setConfiguring(true)}
-            className="min-h-11 rounded-full px-4 py-2 font-semibold text-primary underline focus-visible:ring-4"
+            className="kedem-button-outline px-4 py-2 font-semibold"
           >
             Configurar
           </button>

@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { lazy, Suspense, useEffect } from 'react';
 import { Award, Clock, ShieldCheck } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import {
@@ -7,8 +7,13 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
-import { ResultsCarousel } from '@/components/campaign/ResultsCarousel';
 import { WhatsAppCta } from '@/components/campaign/WhatsAppCta';
+
+const ResultsCarousel = lazy(() =>
+  import('@/components/campaign/ResultsCarousel').then((module) => ({
+    default: module.ResultsCarousel,
+  }))
+);
 
 const benefits = [
   {
@@ -54,6 +59,12 @@ const frequentlyAskedQuestions = [
       'A avaliação permite conhecer o histórico do paciente, entender suas queixas e expectativas e analisar as características individuais. Com essas informações, a profissional pode indicar e planejar o tratamento de forma personalizada.',
   },
   {
+    value: 'valores',
+    question: 'Como posso consultar os valores e as formas de pagamento?',
+    answer:
+      'Fale com a equipe pelo WhatsApp para saber o valor da avaliação e conhecer as formas de pagamento disponíveis. A avaliação ajuda a definir o plano indicado para o seu caso.',
+  },
+  {
     value: 'internacao',
     question: 'O paciente precisa ficar internado para realizar a otomodelação?',
     answer:
@@ -75,76 +86,73 @@ export default function OtomodelacaoPage() {
     <>
       <Helmet>
         <title>Otomodelação | Dra. Kátia Amaral</title>
-        <link rel="preload" as="image" href="/images/otomodelacao5.webp" media="(max-width: 768px)" />
-        <link rel="preload" as="image" href="/images/otomodelacao4.webp" media="(min-width: 769px)" />
         <meta
           name="description"
-          content="Conheça a otomodelação com a Dra. Kátia Amaral e converse pelo WhatsApp para entender indicação, cuidados e avaliação."
+          content="Conheça a otomodelação, tire dúvidas sobre a indicação e consulte valores e formas de pagamento com a equipe da Dra. Kátia Amaral."
         />
       </Helmet>
 
-      <section className="relative isolate flex min-h-[calc(100svh-4rem)] items-center overflow-hidden bg-slate-950 text-white">
-        <picture className="absolute inset-0 -z-20 h-full w-full">
-          <source media="(max-width: 768px)" srcSet="/images/otomodelacao5.webp" />
-          <source media="(min-width: 769px)" srcSet="/images/otomodelacao4.webp" />
-          <img
-            src="/images/otomodelacao5.webp"
-            alt=""
-            width="1200"
-            height="900"
-            fetchPriority="high"
-            className="h-full w-full object-cover"
-          />
-        </picture>
-        <div className="absolute inset-0 -z-10 bg-slate-950/65" />
-        <div className="mx-auto w-full max-w-6xl px-4 py-12 sm:py-16">
-          <div className="max-w-xl">
-            <p className="mb-3 text-sm font-bold uppercase tracking-wider text-green-300">
-              Otomodelação em São Paulo
-            </p>
-            <h1 className="text-3xl font-bold leading-tight sm:text-4xl md:text-5xl">
-              Entenda se a otomodelação faz sentido para você
+      <section className="kedem-hero">
+        <div className="kedem-wrap grid items-center gap-8 py-10 md:grid-cols-2 md:gap-14 md:py-20">
+          <div>
+            <p className="kedem-label">Otomodelação em São Paulo</p>
+            <h1 className="kedem-title text-4xl leading-tight sm:text-5xl lg:text-6xl">
+              Otomodelação para quem quer se sentir mais à vontade
             </h1>
-            <p className="mt-4 text-lg text-slate-100">
-              Converse sobre objetivos, indicação, cuidados e expectativas em uma avaliação individual.
+            <p className="kedem-intro">
+              Comentários sobre as orelhas podem afetar a autoestima. Se mudar a aparência delas é um desejo seu, a avaliação ajuda a entender o que a otomodelação pode oferecer para o seu caso.
             </p>
-            <p className="mt-4 font-semibold">
-              Dra. Kátia Amaral · Enfermeira Esteta · COREN-SP 310.193
-            </p>
+            <p className="font-semibold">Dra. Kátia Amaral · Enfermeira Esteta · COREN-SP 310.193</p>
             <WhatsAppCta
               id="hero-whatsapp-cta"
               position="hero"
-              className="mt-7 w-full max-w-md whitespace-normal sm:w-auto"
+              className="mt-5 w-full max-w-md sm:w-auto"
             >
-              Conversar sobre uma avaliação
+              Quero avaliar meu caso
             </WhatsAppCta>
-            <p className="mt-3 text-sm text-slate-200">Atendimento inicial pelo WhatsApp.</p>
+            <p className="mt-3 text-sm">Converse pelo WhatsApp sobre indicação, valores e formas de pagamento.</p>
           </div>
+          <figure className="kedem-image-frame">
+            <picture className="block overflow-hidden rounded-[inherit]">
+              <source media="(max-width: 768px)" srcSet="/images/otomodelacao5.webp" />
+              <source media="(min-width: 769px)" srcSet="/images/otomodelacao4.webp" />
+              <img
+                src="/images/otomodelacao5.webp"
+                alt=""
+                width="1200"
+                height="900"
+                fetchPriority="high"
+                className="aspect-[4/3] w-full object-cover"
+              />
+            </picture>
+          </figure>
         </div>
       </section>
 
       <section id="resultados" className="bg-white px-4 py-14 sm:py-20">
         <div className="mx-auto max-w-6xl">
-          <h2 className="text-center text-3xl font-bold text-slate-900">Resultados em diferentes casos</h2>
-          <p className="mx-auto mb-8 mt-3 max-w-2xl text-center text-slate-600">
+          <h2 className="text-center kedem-title text-4xl">Resultados em diferentes casos</h2>
+          <p className="mx-auto mb-8 mt-3 max-w-2xl text-center text-muted-foreground">
             Veja comparativos agrupados por paciente. A avaliação considera características e objetivos individuais.
           </p>
-          <ResultsCarousel />
+          <Suspense fallback={<div className="mx-auto aspect-[1/2] max-w-4xl sm:aspect-[2/1]" />}>
+            <ResultsCarousel />
+          </Suspense>
           <div className="mt-8 text-center">
-            <WhatsAppCta position="results">Tirar dúvidas sobre o procedimento</WhatsAppCta>
+            <WhatsAppCta position="results">Quero entender minhas opções</WhatsAppCta>
           </div>
         </div>
       </section>
 
-      <section className="bg-slate-50 px-4 py-14 sm:py-20">
+      <section className="bg-[var(--kedem-sand)] px-4 py-14 sm:py-20">
         <div className="mx-auto max-w-6xl">
-          <h2 className="text-center text-3xl font-bold text-slate-900">Uma conversa clara antes de decidir</h2>
+          <h2 className="text-center kedem-title text-4xl">Uma conversa clara antes de decidir</h2>
           <div className="mt-8 grid gap-5 md:grid-cols-3">
             {benefits.map(({ icon: Icon, title, text }) => (
               <article key={title} className="rounded-2xl bg-white p-6 shadow-sm">
                 <Icon className="h-10 w-10 text-primary" aria-hidden="true" />
                 <h3 className="mt-4 text-xl font-semibold">{title}</h3>
-                <p className="mt-2 text-slate-600">{text}</p>
+                <p className="mt-2 text-muted-foreground">{text}</p>
               </article>
             ))}
           </div>
@@ -162,23 +170,23 @@ export default function OtomodelacaoPage() {
             className="mx-auto aspect-square rounded-full object-cover shadow-xl"
           />
           <div>
-            <h2 className="text-3xl font-bold text-slate-900">Dra. Kátia Amaral</h2>
+            <h2 className="kedem-title text-4xl">Dra. Kátia Amaral</h2>
             <p className="mt-2 font-semibold text-primary">Enfermeira Esteta · COREN-SP 310.193</p>
-            <p className="mt-4 text-slate-600">
+            <p className="mt-4 text-muted-foreground">
               Atendimento na Vila Mariana, em São Paulo, com orientação individual sobre o procedimento e seus cuidados.
             </p>
           </div>
         </div>
       </section>
 
-      <section className="bg-slate-50 px-4 py-14 sm:py-20">
+      <section className="bg-[var(--kedem-sand)] px-4 py-14 sm:py-20">
         <div className="mx-auto max-w-3xl">
-          <h2 className="mb-8 text-center text-3xl font-bold">Perguntas frequentes</h2>
+          <h2 className="mb-8 text-center kedem-title text-4xl">Perguntas frequentes</h2>
           <Accordion type="single" collapsible>
             {frequentlyAskedQuestions.map(({ value, question, answer }) => (
               <AccordionItem key={value} value={value}>
                 <AccordionTrigger>{question}</AccordionTrigger>
-                <AccordionContent className="text-base leading-relaxed text-slate-600">
+                <AccordionContent className="text-base leading-relaxed text-muted-foreground">
                   {answer}
                 </AccordionContent>
               </AccordionItem>
@@ -187,12 +195,12 @@ export default function OtomodelacaoPage() {
         </div>
       </section>
 
-      <section id="cta-final" className="bg-primary px-4 py-16 text-center text-white">
+      <section id="cta-final" className="kedem-hero px-4 py-16 text-center">
         <div className="mx-auto max-w-2xl">
-          <h2 className="text-3xl font-bold">Quer entender o seu caso?</h2>
-          <p className="mt-3 text-lg text-blue-100">Envie uma mensagem e tire suas dúvidas sobre avaliação e próximos passos.</p>
+          <h2 className="kedem-title text-4xl">Dê o primeiro passo no seu tempo</h2>
+          <p className="mt-3 text-lg text-primary">Conte à nossa equipe o que você gostaria de mudar. Pergunte sobre a avaliação, os valores e as opções de pagamento para decidir com calma.</p>
           <WhatsAppCta position="final" className="mt-7 w-full sm:w-auto">
-            Conversar com a Dra. Kátia
+            Consultar valores e agendar
           </WhatsAppCta>
         </div>
       </section>

@@ -22,8 +22,7 @@ const Ozonioterapia = () => {
       benefits={benefits}
       differentials={differentials}
       procedureName="Ozonioterapia"
-      heroImage="/images/ozonioterapia2 - Editado.webp"
-      benefitImage="/images/Katia - 1 - Editado - Editado.webp"
+      heroImage="/images/kedem-sala.webp"
     />
   );
 };

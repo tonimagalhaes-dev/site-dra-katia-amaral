@@ -28,7 +28,7 @@ const HarmonizacaoGlutea = () => {
       benefits={benefits}
       indications={indications}
       differentials={differentials}
-      procedureName="HarmonizacaoGlutea"
+      procedureName="Harmonização Glútea"
       hideHero={false}
       heroImage="/images/gluteo2.webp"
       benefitImage="/images/gluteo1.webp"

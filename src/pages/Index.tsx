@@ -1,11 +1,8 @@
-import { lazy, Suspense, useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowDown, ArrowRight, MapPin } from 'lucide-react';
-import { createWhatsAppUrl } from '@/lib/constants';
+import { appointmentMessage, createWhatsAppUrl } from '@/lib/constants';
 import { useAnalytics } from '@/hooks/useAnalytics';
 import './home.css';
-
-const ContactForm = lazy(() => import('@/components/ContactForm'));
 
 const procedures = [
   {
@@ -25,42 +22,9 @@ const procedures = [
   },
 ];
 
-function AppointmentForm() {
-  const container = useRef<HTMLDivElement>(null);
-  const [isNearViewport, setIsNearViewport] = useState(
-    () => typeof IntersectionObserver === 'undefined'
-  );
-
-  useEffect(() => {
-    if (isNearViewport || !container.current) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) setIsNearViewport(true);
-      },
-      { rootMargin: '400px' }
-    );
-    observer.observe(container.current);
-    return () => observer.disconnect();
-  }, [isNearViewport]);
-
-  return (
-    <div ref={container} className="kedem-form">
-      {isNearViewport && (
-        <Suspense fallback={<p role="status">Carregando formulário…</p>}>
-          <ContactForm
-            title="Deixe seu contato"
-            description="Ao enviar, você continua o atendimento no WhatsApp."
-          />
-        </Suspense>
-      )}
-    </div>
-  );
-}
-
 export default function Index() {
   const { trackWhatsAppClick } = useAnalytics();
-  const appointmentUrl = createWhatsAppUrl('Olá! Gostaria de agendar uma avaliação.');
+  const appointmentUrl = createWhatsAppUrl(appointmentMessage());
 
   return (
     <div className="kedem-home">
@@ -156,24 +120,28 @@ export default function Index() {
         </div>
       </section>
 
-      <section className="kedem-section kedem-wrap kedem-contact" aria-labelledby="contact-title">
+      <section className="kedem-section kedem-wrap" aria-labelledby="contact-title">
         <div>
           <p className="kedem-label">Agendamento</p>
           <h2 id="contact-title">Vamos conversar?</h2>
           <p className="kedem-intro">
-            Agende sua avaliação pelo WhatsApp ou deixe seu contato pelo formulário.
+            Agende sua avaliação pelo WhatsApp ou consulte os canais de atendimento.
           </p>
-          <a
-            className="kedem-button"
-            href={appointmentUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => trackWhatsAppClick('index')}
-          >
-            Conversar no WhatsApp <ArrowRight size={18} aria-hidden="true" />
-          </a>
+          <div className="kedem-actions">
+            <a
+              className="kedem-button"
+              href={appointmentUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackWhatsAppClick('index')}
+            >
+              Conversar no WhatsApp <ArrowRight size={18} aria-hidden="true" />
+            </a>
+            <Link className="kedem-button-outline" to="/contato">
+              Ver opções de contato
+            </Link>
+          </div>
         </div>
-        <AppointmentForm />
       </section>
     </div>
   );

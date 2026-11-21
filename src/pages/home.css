@@ -1,9 +1,4 @@
 .kedem-home {
-  --kedem-ink: #0e3157;
-  --kedem-gold: #98702c;
-  --kedem-ivory: #fcfbf7;
-  --kedem-sand: #efe8db;
-  --kedem-serif: 'Liberation Serif', Georgia, serif;
   background: var(--kedem-ivory);
   color: var(--kedem-ink);
 }
@@ -19,8 +14,7 @@
 }
 
 .kedem-hero-grid,
-.kedem-studio-grid,
-.kedem-contact {
+.kedem-studio-grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   align-items: center;
@@ -92,16 +86,15 @@
   font-weight: 600;
 }
 
-.kedem-button {
+.kedem-home .kedem-button,
+.kedem-home .kedem-button-outline {
+  display: inline-flex;
+  align-items: center;
   justify-content: center;
+  gap: 0.65rem;
   padding: 0.8rem 1.3rem;
-  border-radius: 999px;
-  background: var(--kedem-ink);
-  color: white;
-}
-
-.kedem-button:hover {
-  background: #194773;
+  font-size: 0.9rem;
+  font-weight: 600;
 }
 
 .kedem-text-link:hover {
@@ -184,23 +177,12 @@
   line-height: 1.7;
 }
 
-.kedem-form {
-  min-height: 25rem;
-}
-
-.kedem-form button[type='submit'] {
-  height: auto;
-  min-height: 44px;
-  white-space: normal;
-}
-
 @media (min-width: 800px) {
   .kedem-hero-grid {
     grid-template-columns: 0.9fr 1.1fr;
   }
 
-  .kedem-studio-grid,
-  .kedem-contact {
+  .kedem-studio-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 

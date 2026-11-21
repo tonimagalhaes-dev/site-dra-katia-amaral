@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, MessageCircle } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { Button } from './ui/button';
 import { createWhatsAppUrl } from '@/lib/constants';
 import { useAnalytics } from '@/hooks/useAnalytics';
@@ -42,19 +42,21 @@ const Header = () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border">
+    <header className="sticky top-0 z-50 bg-[#fcfbf7] border-b border-[#efe8db]">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-[76px]">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3">
             <img 
-              src="/images/logo_v2.jpg" 
-              alt="Logo Dra. Katia Amaral"
-              className="w-12 h-12 object-contain rounded-full bg-white"
+              src="/images/kedem-logo.webp"
+              alt="Kedem Beauty & Care"
+              width={200}
+              height={252}
+              className="h-[60px] w-auto object-contain"
             />
             <div>
-              <h1 className="font-semibold text-lg text-foreground">Dra. Katia Amaral</h1>
-              <h2 className="text-xs text-muted-foreground">Estética Avançada</h2>
+              <p className="font-semibold text-base text-[#0e3157]">Dra. Kátia Amaral</p>
+              <p className="text-xs text-muted-foreground">Estética avançada</p>
             </div>
           </Link>
 
@@ -67,7 +69,7 @@ const Header = () => {
                     <button className="text-foreground hover:text-primary transition-colors font-medium">
                       {item.label}
                     </button>
-                    <div className="absolute top-full left-0 mt-2 w-64 bg-background border border-border rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                    <div className="absolute top-full left-0 w-64 bg-background border border-border rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-200 z-50">
                       <div className="p-2">
                         {procedureItems.map((procedure) => (
                           <Link
@@ -97,16 +99,17 @@ const Header = () => {
 
           {/* WhatsApp Button */}
           <div className="hidden lg:block">
-            <Button onClick={handleWhatsAppClick} className="bg-green-500 hover:bg-green-600 text-white">
-              <img src="/images/wa-ico.png" alt="WhatsApp" className="w-6 h-6" />
-              Fale Conosco
+            <Button onClick={handleWhatsAppClick} className="rounded-full bg-[#0e3157] hover:bg-[#194773] text-white">
+              Agende sua avaliação
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
           <button
             className="lg:hidden p-2"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label={isMenuOpen ? 'Fechar menu' : 'Abrir menu'}
+            aria-expanded={isMenuOpen}
+            onClick={() => setIsMenuOpen((open) => !open)}
           >
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>

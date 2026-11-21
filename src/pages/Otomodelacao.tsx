@@ -132,7 +132,7 @@ export default function OtomodelacaoPage() {
       <section id="resultados" className="bg-white px-4 py-14 sm:py-20">
         <div className="mx-auto max-w-6xl">
           <h2 className="text-center kedem-title text-4xl">Resultados em diferentes casos</h2>
-          <p className="mx-auto mb-8 mt-3 max-w-2xl text-center text-slate-600">
+          <p className="mx-auto mb-8 mt-3 max-w-2xl text-center text-muted-foreground">
             Veja comparativos agrupados por paciente. A avaliação considera características e objetivos individuais.
           </p>
           <Suspense fallback={<div className="mx-auto aspect-[1/2] max-w-4xl sm:aspect-[2/1]" />}>
@@ -152,7 +152,7 @@ export default function OtomodelacaoPage() {
               <article key={title} className="rounded-2xl bg-white p-6 shadow-sm">
                 <Icon className="h-10 w-10 text-primary" aria-hidden="true" />
                 <h3 className="mt-4 text-xl font-semibold">{title}</h3>
-                <p className="mt-2 text-slate-600">{text}</p>
+                <p className="mt-2 text-muted-foreground">{text}</p>
               </article>
             ))}
           </div>
@@ -172,7 +172,7 @@ export default function OtomodelacaoPage() {
           <div>
             <h2 className="kedem-title text-4xl">Dra. Kátia Amaral</h2>
             <p className="mt-2 font-semibold text-primary">Enfermeira Esteta · COREN-SP 310.193</p>
-            <p className="mt-4 text-slate-600">
+            <p className="mt-4 text-muted-foreground">
               Atendimento na Vila Mariana, em São Paulo, com orientação individual sobre o procedimento e seus cuidados.
             </p>
           </div>
@@ -186,7 +186,7 @@ export default function OtomodelacaoPage() {
             {frequentlyAskedQuestions.map(({ value, question, answer }) => (
               <AccordionItem key={value} value={value}>
                 <AccordionTrigger>{question}</AccordionTrigger>
-                <AccordionContent className="text-base leading-relaxed text-slate-600">
+                <AccordionContent className="text-base leading-relaxed text-muted-foreground">
                   {answer}
                 </AccordionContent>
               </AccordionItem>

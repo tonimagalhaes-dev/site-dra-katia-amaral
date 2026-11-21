@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { Button } from './ui/button';
-import { createWhatsAppUrl } from '@/lib/constants';
+import { appointmentMessage, createWhatsAppUrl, getProcedureForPath } from '@/lib/constants';
 import { useAnalytics } from '@/hooks/useAnalytics';
 
 const Header = () => {
@@ -40,7 +40,7 @@ const Header = () => {
 
   const handleWhatsAppClick = () => {
     trackWhatsAppClick('header');
-    window.open(createWhatsAppUrl('Olá! Gostaria de agendar uma avaliação.'), '_blank');
+    window.open(createWhatsAppUrl(appointmentMessage(getProcedureForPath(location.pathname))), '_blank');
   };
 
   return (

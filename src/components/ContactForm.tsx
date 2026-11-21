@@ -5,7 +5,7 @@ import { Input } from './ui/input';
 import { Label } from './ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
 import { useToast } from '@/hooks/use-toast';
-import { createWhatsAppUrl } from '@/lib/constants';
+import { appointmentMessage, createWhatsAppUrl } from '@/lib/constants';
 import { useAnalytics } from '@/hooks/useAnalytics';
 
 
@@ -31,6 +31,8 @@ const ContactForm = ({ defaultProcedure, title = "Agende sua avaliação", descr
     'Bioestimulador de Colágeno',
     'Skinbooster',
     'Preenchimento Labial',
+    'Lobuloplastia',
+    'Pacotes de Harmonização Facial',
     'Outros'
   ];
 
@@ -47,11 +49,13 @@ const ContactForm = ({ defaultProcedure, title = "Agende sua avaliação", descr
     }
 
     // Enviar para WhatsApp
-    const message = `Olá! Gostaria de agendar uma avaliação.
-    
-Nome: ${formData.nome}
-Celular: ${formData.celular}
-Procedimento de interesse: ${formData.procedimento}`;
+    const procedure = formData.procedimento === 'Outros' ? undefined : formData.procedimento;
+    const message = [
+      appointmentMessage(procedure),
+      '',
+      `Nome: ${formData.nome}`,
+      `Celular: ${formData.celular}`,
+    ].join('\n');
 
     const whatsappUrl = createWhatsAppUrl(message);
 

@@ -23,5 +23,5 @@ test('otomodelação uses the site navigation and keeps its mobile CTAs usable',
   await expect(heroCta).toBeInViewport();
   await finalCta.scrollIntoViewIfNeeded();
   await expect(finalCta).toBeInViewport();
-  await expect(finalCta).toHaveAttribute('href', /wa\.me.*valores/);
+  await expect(finalCta).toHaveAttribute('href', /wa\.me.*agendar/);
 });

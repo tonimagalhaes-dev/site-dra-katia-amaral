@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { ArrowDown, ArrowRight, MapPin } from 'lucide-react';
-import { createWhatsAppUrl } from '@/lib/constants';
+import { appointmentMessage, createWhatsAppUrl } from '@/lib/constants';
 import { useAnalytics } from '@/hooks/useAnalytics';
 import './home.css';
 
@@ -24,7 +24,7 @@ const procedures = [
 
 export default function Index() {
   const { trackWhatsAppClick } = useAnalytics();
-  const appointmentUrl = createWhatsAppUrl('Olá! Gostaria de agendar uma avaliação.');
+  const appointmentUrl = createWhatsAppUrl(appointmentMessage());
 
   return (
     <div className="kedem-home">

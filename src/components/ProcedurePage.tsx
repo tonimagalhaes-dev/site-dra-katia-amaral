@@ -4,7 +4,7 @@ import { CheckCircle, MessageCircle } from 'lucide-react';
 import { Button } from './ui/button';
 import { Card, CardContent } from './ui/card';
 import { useAnalytics } from '@/hooks/useAnalytics';
-import { createWhatsAppUrl } from '@/lib/constants';
+import { appointmentMessage, createWhatsAppUrl } from '@/lib/constants';
 
 
 interface ProcedurePageProps {
@@ -47,7 +47,7 @@ const ProcedurePage = ({
   
   const handleWhatsAppClick = () => {
     trackWhatsAppClick('procedure-page', procedureName);
-    const message = `Olá! Gostaria de saber mais sobre ${procedureName} e agendar uma avaliação.`;
+    const message = appointmentMessage(procedureName);
     window.open(createWhatsAppUrl(message), '_blank');
   };
 

@@ -4,6 +4,14 @@
 
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. */
 
+@font-face {
+  font-family: 'Open Sans';
+  src: url('/fonts/open-sans-latin.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 300 800;
+  font-display: optional;
+}
+
 @layer base {
   :root {
     --kedem-ink: #0e3157;
@@ -11,6 +19,8 @@
     --kedem-button-gold: #e6c88e;
     --kedem-ivory: #fcfbf7;
     --kedem-sand: #efe8db;
+    --kedem-blue: #0786b1;
+    --kedem-sans: 'Open Sans', Arial, sans-serif;
     --kedem-serif: 'Liberation Serif', Georgia, serif;
 
     --background: 48 45% 98%;
@@ -29,7 +39,7 @@
     --secondary-foreground: 222.2 47.4% 11.2%;
 
     --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted-foreground: 211 28% 35%;
 
     --accent: 39 38% 90%;
     --accent-foreground: 222.2 47.4% 11.2%;
@@ -106,6 +116,7 @@
 
   body {
     @apply bg-background text-foreground;
+    font-family: var(--kedem-sans);
     overflow-x: hidden;
   }
 }
@@ -148,7 +159,7 @@
 }
 
 :is(.kedem-button, .kedem-button-outline):focus-visible {
-  outline: 2px solid var(--kedem-gold);
+  outline: 2px solid var(--kedem-blue);
   outline-offset: 3px;
 }
 

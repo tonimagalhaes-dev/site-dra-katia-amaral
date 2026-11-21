@@ -11,11 +11,11 @@ import { otomodelacaoResults } from '@/data/otomodelacaoResults';
 function ResultImage({ src, alt, label }: { src: string; alt: string; label: string }) {
   const [failed, setFailed] = useState(false);
   return (
-    <figure className="overflow-hidden rounded-xl border bg-slate-100">
-      <figcaption className="px-3 py-2 text-center text-sm font-semibold text-slate-700">{label}</figcaption>
+    <figure className="overflow-hidden rounded-xl border bg-[var(--kedem-sand)]">
+      <figcaption className="px-3 py-2 text-center text-sm font-semibold text-primary">{label}</figcaption>
       <div className="aspect-square">
         {failed ? (
-          <div className="flex h-full flex-col items-center justify-center gap-2 p-6 text-center text-slate-600">
+          <div className="flex h-full flex-col items-center justify-center gap-2 p-6 text-center text-muted-foreground">
             <ImageOff aria-hidden="true" />
             <span>Imagem indisponível</span>
           </div>
@@ -85,7 +85,7 @@ export function ResultsCarousel() {
         </button>
         <div className="flex max-w-48 gap-1.5 overflow-hidden" aria-hidden="true">
           {otomodelacaoResults.map((result, index) => (
-            <span key={result.id} className={`h-2 w-2 rounded-full ${index === active ? 'bg-primary' : 'bg-slate-300'}`} />
+            <span key={result.id} className={`h-2 w-2 rounded-full ${index === active ? 'bg-primary' : 'bg-[var(--kedem-sand)]'}`} />
           ))}
         </div>
         <button
@@ -98,7 +98,7 @@ export function ResultsCarousel() {
           <ChevronRight aria-hidden="true" />
         </button>
       </div>
-      <p className="mt-5 text-center text-sm text-slate-600">
+      <p className="mt-5 text-center text-sm text-muted-foreground">
         Imagens de casos individuais. Os resultados podem variar de pessoa para pessoa.
       </p>
     </div>

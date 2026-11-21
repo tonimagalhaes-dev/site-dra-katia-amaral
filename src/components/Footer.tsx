@@ -1,14 +1,22 @@
-import { Link } from 'react-router-dom';
+import type { MouseEvent } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { MapPin, Instagram, MessageCircle } from 'lucide-react';
-import { createWhatsAppUrl } from '@/lib/constants';
+import { appointmentMessage, createWhatsAppUrl, getProcedureForPath } from '@/lib/constants';
 import { useAnalytics } from '@/hooks/useAnalytics';
 
+function scrollToHeader(event: MouseEvent<HTMLAnchorElement>) {
+  if (!event.defaultPrevented && event.button === 0 && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey) {
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }
+}
+
 const Footer = () => {
+  const location = useLocation();
   const { trackWhatsAppClick } = useAnalytics();
 
   const handleWhatsAppClick = () => {
     trackWhatsAppClick('footer');
-    window.open(createWhatsAppUrl('Olá! Gostaria de agendar uma avaliação.'), '_blank');
+    window.open(createWhatsAppUrl(appointmentMessage(getProcedureForPath(location.pathname))), '_blank');
   };
 
   const handleInstagramClick = () => {
@@ -54,53 +62,53 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="font-semibold text-foreground">Menu</h3>
             <nav className="space-y-2">
-              <Link to="/" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
+              <Link to="/" onClick={scrollToHeader} className="block text-sm text-muted-foreground hover:text-primary transition-colors">
                 Início
               </Link>
-              <Link to="/otomodelacao" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
+              <Link to="/otomodelacao" onClick={scrollToHeader} className="block text-sm text-muted-foreground hover:text-primary transition-colors">
                 Otomodelação
               </Link>
-              <Link to="/harmonizacao-facial" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
+              <Link to="/harmonizacao-facial" onClick={scrollToHeader} className="block text-sm text-muted-foreground hover:text-primary transition-colors">
                 Harmonização Facial
               </Link>
                
-              <Link to="/harmonizacao-corporal" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
+              <Link to="/harmonizacao-corporal" onClick={scrollToHeader} className="block text-sm text-muted-foreground hover:text-primary transition-colors">
                 Harmonização Corporal
               </Link>
               {/*
-              <Link to="/preenchimento-labial" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
+              <Link to="/preenchimento-labial" onClick={scrollToHeader} className="block text-sm text-muted-foreground hover:text-primary transition-colors">
                 Preenchimento Labial
               </Link>
-              <Link to="/harmonizacao-glutea" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
+              <Link to="/harmonizacao-glutea" onClick={scrollToHeader} className="block text-sm text-muted-foreground hover:text-primary transition-colors">
                 Harmonização Glútea
               </Link>
-              <Link to="/bioestimulador-colageno" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
+              <Link to="/bioestimulador-colageno" onClick={scrollToHeader} className="block text-sm text-muted-foreground hover:text-primary transition-colors">
                 Bioestimulador de Colágeno
               </Link>
-              <Link to="/ozonioterapia" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
+              <Link to="/ozonioterapia" onClick={scrollToHeader} className="block text-sm text-muted-foreground hover:text-primary transition-colors">
                 Ozonioterapia
               </Link>
-              <Link to="/micropigmentacao" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
+              <Link to="/micropigmentacao" onClick={scrollToHeader} className="block text-sm text-muted-foreground hover:text-primary transition-colors">
                 Micropigmentação
               </Link>
-              <Link to="/jato-de-plasma" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
+              <Link to="/jato-de-plasma" onClick={scrollToHeader} className="block text-sm text-muted-foreground hover:text-primary transition-colors">
                 Jato de Plasma - Eletrocautério
               </Link>
-              <Link to="/empetiers-mesoterapia" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
+              <Link to="/empetiers-mesoterapia" onClick={scrollToHeader} className="block text-sm text-muted-foreground hover:text-primary transition-colors">
                 Empetiers/Mesoterapia
               </Link>
-              <Link to="/escleroterapia" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
+              <Link to="/escleroterapia" onClick={scrollToHeader} className="block text-sm text-muted-foreground hover:text-primary transition-colors">
                 Escleroterapia
               </Link>
-              <Link to="/terapia-capilar" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
+              <Link to="/terapia-capilar" onClick={scrollToHeader} className="block text-sm text-muted-foreground hover:text-primary transition-colors">
                 Terapia Capilar
               </Link>
               */}
               
-              <Link to="/sobre" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
+              <Link to="/sobre" onClick={scrollToHeader} className="block text-sm text-muted-foreground hover:text-primary transition-colors">
                 Sobre
               </Link>
-              <Link to="/contato" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
+              <Link to="/contato" onClick={scrollToHeader} className="block text-sm text-muted-foreground hover:text-primary transition-colors">
                 Contato
               </Link>
             </nav>

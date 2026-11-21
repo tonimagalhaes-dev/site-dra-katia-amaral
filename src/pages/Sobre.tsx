@@ -1,11 +1,11 @@
 import { MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { createWhatsAppUrl } from '@/lib/constants';
+import { appointmentMessage, createWhatsAppUrl } from '@/lib/constants';
 import { useAnalytics } from '@/hooks/useAnalytics';
 
 export default function Sobre() {
   const { trackWhatsAppClick } = useAnalytics();
-  const appointmentUrl = createWhatsAppUrl('Olá! Gostaria de agendar uma avaliação.');
+  const appointmentUrl = createWhatsAppUrl(appointmentMessage());
 
   return (
     <>

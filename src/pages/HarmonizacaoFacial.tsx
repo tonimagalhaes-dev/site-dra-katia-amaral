@@ -3,6 +3,18 @@ import ProceduresSection from '@/components/ProceduresSection';
 
 const proceduresHF = [
     {
+      title: 'Lobuloplastia',
+      description: 'Conheça as opções de avaliação para alterações no lóbulo da orelha.',
+      link: '/lobuloplastia',
+      image: '/images/kedem-sala.webp'
+    },
+    {
+      title: 'Pacotes de Harmonização Facial',
+      description: 'Entenda como Botox, preenchimento, bioestimulador e fios podem compor um plano individual.',
+      link: '/pacotes-de-harmonizacao',
+      image: '/images/facial3.webp'
+    },
+    {
       title: 'Bioestimulador de Colágeno',
       description: 'Rejuvenescimento natural e duradouro da pele',
       icon: '🧴',

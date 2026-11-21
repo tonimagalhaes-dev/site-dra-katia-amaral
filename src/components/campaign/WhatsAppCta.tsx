@@ -1,5 +1,5 @@
 import type { MouseEventHandler, ReactNode } from 'react';
-import { createWhatsAppUrl, OTOMODELACAO_WHATSAPP_MESSAGE } from '@/lib/constants';
+import { appointmentMessage, createWhatsAppUrl } from '@/lib/constants';
 import { trackWhatsAppContact } from '@/analytics/analytics';
 import type { CtaPosition } from '@/analytics/types';
 import { cn } from '@/lib/utils';
@@ -18,7 +18,7 @@ export function WhatsAppCta({ position, children, className, id }: WhatsAppCtaPr
   return (
     <a
       id={id}
-      href={createWhatsAppUrl(OTOMODELACAO_WHATSAPP_MESSAGE)}
+      href={createWhatsAppUrl(appointmentMessage('Otomodelação'))}
       target="_blank"
       rel="noopener noreferrer"
       onClick={handleClick}

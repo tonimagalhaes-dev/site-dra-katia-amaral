@@ -27,6 +27,8 @@ const Ozonioterapia = lazy(() => import('./pages/Ozonioterapia'));
 const PreenchimentoLabial = lazy(() => import('./pages/PreenchimentoLabial'));
 const Skinbooster = lazy(() => import('./pages/Skinbooster'));
 const TerapiaCapilar = lazy(() => import('./pages/TerapiaCapilar'));
+const Lobuloplastia = lazy(() => import('./pages/Lobuloplastia'));
+const PacotesHarmonizacao = lazy(() => import('./pages/PacotesHarmonizacao'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 
 // Componente de "Carregando..."
@@ -76,6 +78,8 @@ function App() {
             />
             <Route path="/skinbooster" element={<Skinbooster />} />
             <Route path="/terapia-capilar" element={<TerapiaCapilar />} />
+            <Route path="/lobuloplastia" element={<Lobuloplastia />} />
+            <Route path="/pacotes-de-harmonizacao" element={<PacotesHarmonizacao />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>

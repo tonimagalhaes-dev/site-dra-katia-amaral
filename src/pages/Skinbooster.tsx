@@ -31,8 +31,7 @@ const Skinbooster = () => {
       indications={indications}
       differentials={differentials}
       procedureName="Skinbooster"
-      heroImage='/images/skinbooster1.webp'
-      benefitImage='/images/skinbooster2.webp'
+      heroImage='/images/kedem-sala.webp'
     />
   );
 };

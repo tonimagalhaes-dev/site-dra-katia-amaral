@@ -6,14 +6,14 @@ const proceduresHC = [
       title: 'Bioestimulador de Colágeno',
       description: 'Rejuvenescimento natural e duradouro da pele',
       icon: '🧴',
-      link: '/bioestimulador-colageno',
+      link: '/bioestimulador-de-colageno',
       image: '/images/bioestimulador1.webp'
     },
     {
       title: 'Empetiers/Mesoterapia',
       description: 'Realce a beleza dos seus traços com a mesoterapia',
       icon: '💋',
-      link: '/empetiers-mesoterapia',
+      link: '/mesoterapia-emptiers',
       image: '/images/empitiers3.webp'
     },
     {

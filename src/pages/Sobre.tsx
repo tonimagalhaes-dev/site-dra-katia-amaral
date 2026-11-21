@@ -1,91 +1,66 @@
 import { MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { createWhatsAppUrl } from '@/lib/constants';
+import { appointmentMessage, createWhatsAppUrl } from '@/lib/constants';
 import { useAnalytics } from '@/hooks/useAnalytics';
 
-
-const Sobre = () => {
-  const differentials = [
-    "Acompanhamento pós-procedimento individual",
-    "Procedimentos sem cirurgia, com foco no natural",
-    "Atendimento humanizado e técnico",
-    "Consultório em São Paulo"
-  ];
+export default function Sobre() {
   const { trackWhatsAppClick } = useAnalytics();
-
-  const handleWhatsAppClick = () => {
-    trackWhatsAppClick('sobre-page', 'sobre');
-    window.open(createWhatsAppUrl('Olá! Gostaria de agendar uma avaliação.'), '_blank');
- };
+  const appointmentUrl = createWhatsAppUrl(appointmentMessage());
 
   return (
-    <div className="min-h-screen bg-background">
-      
-      <section className="relative bg-gradient-to-br from-rose-50 to-gold-50 py-20">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <h1 className="text-4xl lg:text-5xl font-bold font-playfair text-foreground">
-                Conheça a Dra. Katia Amaral
-              </h1>
-              <p className="text-lg text-muted-foreground">
-                Sou a Enf.ª Katia Amaral, especialista em estética com mais de 20 anos de experiência em cuidados
-                com a saúde. Formada pela Universidade Federal de São Paulo, encontrei na estética uma forma de
-                unir conhecimento técnico, sensibilidade e propósito: resgatar a autoestima e o bem-estar dos meus
-                 pacientes.
-              </p>
-              <p className="text-lg text-muted-foreground">
-                Meu trabalho é voltado para a harmonização facial e modelação das orelhas, sempre com foco em resultados naturais, segurança e principalmente, no cuidado no pós-procedimento — uma etapa essencial para garantir conforto, recuperação adequada e a satisfação com os resultados.
-              </p>
-              <p className="text-lg text-muted-foreground">
-                Acredito que cada paciente é único. Por isso, ofereço um atendimento personalizado, escutando suas necessidades e criando um plano que respeite suas características e objetivos.
-              </p>
-              <p className="text-lg text-muted-foreground">
-                Meu compromisso é te ajudar a se sentir bem consigo mesma, confiante e feliz ao se olhar no espelho — pronta para viver o seu momento da selfie perfeita, com leveza e autenticidade.
-              </p>
-
-              <Button onClick={handleWhatsAppClick} size="lg" className="bg-primary hover:bg-primary/90">
-                <MessageCircle className="w-5 h-5 mr-2" />
-                Fale comigo no WhatsApp
-              </Button>
-            </div>
-            <div className="relative">
-              <div className="aspect-square bg-gradient-to-br from-primary/20 to-gold-400/20 rounded-full flex items-center justify-center">
-                <div className="w-full h-full bg-white rounded-full shadow-lg flex items-center justify-center">
-                    <img
-                    src="/images/katia7.webp"
-                    alt="Dra. Katia Amaral"
-                    className="w-full h-full object-cover rounded-full"
-                    />
-                </div>
-              </div>
-            </div>
+    <>
+      <section className="kedem-hero">
+        <div className="kedem-wrap grid items-center gap-8 py-12 md:grid-cols-2 md:gap-16 md:py-20">
+          <div>
+            <p className="kedem-label">Enfermeira esteta · COREN-SP 310.193</p>
+            <h1 className="kedem-title text-5xl leading-none sm:text-6xl lg:text-7xl">
+              Conheça a Dra. Kátia Amaral
+            </h1>
+            <p className="kedem-intro">
+              Sou enfermeira esteta, formada pela Universidade Federal de São Paulo, com mais de 20
+              anos de experiência em cuidados com a saúde.
+            </p>
+            <Button asChild size="lg">
+              <a
+                href={appointmentUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => trackWhatsAppClick('sobre-page', 'sobre')}
+              >
+                <MessageCircle size={18} aria-hidden="true" /> Fale comigo no WhatsApp
+              </a>
+            </Button>
           </div>
+          <figure className="kedem-image-frame mx-auto w-full max-w-[440px]">
+            <img
+              src="/images/kedem-katia.webp"
+              srcSet="/images/kedem-katia-550.webp 550w, /images/kedem-katia.webp 1020w"
+              sizes="(min-width: 960px) 426px, (min-width: 768px) 45vw, calc(100vw - 54px)"
+              width={1020}
+              height={1275}
+              fetchPriority="high"
+              alt="Retrato da Dra. Kátia Amaral sentada em uma poltrona"
+            />
+          </figure>
         </div>
       </section>
 
-      {/* Diferenciais Section Hide 
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold font-playfair mb-4">Diferenciais</h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            {differentials.map((differential, index) => (
-              <Card key={index} className="p-6">
-                <CardContent className="flex items-start space-x-3">
-                  <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
-                  <span className="text-lg">{differential}</span>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+      <section className="kedem-wrap py-12 md:py-16" aria-labelledby="care-title">
+        <div className="max-w-2xl space-y-5 leading-relaxed">
+          <h2 id="care-title" className="kedem-title text-4xl">
+            Como conduzo o atendimento
+          </h2>
+          <p>
+            Meu trabalho é voltado para a harmonização facial e a modelação das orelhas. Na
+            avaliação, conversamos sobre suas necessidades para definir um plano que respeite suas
+            características e objetivos.
+          </p>
+          <p>
+            Também acompanho o pós-procedimento para orientar os cuidados e esclarecer dúvidas
+            durante a recuperação.
+          </p>
         </div>
       </section>
-      */}
-
-    </div>
+    </>
   );
-};
-
-export default Sobre;
+}

@@ -4,10 +4,27 @@
 
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. */
 
+@font-face {
+  font-family: 'Open Sans';
+  src: url('/fonts/open-sans-latin.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 300 800;
+  font-display: optional;
+}
+
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --kedem-ink: #0e3157;
+    --kedem-gold: #98702c;
+    --kedem-button-gold: #e6c88e;
+    --kedem-ivory: #fcfbf7;
+    --kedem-sand: #efe8db;
+    --kedem-blue: #0786b1;
+    --kedem-sans: 'Open Sans', Arial, sans-serif;
+    --kedem-serif: 'Liberation Serif', Georgia, serif;
+
+    --background: 48 45% 98%;
+    --foreground: 211 72% 20%;
 
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
@@ -15,16 +32,16 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 211 100% 15%; /* #001e4c */
-    --primary-foreground: 0 0% 100%;
+    --primary: 211 72% 20%;
+    --primary-foreground: 40 65% 73%;
 
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
 
     --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted-foreground: 211 28% 35%;
 
-    --accent: 210 40% 96.1%;
+    --accent: 39 38% 90%;
     --accent-foreground: 222.2 47.4% 11.2%;
 
     --destructive: 0 84.2% 60.2%;
@@ -99,6 +116,7 @@
 
   body {
     @apply bg-background text-foreground;
+    font-family: var(--kedem-sans);
     overflow-x: hidden;
   }
 }
@@ -112,4 +130,60 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+.kedem-button,
+.kedem-button-outline {
+  border: 1px solid var(--kedem-gold);
+  border-radius: 999px;
+  min-height: 44px;
+  white-space: normal;
+}
+
+.kedem-button {
+  background-color: var(--kedem-ink);
+  color: var(--kedem-button-gold);
+}
+
+.kedem-button:hover {
+  background-color: #194773;
+}
+
+.kedem-button-outline {
+  background-color: var(--kedem-ivory);
+  color: var(--kedem-ink);
+}
+
+.kedem-button-outline:hover {
+  background-color: var(--kedem-sand);
+}
+
+:is(.kedem-button, .kedem-button-outline):focus-visible {
+  outline: 2px solid var(--kedem-blue);
+  outline-offset: 3px;
+}
+
+.kedem-title {
+  font-family: var(--kedem-serif);
+  font-weight: 400;
+  text-wrap: balance;
+}
+
+.kedem-image-frame {
+  border: 1px solid var(--kedem-gold);
+  padding: .4rem;
+  border-radius: 48% 48% .35rem .35rem / 42% 42% .35rem .35rem;
+}
+
+.kedem-image-frame > img {
+  width: 100%;
+  border-radius: inherit;
+  object-fit: cover;
+}
+
+header nav .kedem-button-outline:is(:hover, :focus-visible),
+header nav .group:focus-within > .kedem-button-outline,
+header nav .group:hover > .kedem-button-outline {
+  background-color: var(--kedem-ink);
+  color: var(--kedem-button-gold);
 }

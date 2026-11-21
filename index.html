@@ -8,14 +8,48 @@
     <meta name="p:domain_verify" content="631f1ae86cd774d02670d09897f3d9b8" />
 
     <script>
-      if (window.location.pathname === '/') {
-        const reception = document.createElement('link');
-        reception.rel = 'preload';
-        reception.as = 'image';
-        reception.imageSrcset = '/images/kedem-recepcao-480.webp 480w, /images/kedem-recepcao.webp 864w';
-        reception.imageSizes = '(min-width: 1200px) 590px, (min-width: 800px) 51vw, calc(100vw - 40px)';
-        reception.fetchPriority = 'high';
-        document.head.append(reception);
+      const route = window.location.pathname.replace(/\/+$/, '') || '/';
+      const responsiveHeroes = {
+        '/': {
+          srcset: '/images/kedem-recepcao-480.webp 480w, /images/kedem-recepcao.webp 864w',
+          sizes: '(min-width: 1200px) 590px, (min-width: 800px) 51vw, calc(100vw - 40px)',
+        },
+        '/sobre': {
+          srcset: '/images/kedem-katia-550.webp 550w, /images/kedem-katia.webp 1020w',
+          sizes: '(min-width: 960px) 426px, (min-width: 768px) 45vw, calc(100vw - 54px)',
+        },
+      };
+      const procedureHeroes = {
+        '/otomodelacao': matchMedia('(max-width: 768px)').matches ? 'otomodelacao5.webp' : 'otomodelacao4.webp',
+        '/harmonizacao-facial': 'facial3.webp',
+        '/harmonizacao-corporal': 'empitiers3.webp',
+        '/lobuloplastia': 'kedem-sala.webp',
+        '/pacotes-de-harmonizacao': 'facial3.webp',
+        '/bioestimulador-de-colageno': 'bioestimulador1.webp',
+        '/mesoterapia-emptiers': 'Empitiers.webp',
+        '/escleroterapia': 'escleroterapia1.webp',
+        '/harmonizacao-glutea': 'gluteo2.webp',
+        '/jato-de-plasma': 'plasma2.webp',
+        '/micropigmentacao': 'micro3.webp',
+        '/ozonioterapia': 'kedem-sala.webp',
+        '/preenchimento-labial': 'labios2.webp',
+        '/skinbooster': 'kedem-sala.webp',
+        '/terapia-capilar': 'capilar5.webp',
+      };
+      const responsiveHero = responsiveHeroes[route];
+      const procedureHero = procedureHeroes[route];
+      if (responsiveHero || procedureHero) {
+        const hero = document.createElement('link');
+        hero.rel = 'preload';
+        hero.as = 'image';
+        hero.fetchPriority = 'high';
+        if (responsiveHero) {
+          hero.imageSrcset = responsiveHero.srcset;
+          hero.imageSizes = responsiveHero.sizes;
+        } else {
+          hero.href = '/images/' + procedureHero;
+        }
+        document.head.append(hero);
       }
     </script>
 

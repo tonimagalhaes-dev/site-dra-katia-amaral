@@ -8,14 +8,14 @@ import {
 } from '@/components/ui/carousel';
 import { otomodelacaoResults } from '@/data/otomodelacaoResults';
 
-function ResultImage({ src, alt, label, eager }: { src: string; alt: string; label: string; eager: boolean }) {
+function ResultImage({ src, alt, label }: { src: string; alt: string; label: string }) {
   const [failed, setFailed] = useState(false);
   return (
-    <figure className="overflow-hidden rounded-xl border bg-slate-100">
-      <figcaption className="px-3 py-2 text-center text-sm font-semibold text-slate-700">{label}</figcaption>
+    <figure className="overflow-hidden rounded-xl border bg-[var(--kedem-sand)]">
+      <figcaption className="px-3 py-2 text-center text-sm font-semibold text-primary">{label}</figcaption>
       <div className="aspect-square">
         {failed ? (
-          <div className="flex h-full flex-col items-center justify-center gap-2 p-6 text-center text-slate-600">
+          <div className="flex h-full flex-col items-center justify-center gap-2 p-6 text-center text-muted-foreground">
             <ImageOff aria-hidden="true" />
             <span>Imagem indisponível</span>
           </div>
@@ -25,7 +25,8 @@ function ResultImage({ src, alt, label, eager }: { src: string; alt: string; lab
             alt={alt}
             width={800}
             height={800}
-            loading={eager ? 'eager' : 'lazy'}
+            loading="lazy"
+            decoding="async"
             onError={() => setFailed(true)}
             className="h-full w-full object-contain"
           />
@@ -65,7 +66,7 @@ export function ResultsCarousel() {
             <CarouselItem key={result.id} aria-label={`${result.patientLabel} de ${otomodelacaoResults.length}`}>
               <div className="grid gap-3 sm:grid-cols-2">
                 {result.views.map((view) => (
-                  <ResultImage key={view.id} {...view} eager={index === 0} />
+                  <ResultImage key={view.id} {...view} />
                 ))}
               </div>
             </CarouselItem>
@@ -77,27 +78,27 @@ export function ResultsCarousel() {
           type="button"
           onClick={() => api?.scrollPrev()}
           disabled={!canPrev}
-          className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-full border bg-white disabled:opacity-40 focus-visible:ring-4"
+          className="kedem-button-outline inline-flex min-w-11 items-center justify-center disabled:opacity-40"
           aria-label="Caso anterior"
         >
           <ChevronLeft aria-hidden="true" />
         </button>
         <div className="flex max-w-48 gap-1.5 overflow-hidden" aria-hidden="true">
           {otomodelacaoResults.map((result, index) => (
-            <span key={result.id} className={`h-2 w-2 rounded-full ${index === active ? 'bg-primary' : 'bg-slate-300'}`} />
+            <span key={result.id} className={`h-2 w-2 rounded-full ${index === active ? 'bg-primary' : 'bg-[var(--kedem-sand)]'}`} />
           ))}
         </div>
         <button
           type="button"
           onClick={() => api?.scrollNext()}
           disabled={!canNext}
-          className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-full border bg-white disabled:opacity-40 focus-visible:ring-4"
+          className="kedem-button-outline inline-flex min-w-11 items-center justify-center disabled:opacity-40"
           aria-label="Próximo caso"
         >
           <ChevronRight aria-hidden="true" />
         </button>
       </div>
-      <p className="mt-5 text-center text-sm text-slate-600">
+      <p className="mt-5 text-center text-sm text-muted-foreground">
         Imagens de casos individuais. Os resultados podem variar de pessoa para pessoa.
       </p>
     </div>

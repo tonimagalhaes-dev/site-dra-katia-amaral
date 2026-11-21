@@ -1,7 +1,7 @@
 import { Suspense, lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { Toaster } from '@/components/ui/toaster';
-import { CampaignShell } from '@/components/campaign/CampaignShell';
+import { SiteLayout } from '@/components/SiteLayout';
 import { CookieConsentBanner } from '@/components/consent/CookieConsentBanner';
 import Index from './pages/Index';
 
@@ -39,7 +39,7 @@ const PageLoader = () => (
 function App() {
   return (
     <>
-      <CampaignShell>
+      <SiteLayout>
         <Suspense fallback={<PageLoader />}>
           <Routes>
             <Route path="/" element={<Index />} />
@@ -79,7 +79,7 @@ function App() {
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
-      </CampaignShell>
+      </SiteLayout>
       <Toaster />
       <CookieConsentBanner />
     </>

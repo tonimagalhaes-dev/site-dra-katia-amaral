@@ -59,6 +59,12 @@ const frequentlyAskedQuestions = [
       'A avaliação permite conhecer o histórico do paciente, entender suas queixas e expectativas e analisar as características individuais. Com essas informações, a profissional pode indicar e planejar o tratamento de forma personalizada.',
   },
   {
+    value: 'valores',
+    question: 'Como posso consultar os valores e as formas de pagamento?',
+    answer:
+      'Fale com a equipe pelo WhatsApp para saber o valor da avaliação e conhecer as formas de pagamento disponíveis. A avaliação ajuda a definir o plano indicado para o seu caso.',
+  },
+  {
     value: 'internacao',
     question: 'O paciente precisa ficar internado para realizar a otomodelação?',
     answer:
@@ -82,7 +88,7 @@ export default function OtomodelacaoPage() {
         <title>Otomodelação | Dra. Kátia Amaral</title>
         <meta
           name="description"
-          content="Conheça a otomodelação com a Dra. Kátia Amaral e converse pelo WhatsApp para entender indicação, cuidados e avaliação."
+          content="Conheça a otomodelação, tire dúvidas sobre a indicação e consulte valores e formas de pagamento com a equipe da Dra. Kátia Amaral."
         />
       </Helmet>
 
@@ -91,10 +97,10 @@ export default function OtomodelacaoPage() {
           <div>
             <p className="kedem-label">Otomodelação em São Paulo</p>
             <h1 className="kedem-title text-4xl leading-tight sm:text-5xl lg:text-6xl">
-              Entenda se a otomodelação faz sentido para você
+              Otomodelação para quem quer se sentir mais à vontade
             </h1>
             <p className="kedem-intro">
-              Converse sobre objetivos, indicação, cuidados e expectativas em uma avaliação individual.
+              Comentários sobre as orelhas podem afetar a autoestima. Se mudar a aparência delas é um desejo seu, a avaliação ajuda a entender o que a otomodelação pode oferecer para o seu caso.
             </p>
             <p className="font-semibold">Dra. Kátia Amaral · Enfermeira Esteta · COREN-SP 310.193</p>
             <WhatsAppCta
@@ -102,9 +108,9 @@ export default function OtomodelacaoPage() {
               position="hero"
               className="mt-5 w-full max-w-md sm:w-auto"
             >
-              Conversar sobre uma avaliação
+              Quero avaliar meu caso
             </WhatsAppCta>
-            <p className="mt-3 text-sm">Atendimento inicial pelo WhatsApp.</p>
+            <p className="mt-3 text-sm">Converse pelo WhatsApp sobre indicação, valores e formas de pagamento.</p>
           </div>
           <figure className="kedem-image-frame">
             <picture className="block overflow-hidden rounded-[inherit]">
@@ -133,7 +139,7 @@ export default function OtomodelacaoPage() {
             <ResultsCarousel />
           </Suspense>
           <div className="mt-8 text-center">
-            <WhatsAppCta position="results">Tirar dúvidas sobre o procedimento</WhatsAppCta>
+            <WhatsAppCta position="results">Quero entender minhas opções</WhatsAppCta>
           </div>
         </div>
       </section>
@@ -191,10 +197,10 @@ export default function OtomodelacaoPage() {
 
       <section id="cta-final" className="kedem-hero px-4 py-16 text-center">
         <div className="mx-auto max-w-2xl">
-          <h2 className="kedem-title text-4xl">Quer entender o seu caso?</h2>
-          <p className="mt-3 text-lg text-primary">Envie uma mensagem e tire suas dúvidas sobre avaliação e próximos passos.</p>
+          <h2 className="kedem-title text-4xl">Dê o primeiro passo no seu tempo</h2>
+          <p className="mt-3 text-lg text-primary">Conte à nossa equipe o que você gostaria de mudar. Pergunte sobre a avaliação, os valores e as opções de pagamento para decidir com calma.</p>
           <WhatsAppCta position="final" className="mt-7 w-full sm:w-auto">
-            Conversar com a Dra. Kátia
+            Consultar valores e agendar
           </WhatsAppCta>
         </div>
       </section>

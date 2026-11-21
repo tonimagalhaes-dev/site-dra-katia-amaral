@@ -8,6 +8,8 @@ import { useAnalytics } from '@/hooks/useAnalytics';
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+  const desktopMenuButton =
+    'kedem-button-outline inline-flex items-center justify-center px-4 text-sm font-medium transition-colors';
   const { trackWhatsAppClick } = useAnalytics();
 
   const menuItems = [
@@ -61,12 +63,12 @@ const Header = () => {
           </Link>
 
           {/* Desktop Menu */}
-          <nav className="hidden lg:flex items-center space-x-8">
+          <nav className="hidden lg:flex items-center gap-3">
             {menuItems.map((item) => (
               <div key={item.label} className="relative group">
                 {item.isDropdown ? (
                   <>
-                    <button className="kedem-button-outline px-4 text-sm font-medium">
+                    <button type="button" className={desktopMenuButton}>
                       {item.label}
                     </button>
                     <div className="absolute top-full left-0 w-64 bg-background border border-border rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-200 z-50">
@@ -86,9 +88,8 @@ const Header = () => {
                 ) : (
                   <Link
                     to={item.path}
-                    className={`text-foreground hover:text-primary transition-colors font-medium ${
-                      location.pathname === item.path ? 'text-primary' : ''
-                    }`}
+                    className={desktopMenuButton}
+                    aria-current={location.pathname === item.path ? 'page' : undefined}
                   >
                     {item.label}
                   </Link>

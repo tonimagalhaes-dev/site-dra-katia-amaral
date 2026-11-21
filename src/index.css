@@ -169,3 +169,10 @@
   border-radius: inherit;
   object-fit: cover;
 }
+
+header nav .kedem-button-outline:is(:hover, :focus-visible),
+header nav .group:focus-within > .kedem-button-outline,
+header nav .group:hover > .kedem-button-outline {
+  background-color: var(--kedem-ink);
+  color: var(--kedem-button-gold);
+}

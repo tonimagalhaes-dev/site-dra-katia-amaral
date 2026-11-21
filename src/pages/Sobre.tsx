@@ -34,10 +34,10 @@ export default function Sobre() {
           <figure className="kedem-image-frame mx-auto w-full max-w-[440px]">
             <img
               src="/images/kedem-katia.webp"
-              srcSet="/images/kedem-katia-440.webp 440w, /images/kedem-katia.webp 880w"
+              srcSet="/images/kedem-katia-550.webp 550w, /images/kedem-katia.webp 1020w"
               sizes="(min-width: 960px) 426px, (min-width: 768px) 45vw, calc(100vw - 54px)"
-              width={880}
-              height={1100}
+              width={1020}
+              height={1275}
               fetchPriority="high"
               alt="Retrato da Dra. Kátia Amaral sentada em uma poltrona"
             />

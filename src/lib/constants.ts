@@ -5,7 +5,7 @@ export const WHATSAPP_NUMBER = '5511942242893';
 // URL base do WhatsApp
 export const WHATSAPP_BASE_URL = `https://wa.me/${WHATSAPP_NUMBER}`;
 export const OTOMODELACAO_WHATSAPP_MESSAGE =
-  'Olá, Dra. Kátia! Vi a página de otomodelação e gostaria de saber mais sobre uma avaliação.';
+  'Olá, Dra. Kátia! Vi a página de otomodelação e gostaria de saber se a otomodelação é indicada para mim e conhecer os valores e as formas de pagamento.';
 
 // Função utilitária para criar links do WhatsApp com mensagem
 export const createWhatsAppUrl = (message: string) => {

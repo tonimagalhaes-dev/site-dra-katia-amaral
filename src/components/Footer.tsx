@@ -110,10 +110,16 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="font-semibold text-foreground">Contato</h3>
             <div className="space-y-3">
-              <div className="flex items-center space-x-3 text-sm text-muted-foreground">
-                <MapPin className="w-4 h-4 text-primary" />
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Rua+Santa+Cruz%2C+2105%2C+Sala+1410%2C+Vila+Mariana%2C+S%C3%A3o+Paulo"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Abrir endereço no Google Maps"
+                className="flex min-h-11 items-center gap-3 text-sm text-muted-foreground underline-offset-4 hover:underline"
+              >
+                <MapPin className="h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
                 <span>Rua Santa Cruz, 2105 Sala 1410 - Vila Mariana, São Paulo</span>
-              </div>
+              </a>
 
               <button 
                 onClick={handleWhatsAppClick}
